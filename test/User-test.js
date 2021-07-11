@@ -146,7 +146,11 @@ describe.only('User', () => {
     expect(user2.hrsSleptQuality(sleep, 'sleepQuality', '2019/06/15')).to.equal(4.7);
   });
 
-  it('Should return user who slept the most', () => {
+  it('Should return user who slept the most amongs other user/s', () => {
     expect(user.mostSleptUser(sleep, userData, '2019/06/15')).to.equal('Jarvis Considine');
+  });
+
+  it('Should have user/s steps for a day in miles', () => {
+    expect(user1.stepsActiveDay(activity, userData, '2019/06/15', 1)).to.equal('2.91');
   });
 });

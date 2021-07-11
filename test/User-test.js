@@ -91,4 +91,9 @@ describe.only('User', () => {
     expect(user1.id).to.equal(1);
     expect(user2.id).to.equal(2);
   });
+
+  it('Should have user/s name', () => {
+    expect(user1.name).to.equal('Luisa Hane');
+    expect(user2.name).to.equal('Jarvis Considine');
+  });
 });

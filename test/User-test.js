@@ -96,4 +96,10 @@ describe.only('User', () => {
     expect(user1.name).to.equal('Luisa Hane');
     expect(user2.name).to.equal('Jarvis Considine');
   });
+
+  it('Should have user/s adress', () => {
+    expect(user2.address).to.equal('30086 Kathryn Port, Ciceroland NE 07273');
+    expect(user1.address).to.equal('15195 Nakia Tunnel, Erdmanport VA 19901-1697');
+  });
+
 });

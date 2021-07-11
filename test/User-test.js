@@ -112,5 +112,13 @@ describe.only('User', () => {
     expect(user2.strideLength).to.equal(4.5);
   });
 
-  
+  it('Should have user/s average step goal', () => {
+    expect(user1.dailyStepGoal).to.equal(10000);
+    expect(user2.dailyStepGoal).to.equal(5000);
+  });
+
+  it('Should have user/s friends', () => {
+    expect(user1.friends.length).to.deep.equal(3);
+    expect(user2.friends.length).to.deep.equal(4);
+  });
 });

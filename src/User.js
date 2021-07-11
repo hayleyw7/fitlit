@@ -37,16 +37,41 @@ class User {
     return array.map(data => data[property]).reduce((total, currentVal) =>
       total + currentVal) / array.length;
   }
+
   getAvgFluidCons(currentData, property, date) {
     let avgFluid = this.avgData(currentData, property, date);
     // console.log(avgFluid);
     return avgFluid;
   }
+
   hrsSleptQuality(currentData, property, date) {
     let hrs = this.avgData(currentData, property, date);
     // console.log(hrs)
     return hrs;
   }
+
+  mostSleptUser(sleepData, userData, date) {
+    let hrs = []
+    let user = userData.reduce((userName, currentVal) => {
+      sleepData.forEach(data => {
+        if ((data.userID === currentVal.id) &&
+        (data.date === date)) {
+          hrs.push(data.hoursSlept)
+        }
+        if (hrs.length > 0) {
+          hrs.forEach(hr => {
+            if (hr >= data.hoursSlept) {
+              userName = currentVal.name;
+            }
+          })
+        }
+      })
+
+      return userName;
+    }, '');
+    return user;
+  }
+
 }
 
 module.exports = User;

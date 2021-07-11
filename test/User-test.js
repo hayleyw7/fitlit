@@ -146,5 +146,7 @@ describe.only('User', () => {
     expect(user2.hrsSleptQuality(sleep, 'sleepQuality', '2019/06/15')).to.equal(4.7);
   });
 
-
+  it('Should return user who slept the most', () => {
+    expect(user.mostSleptUser(sleep, userData, '2019/06/15')).to.equal('Jarvis Considine');
+  });
 });

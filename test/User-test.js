@@ -87,4 +87,8 @@ describe.only('User', () => {
     expect(user).to.be.instanceof(User);
   });
 
+  it('Should have an id', () => {
+    expect(user1.id).to.equal(1);
+    expect(user2.id).to.equal(2);
+  });
 });

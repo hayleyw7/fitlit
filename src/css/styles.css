@@ -8,16 +8,16 @@
 
 /* UTILITY */
 
- /* :root {
-  --blue: #215abc;
-  --red: #7e3a30;
-  --black: #000000;
+:root {
   --white: #FFF;
-  --beige: #f2efdc;
-
+  --black: #000000;
+  --sidebar: #979797;
+  --background: #333333;
+  --green: #ACE075;
+  --red: #E07581;
+  --yellow: #F5C87F;
+  --blue: #7FB6F5;
 }
-
-/* BACKGROUND */
 
 body {
   display: flex;
@@ -28,10 +28,14 @@ body {
 /* HEADERS */
 
 h1 {
-
+  
 }
 
 h2 {
+
+}
+
+h3 {
 
 }
 

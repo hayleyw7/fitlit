@@ -5,6 +5,7 @@ import User from '../src/User';
 describe('User', () => {
   let userData, hydration, sleep, activity, user, user1, user2;
   beforeEach(() => {
+
     userData = [
       {
         "id": 1,
@@ -57,6 +58,24 @@ describe('User', () => {
       "hoursSlept": 7,
       "sleepQuality": 4.7
     }];
-    
+
+    activity = [{
+      "userID": 1,
+      "date": "2019/06/15",
+      "numSteps": 3577,
+      "minutesActive": 140,
+      "flightsOfStairs": 16
+    },
+    {
+      "userID": 2,
+      "date": "2019/06/15",
+      "numSteps": 4294,
+      "minutesActive": 138,
+      "flightsOfStairs": 10
+    }];
+
+    user = new User(userData);
+    user1 = new User(userData[0]);
+    user2 = new User(userData[1]);
   });
 });

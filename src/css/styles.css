@@ -72,11 +72,26 @@ h3 {
   padding: 1rem;
   width: 15%;
   background-color: var(--sidebar);
+  height: 100rem;
 }
 
 .widget-section {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100rem;
   width: 85%;
+  padding: 0 0 0 2rem;
+}
+
+.widget-category {
+  display: flex;
+  flex-direction: row;
+}
+
+/* WIDGETS */
+
+.widget {
+  background-color: var(--black);
+  padding: 1rem;
+  border-radius: 1rem;
 }

@@ -121,4 +121,10 @@ describe.only('User', () => {
     expect(user1.friends.length).to.deep.equal(3);
     expect(user2.friends.length).to.deep.equal(4);
   });
+
+  it('Should display user/s first name', () => {
+    expect(user1.getName()).to.equal('Luisa');
+    expect(user2.getName()).to.equal('Jarvis');
+  });
+
 });

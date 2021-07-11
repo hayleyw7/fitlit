@@ -8,48 +8,92 @@
 
 /* UTILITY */
 
- /* :root {
-  --blue: #215abc;
-  --red: #7e3a30;
-  --black: #000000;
+:root {
   --white: #FFF;
-  --beige: #f2efdc;
-
+  --black: #000000;
+  --sidebar: #666666;
+  --background: #333333;
+  --green: #ACE075;
+  --red: #E07581;
+  --yellow: #F5C87F;
+  --blue: #7FB6F5;
+  --purple: #C3B1E1;
 }
-
-/* BACKGROUND */
 
 body {
   display: flex;
   flex: 1;
   font-family: 'Arial';
+  background-color: var(--background);
+  color: var(--white);
 }
 
 /* HEADERS */
 
 h1 {
-
+  color: var(--green);
+  font-size: 5rem;
+  text-align: center;
 }
 
 h2 {
 
 }
 
-/* SECTIONS */
-
-.widget-section {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 80%;
+.goals-header {
+  color: var(--red);
 }
+
+.activity-header {
+  color: var(--yellow);
+}
+
+.hydration-header {
+  color: var(--blue);
+}
+
+.sleep-header {
+  color: var(--purple);
+}
+
+
+
+h3 {
+
+}
+
+/* SECTIONS */
 
 .sidebar
  {
   display: flex;
   flex-direction: column;
-  min-width: 9rem;
-  padding: 2.9em 1rem 1rem 1rem;
-  width: 18%;
-  border-right: solid .4rem var(--black);
+  min-width: 12rem;
+  padding: 1rem;
+  width: 15%;
+  background-color: var(--sidebar);
+  height: 100rem;
+}
+
+.widget-section {
+  display: flex;
+  flex-direction: column;
+  height: 100rem;
+  width: 85%;
+  padding: 0 0 0 2rem;
+}
+
+.widget-category {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+}
+
+/* WIDGETS */
+
+.widget {
+  background-color: var(--black);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
 }

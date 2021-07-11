@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import User from '../src/User';
 
 
-describe('User', () => {
+describe.only('User', () => {
   let userData, hydration, sleep, activity, user, user1, user2;
   beforeEach(() => {
 
@@ -78,4 +78,13 @@ describe('User', () => {
     user1 = new User(userData[0]);
     user2 = new User(userData[1]);
   });
+
+  it('Should be a function', () => {
+    expect(User).to.be.a('function');
+  });
+
+  it('Should be an instance of User', () => {
+    expect(user).to.be.instanceof(User);
+  });
+
 });

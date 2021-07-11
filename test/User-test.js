@@ -106,4 +106,11 @@ describe.only('User', () => {
     expect(user1.email).to.equal('Diana.Hayes1@hotmail.com');
     expect(user2.email).to.equal('Dimitri.Bechtelar11@gmail.com');
   });
+
+  it('Should have user/s stride length', () => {
+    expect(user1.strideLength).to.equal(4.3);
+    expect(user2.strideLength).to.equal(4.5);
+  });
+
+  
 });

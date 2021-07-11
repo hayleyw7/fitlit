@@ -42,6 +42,11 @@ class User {
     // console.log(avgFluid);
     return avgFluid;
   }
+  hrsSleptQuality(currentData, property, date) {
+    let hrs = this.avgData(currentData, property, date);
+    // console.log(hrs)
+    return hrs;
+  }
 }
 
 module.exports = User;

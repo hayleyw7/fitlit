@@ -128,12 +128,22 @@ describe.only('User', () => {
   });
 
   // it('Should check all data for all times', () => {
-  //   expect(user1.avgData(hydration, 1, '2019/06/15' )).to.deep.equal('')
+  //   expect(user1.avgData(hydration, 'numOunces', '2019/06/15' )).to.deep.equal('37')
   // })
 
   it('Should get users average water consumed all times', () => {
     expect(user1.getAvgFluidCons(hydration, 'numOunces', '2019/06/15')).to.equal(37);
     expect(user2.getAvgFluidCons(hydration, 'numOunces', '2019/06/15')).to.equal(75);
+  });
+
+  it('Should return user/s slept hours per day', () => {
+    expect(user1.hrsSleptQuality(sleep, 'hoursSlept', '2019/06/15')).to.equal(6.1);
+    expect(user2.hrsSleptQuality(sleep, 'hoursSlept', '2019/06/15')).to.equal(7);
+  });
+
+  it('Should return user/s sleeping quality', () => {
+    expect(user1.hrsSleptQuality(sleep, 'sleepQuality', '2019/06/15')).to.equal(2.2);
+    expect(user2.hrsSleptQuality(sleep, 'sleepQuality', '2019/06/15')).to.equal(4.7);
   });
 
 

@@ -127,4 +127,14 @@ describe.only('User', () => {
     expect(user2.getName()).to.equal('Jarvis');
   });
 
+  // it('Should check all data for all times', () => {
+  //   expect(user1.avgData(hydration, 1, '2019/06/15' )).to.deep.equal('')
+  // })
+
+  it('Should get users average water consumed all times', () => {
+    expect(user1.getAvgFluidCons(hydration, 'numOunces', '2019/06/15')).to.equal(37);
+    expect(user2.getAvgFluidCons(hydration, 'numOunces', '2019/06/15')).to.equal(75);
+  });
+
+
 });

@@ -1,5 +1,55 @@
-body, html {
+/* IN ORIGINAL STARTER KIT FILE /* 
+
+/* body, html {
   background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
   background-repeat: no-repeat;
   height: 100%;
+} */
+
+/* UTILITY */
+
+ /* :root {
+  --blue: #215abc;
+  --red: #7e3a30;
+  --black: #000000;
+  --white: #FFF;
+  --beige: #f2efdc;
+
+}
+
+/* BACKGROUND */
+
+body {
+  display: flex;
+  flex: 1;
+  font-family: 'Arial';
+}
+
+/* HEADERS */
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+/* SECTIONS */
+
+.widget-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 80%;
+}
+
+.sidebar
+ {
+  display: flex;
+  flex-direction: column;
+  min-width: 9rem;
+  padding: 2.9em 1rem 1rem 1rem;
+  width: 18%;
+  border-right: solid .4rem var(--black);
 }

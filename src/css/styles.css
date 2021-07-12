@@ -69,7 +69,7 @@ h3 {
  {
   display: flex;
   flex-direction: column;
-  min-width: 12rem;
+  min-width: 13.5rem;
   padding: 1rem;
   width: 15%;
   background-color: var(--sidebar);
@@ -107,9 +107,11 @@ h3 {
 .widget-half {
   width: 32.5rem;
   height: 15rem;
+  mid-width: 15rem;
 }
 
 .widget-full {
   width: 69rem;
   height: 20rem;
+  mid-width: 30rem;
 }

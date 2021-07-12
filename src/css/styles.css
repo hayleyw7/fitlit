@@ -32,12 +32,15 @@ body {
 
 h1 {
   color: var(--green);
-  font-size: 5rem;
-  text-align: center;
+  font-size: 5.4rem;
+  /* text-align: center; */
+  margin: .4rem 0 0 0;
+  padding: 0;
 }
 
 h2 {
   font-size: 2.5rem;
+  margin: 2.1rem 1rem 1.25rem 1rem;
 }
 
 .goals-header {
@@ -56,29 +59,33 @@ h2 {
   color: var(--purple);
 }
 
-
-
 h3 {
 
 }
 
-/* SECTIONS */
+/* SIDEBAR */
 
 .sidebar
  {
   display: flex;
   flex-direction: column;
-  min-width: 12rem;
+  min-width: 13.5rem;
   padding: 1rem;
   width: 15%;
   background-color: var(--sidebar);
-  height: 151rem;
+  height: 248vh;
 }
+
+.sidebar-text {
+  padding: 0 1rem 1rem 0.35rem;
+}
+
+/* WIDGETS */
 
 .widget-section {
   display: flex;
   flex-direction: column;
-  height: 100rem;
+  /* height: 100vh; */
   width: 85%;
   padding: 0 0 0 2rem;
 }
@@ -86,25 +93,25 @@ h3 {
 .widget-category {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
+  justify-content: left;
 }
-
-/* WIDGETS */
 
 .widget-half,
 .widget-full {
   background-color: var(--black);
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   border-radius: 1rem;
-  margin: 1rem;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .widget-half {
   width: 32.5rem;
   height: 15rem;
+  mid-width: 15rem;
 }
 
 .widget-full {
   width: 69rem;
   height: 20rem;
+  mid-width: 30rem;
 }

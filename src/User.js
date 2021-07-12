@@ -74,11 +74,14 @@ class User {
 
   stepsActiveDay(activityData, userData, date, id) {
     const userStride = userData[id - 1].strideLength
-    console.log(userStride)
     let steps = this.avgData(activityData, 'numSteps', date);
     let convertToMiles = parseFloat(((steps * userStride) / 5280).toFixed(2))
     return convertToMiles;
 
+  }
+  activeMinutes(activityData, property, date) {
+    let activity = this.avgData(activityData, property, date);
+    return activity;
   }
 
 }

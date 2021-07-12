@@ -151,6 +151,11 @@ describe.only('User', () => {
   });
 
   it('Should have user/s steps for a day in miles', () => {
-    expect(user1.stepsActiveDay(activity, userData, '2019/06/15', 1)).to.equal('2.91');
+    expect(user1.stepsActiveDay(activity, userData, '2019/06/15', 1)).to.equal(2.91);
   });
+
+  it('Should have users active minutes for a day', () => {
+    expect(user1.activeMinutes(activity, 'minutesActive', '2019/06/15')).to.equal(140);
+    expect(user2.activeMinutes(activity, 'minutesActive', '2019/06/15')).to.equal(138);
+  })
 });

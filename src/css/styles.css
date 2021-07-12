@@ -91,9 +91,10 @@ h3 {
 
 /* WIDGETS */
 
-.widget {
+.widget-half {
   background-color: var(--black);
   padding: 1rem;
   border-radius: 1rem;
   margin: 1rem;
+  width: 32.5rem;
 }

@@ -34,6 +34,8 @@ h1 {
   color: var(--green);
   font-size: 5rem;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
@@ -55,8 +57,6 @@ h2 {
 .sleep-header {
   color: var(--purple);
 }
-
-
 
 h3 {
 

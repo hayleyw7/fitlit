@@ -37,7 +37,7 @@ h1 {
 }
 
 h2 {
-
+  font-size: 2.5rem;
 }
 
 .goals-header {
@@ -72,7 +72,7 @@ h3 {
   padding: 1rem;
   width: 15%;
   background-color: var(--sidebar);
-  height: 100rem;
+  height: 151rem;
 }
 
 .widget-section {
@@ -91,9 +91,20 @@ h3 {
 
 /* WIDGETS */
 
-.widget {
+.widget-half,
+.widget-full {
   background-color: var(--black);
   padding: 1rem;
   border-radius: 1rem;
   margin: 1rem;
+}
+
+.widget-half {
+  width: 32.5rem;
+  height: 15rem;
+}
+
+.widget-full {
+  width: 69rem;
+  height: 20rem;
 }

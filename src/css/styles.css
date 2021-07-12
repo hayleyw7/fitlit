@@ -32,14 +32,15 @@ body {
 
 h1 {
   color: var(--green);
-  font-size: 5rem;
-  text-align: center;
-  margin: 0;
+  font-size: 5.4rem;
+  /* text-align: center; */
+  margin: .4rem 0 0 0;
   padding: 0;
 }
 
 h2 {
   font-size: 2.5rem;
+  margin: 2.1rem 1rem 1.25rem 1rem;
 }
 
 .goals-header {
@@ -62,7 +63,7 @@ h3 {
 
 }
 
-/* SECTIONS */
+/* SIDEBAR */
 
 .sidebar
  {
@@ -74,6 +75,12 @@ h3 {
   background-color: var(--sidebar);
   height: 151rem;
 }
+
+.sidebar-text {
+  padding: 0 1rem 1rem 0.35rem;
+}
+
+/* WIDGETS */
 
 .widget-section {
   display: flex;
@@ -89,14 +96,12 @@ h3 {
   /* justify-content: space-around; */
 }
 
-/* WIDGETS */
-
 .widget-half,
 .widget-full {
   background-color: var(--black);
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   border-radius: 1rem;
-  margin: 1rem;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .widget-half {

@@ -80,7 +80,7 @@ class User {
     return convertToMiles;
 
   }
-  
+
   activeMinutes(activityData, property, date) {
     let activity = this.avgData(activityData, property, date);
     return activity;
@@ -110,3 +110,20 @@ class User {
 }
 
 module.exports = User;
+
+//// THESE METHODS ARE DONE IN THIS CLASS //////
+
+// A `User` represents a single user
+// - [x]  It should have a parameter to take in a `userData` object
+// - [x]  Each user holds on to the user properties from the data file
+// - [x]  Should have a method to:
+// - [x]  Return a user’s first name only
+// [x]  For a user, how many fluid ounces they consumed for a specific day (identified by a date)
+//- [x]  For a given day (identified by the date), find the users who slept the most number of hours (one or more if they tied)
+//[x]  For a user (identified by their `userID`), the average number of hours slept per day
+// - [x]  For a user, their average sleep quality per day over all time
+// - [x]  For a user, how many hours they slept for a specific day (identified by a date)
+// - [x]  For a user, their sleep quality for a specific day (identified by a date)
+//[x]  For a user, the number of steps for the latest day
+// - [x]  For a user, the number minutes active for the latest day
+// - [x]  For a user, the distance they have walked (in miles) for the latest day based on their step count

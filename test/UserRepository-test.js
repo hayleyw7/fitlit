@@ -15,7 +15,6 @@ import {
 describe('User Repository', () => {
   let user, userRepo;
   beforeEach(()=> {
-  
   })
   it('should be a function', function () {
     expect(UserRepository).to.be.a('function');

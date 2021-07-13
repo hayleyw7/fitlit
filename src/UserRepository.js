@@ -1,5 +1,7 @@
 class UserRepository {
-
+  constructor(UserData) {
+    
+  }
 }
 
 module.exports =  UserRepository;

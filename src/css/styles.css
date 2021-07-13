@@ -73,7 +73,7 @@ h3 {
   padding: 1rem;
   width: 13.5rem;
   background-color: var(--sidebar);
-  height: 248vh;
+  height: 295vh;
 }
 
 .sidebar-text {
@@ -118,4 +118,9 @@ h3 {
   width: 69rem;
   height: 20rem;
   min-width: 30rem;
+}
+
+canvas {
+  width: 32rem !important;
+  height: 10rem !important;
 }

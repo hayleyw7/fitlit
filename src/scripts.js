@@ -6,7 +6,7 @@ import './css/styles.css';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
-
+import './widget-chart.js'
 console.log('This is the JavaScript entry file - your code begins here.');
 
 // An example of how you tell webpack to use a JS file
@@ -22,27 +22,31 @@ import UserRepository from './UserRepository';
 //// this code will be moved ////
 /////////////////////////////////
 
-const data = {
-  labels: [' ', ' '],
-  datasets: [{
-    backgroundColor: 'rgb(224, 117, 129)',
-    data: [40, 400],
-  }]
-};
-
-const config = {
-  type: 'horizontalBar',
-  data,
-  options: {
-    tooltips: {enabled: false},
-    hover: {mode: null},
-    legend: {
-      display: false
-    }
-  }
-};
-
-  var myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
+// const data = {
+//   labels: [' ', ' '],
+//   datasets: [{
+//     backgroundColor: 'rgb(224, 117, 129)',
+//     data: [40, 400],
+//   }]
+// };
+//
+// const config = {
+//   type: 'horizontalBar',
+//   data,
+//   options: {
+//     tooltips: {
+//       enabled: false
+//     },
+//     hover: {
+//       mode: null
+//     },
+//     legend: {
+//       display: false
+//     }
+//   }
+// };
+//
+// var myChart = new Chart(
+//   document.getElementById('myChart'),
+//   config
+// );

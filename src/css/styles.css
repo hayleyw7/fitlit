@@ -111,6 +111,10 @@ h2 {
   min-width: 30rem;
 }
 
+/*
+//// MEDIA QUERY //// */
+
+
 canvas {
   width: 32rem !important;
   height: 10rem !important;

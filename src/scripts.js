@@ -22,21 +22,10 @@ import UserRepository from './UserRepository';
 //// this code will be moved ////
 /////////////////////////////////
 
-// const labels = [
-//   'January',
-//   'February',
-//   'March',
-//   'April',
-//   'May',
-//   'June',
-// ];
-
 const data = {
   labels: [' ', ' '],
   datasets: [{
-    // label: 'My First dataset',
     backgroundColor: 'rgb(224, 117, 129)',
-    // borderColor: 'rgb(255, 99, 132)',
     data: [40, 400],
   }]
 };
@@ -44,7 +33,10 @@ const data = {
 const config = {
   type: 'horizontalBar',
   data,
-  options: {}
+  options: {
+    tooltips: {enabled: false},
+    hover: {mode: null},
+  }
 };
 
   var myChart = new Chart(

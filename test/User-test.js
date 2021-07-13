@@ -156,34 +156,7 @@ describe.only('User', () => {
   });
 
   it('Should return user who slept the most amongs other user/s', () => {
-    let data = [ {
-      "id": 1,
-      "name": "Luisa Hane",
-      "address": "15195 Nakia Tunnel, Erdmanport VA 19901-1697",
-      "email": "Diana.Hayes1@hotmail.com",
-      "strideLength": 4.3,
-      "dailyStepGoal": 10000,
-      "friends": [
-        16,
-        4,
-        8
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Jarvis Considine",
-      "address": "30086 Kathryn Port, Ciceroland NE 07273",
-      "email": "Dimitri.Bechtelar11@gmail.com",
-      "strideLength": 4.5,
-      "dailyStepGoal": 5000,
-      "friends": [
-        9,
-        18,
-        24,
-        19
-      ]
-    }]
-    expect(users.mostSleptUser(sleepData, data, '2019/06/15')).to.equal('Jarvis Considine');
+    expect(users.mostSleptUser(sleepData, userData, '2019/06/15')).to.equal('Jordon Lind');
   });
 
   it('Should have user/s steps for a day in miles', () => {

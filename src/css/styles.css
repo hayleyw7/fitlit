@@ -109,11 +109,11 @@ h3 {
 .widget-half {
   width: 32.5rem;
   height: 15rem;
-  mid-width: 15rem;
+  min-width: 15rem;
 }
 
 .widget-full {
   width: 69rem;
   height: 20rem;
-  mid-width: 30rem;
+  min-width: 30rem;
 }

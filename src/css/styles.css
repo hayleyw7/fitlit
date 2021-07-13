@@ -22,7 +22,6 @@
 
 body {
   display: flex;
-  /* flex: 1; */
   font-family: 'Arial';
   background-color: var(--background);
   color: var(--white);
@@ -30,11 +29,9 @@ body {
 }
 
 /* HEADERS */
-
 h1 {
   color: var(--green);
   font-size: 5.4rem;
-  /* text-align: center; */
   margin: .4rem 0 0 0;
   padding: 0;
 }
@@ -60,14 +57,8 @@ h2 {
   color: var(--purple);
 }
 
-h3 {
-
-}
-
 /* SIDEBAR */
-
-.nav-bar
- {
+.nav-bar {
   /* display: flex;
   flex-direction: row; */
   min-width: 13.5rem;
@@ -82,7 +73,6 @@ h3 {
 
 
 /* /////// MAIN ///////  */
-
 .widget-container {
   display: flex;
   flex-direction: column;
@@ -93,8 +83,6 @@ h3 {
 
 
 /* WIDGETS */
-
-
 .widget-goals,.widget-sleep,.widget-hydration,.widget-activity {
   display: flex;
   flex-direction: row;
@@ -103,20 +91,12 @@ h3 {
   align-items: center;
 }
 
-/* .widget-category {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  flex-wrap: wrap;
-} */
-
 .widget-half,
 .widget-full {
   background-color: var(--black);
   padding: 0 1rem 1rem 1rem;
   border-radius: 1rem;
   margin: 0 1rem 1rem 1rem;
-  /* flex-direction: column; */
 }
 
 .widget-half {

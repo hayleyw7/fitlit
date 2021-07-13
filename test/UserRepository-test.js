@@ -10,12 +10,16 @@ import {
 import {
   userData
 } from '../src/data/users.js';
+console.log(userData)
 
 
 describe('User Repository', () => {
-  let users, userRepo;
+  let users, userRepo, user1, user2;
   beforeEach(()=> {
-    users = new User(userData);
+    user1 = new User(userData[0])
+    user2 = new User(userData[1])
+    users = []
+    users.push(user1, user2)
     userRepo = new UserRepository(users);
   })
   it('should be a function', function () {
@@ -24,5 +28,9 @@ describe('User Repository', () => {
 
   it('Should be instance of UserRepository', () => {
     expect(userRepo).to.be.instanceof(UserRepository);
+  });
+
+  it('Should have all user/s credentials', () => {
+    expect(userRepo.users).to.deep.equal(users);
   });
 });

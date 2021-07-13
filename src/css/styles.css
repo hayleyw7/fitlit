@@ -94,29 +94,21 @@ h3 {
 
 /* WIDGETS */
 
-.widget-section {
-  /* display: flex;
-  flex-direction: column; */
-  /* height: 100vh; */
-  /* width: 85%; */
-  padding: 0 0 0 2rem;
-  /* flex-wrap: wrap; */
-  flex: 1;
-}
 
 .widget-goals,.widget-sleep,.widget-hydration,.widget-activity {
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-.widget-category {
+/* .widget-category {
   display: flex;
   flex-direction: row;
   justify-content: left;
   flex-wrap: wrap;
-}
+} */
 
 .widget-half,
 .widget-full {

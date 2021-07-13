@@ -5,6 +5,7 @@ class UserRepository {
   }
   getUser(id) {
     const currentUser = this.users.find(user=> user.id === id)
+    console.log(currentUser)
     return currentUser;
   }
 

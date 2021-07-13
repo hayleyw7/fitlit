@@ -22,7 +22,7 @@
 
 body {
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   font-family: 'Arial';
   background-color: var(--background);
   color: var(--white);
@@ -67,11 +67,11 @@ h3 {
 
 .sidebar
  {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: row; */
   min-width: 13.5rem;
   padding: 1rem;
-  width: 15%;
+  width: 13.5rem;
   background-color: var(--sidebar);
   height: 248vh;
 }
@@ -83,17 +83,20 @@ h3 {
 /* WIDGETS */
 
 .widget-section {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   /* height: 100vh; */
-  width: 85%;
+  /* width: 85%; */
   padding: 0 0 0 2rem;
+  /* flex-wrap: wrap; */
+  flex: 1;
 }
 
 .widget-category {
   display: flex;
   flex-direction: row;
   justify-content: left;
+  flex-wrap: wrap;
 }
 
 .widget-half,
@@ -102,16 +105,17 @@ h3 {
   padding: 0 1rem 1rem 1rem;
   border-radius: 1rem;
   margin: 0 1rem 1rem 1rem;
+  /* flex-direction: column; */
 }
 
 .widget-half {
   width: 32.5rem;
   height: 15rem;
-  mid-width: 15rem;
+  min-width: 15rem;
 }
 
 .widget-full {
   width: 69rem;
   height: 20rem;
-  mid-width: 30rem;
+  min-width: 30rem;
 }

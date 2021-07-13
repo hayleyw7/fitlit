@@ -16,10 +16,7 @@ console.log(userData)
 describe('User Repository', () => {
   let users, userRepo, user1, user2;
   beforeEach(()=> {
-    user1 = new User(userData[0])
-    user2 = new User(userData[1])
-    users = []
-    users.push(user1, user2)
+    users = userData
     userRepo = new UserRepository(users);
   })
   it('should be a function', function () {
@@ -32,10 +29,11 @@ describe('User Repository', () => {
 
   it('Should have all user/s credentials', () => {
     expect(userRepo.users).to.deep.equal(users);
+    expect(userRepo.users.length).to.equal(50)
   });
 
   it('Should user/s data by it/s own unique id', () => {
-    expect(userRepo.getUser(1)).to.equal(user1);
+    expect(userRepo.getUser(1)).to.equal(userData[0]);
   });
 
   it('Should return how much average water consumed for all times', () => {

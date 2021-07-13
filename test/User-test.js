@@ -157,5 +157,17 @@ describe.only('User', () => {
   it('Should have users active minutes for a day', () => {
     expect(user1.activeMinutes(activity, 'minutesActive', '2019/06/15')).to.equal(140);
     expect(user2.activeMinutes(activity, 'minutesActive', '2019/06/15')).to.equal(138);
-  })
+  });
+
+  it('Should check if user reached his/hers/them daily step goal', () => {
+    expect(user1.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal(`You are almost there, you have 6423 left!`);
+    expect(user2.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 2)).to.equal(`You are almost there, you have 706 left!`);
+
+    // expect(user1.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal('You reached your daily goal!');
+    // expect(user2.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 2)).to.equal('You reached your daily goal!');
+
+  });
+
+
+
 });

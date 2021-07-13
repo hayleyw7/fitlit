@@ -11,7 +11,7 @@ import {
 } from '../src/data/users.js';
 
 
-describe.only('User', () => {
+describe('User', () => {
   let users, user1, user2;
   beforeEach(() => {
 

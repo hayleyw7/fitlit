@@ -13,10 +13,16 @@ import {
 
 
 describe('User Repository', () => {
-  let user, userRepo;
+  let users, userRepo;
   beforeEach(()=> {
+    users = new User(userData);
+    userRepo = new UserRepository(users);
   })
   it('should be a function', function () {
     expect(UserRepository).to.be.a('function');
+  });
+
+  it('Should be instance of UserRepository', () => {
+    expect(userRepo).to.be.instanceof(UserRepository);
   });
 });

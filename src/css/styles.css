@@ -119,3 +119,8 @@ h3 {
   height: 20rem;
   min-width: 30rem;
 }
+
+canvas {
+  width: 32rem !important;
+  height: 10rem !important;
+}

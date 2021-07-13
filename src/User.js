@@ -19,8 +19,9 @@ class User {
 
      // run condition to check if given date data is a string or number
     if (typeof date === "string") {
+      // console.log('YOOO');
       array = array.filter(data => data.date === date);
-
+      // console.log('DIS THE ARRAY',array);
       if (!array.length) {
         return 0;
       }
@@ -73,7 +74,7 @@ class User {
   }
 
   stepsActiveDay(activityData, userData, date, id) {
-    const userStride = userData[id - 1].strideLength
+    const userStride = userData[id - 1].strideLength;
     let steps = this.avgData(activityData, 'numSteps', date);
     let convertToMiles = parseFloat(((steps * userStride) / 5280).toFixed(2))
     return convertToMiles;
@@ -84,6 +85,27 @@ class User {
     return activity;
   }
 
+  dailyStepGoals(activityData, userData, property, date, id) {
+    let steps = activityData.reduce((num, currentVal) => {
+      if ((currentVal.userID === id) && (currentVal.date === date)) {
+        num = currentVal.numSteps;
+      }
+      return num;
+    }, 0);
+
+    let goals = userData.reduce((num, currentVal ) => {
+      if (currentVal.id === id) {
+        num = currentVal[property];
+      }
+      return num;
+    }, 0);
+
+    if (steps >= goals) {
+      return `You reached your daily goal!`
+    } else {
+      return `You are almost there, you have ${goals - steps} left!`
+    }
+  }
 }
 
 module.exports = User;

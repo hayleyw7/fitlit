@@ -31,6 +31,13 @@ class UserRepository {
     return hydration;
   }
 
+  // getAvgSleepQualityOfUser() {
+  //   const totalSleepQualityOfUser = sleepData.reduce((sleep, day) => {
+  //     return sleep += day.sleepQuality;
+  //   }, 0);
+	// 	return totalSleepQualityOfUser / sleepData.length;
+  // }
+
 }
 
 module.exports =  UserRepository;

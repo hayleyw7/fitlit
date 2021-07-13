@@ -73,6 +73,11 @@ class User {
     return user;
   }
 
+  numSteps(activityData, property, date) {
+    let steps = this.avgData(activityData, property, date);
+    return steps;
+  }
+
   stepsActiveDay(activityData, userData, date, id) {
     const userStride = userData[id - 1].strideLength;
     let steps = this.avgData(activityData, 'numSteps', date);
@@ -121,9 +126,8 @@ module.exports = User;
 // [x]  For a user, how many fluid ounces they consumed for a specific day (identified by a date)
 //- [x]  For a given day (identified by the date), find the users who slept the most number of hours (one or more if they tied)
 //[x]  For a user (identified by their `userID`), the average number of hours slept per day
-// - [x]  For a user, their average sleep quality per day over all time
 // - [x]  For a user, how many hours they slept for a specific day (identified by a date)
 // - [x]  For a user, their sleep quality for a specific day (identified by a date)
-//[x]  For a user, the number of steps for the latest day
-// - [x]  For a user, the number minutes active for the latest day
 // - [x]  For a user, the distance they have walked (in miles) for the latest day based on their step count
+// - [x]  For a user, the number minutes active for the latest day
+//   [X]  For a user, the number of steps for the latest day

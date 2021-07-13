@@ -11,78 +11,9 @@ import {
 } from '../src/data/users.js';
 
 
-describe.only('User', () => {
+describe('User', () => {
   let users, user1, user2;
   beforeEach(() => {
-
-    // users = [
-    //   {
-    //     "id": 1,
-    //     "name": "Luisa Hane",
-    //     "address": "15195 Nakia Tunnel, Erdmanport VA 19901-1697",
-    //     "email": "Diana.Hayes1@hotmail.com",
-    //     "strideLength": 4.3,
-    //     "dailyStepGoal": 10000,
-    //     "friends": [
-    //       16,
-    //       4,
-    //       8
-    //     ]
-    //   },
-    //   {
-    //     "id": 2,
-    //     "name": "Jarvis Considine",
-    //     "address": "30086 Kathryn Port, Ciceroland NE 07273",
-    //     "email": "Dimitri.Bechtelar11@gmail.com",
-    //     "strideLength": 4.5,
-    //     "dailyStepGoal": 5000,
-    //     "friends": [
-    //       9,
-    //       18,
-    //       24,
-    //       19
-    //     ]
-    //   }];
-
-    // hydration = [{
-    //   "userID": 1,
-    //   "date": "2019/06/15",
-    //   "numOunces": 37
-    // },
-    // {
-    //   "userID": 2,
-    //   "date": "2019/06/15",
-    //   "numOunces": 75
-    // }];
-    //
-    // sleep = [{
-    //   "userID": 1,
-    //   "date": "2019/06/15",
-    //   "hoursSlept": 6.1,
-    //   "sleepQuality": 2.2
-    // },
-    // {
-    //   "userID": 2,
-    //   "date": "2019/06/15",
-    //   "hoursSlept": 7,
-    //   "sleepQuality": 4.7
-    // }];
-    //
-    // activity = [{
-    //   "userID": 1,
-    //   "date": "2019/06/15",
-    //   "numSteps": 3577,
-    //   "minutesActive": 140,
-    //   "flightsOfStairs": 16
-    // },
-    // {
-    //   "userID": 2,
-    //   "date": "2019/06/15",
-    //   "numSteps": 4294,
-    //   "minutesActive": 138,
-    //   "flightsOfStairs": 10
-    // }];
-
     users = new User(userData);
     user1 = new User(userData[0]);
     // user2 = new User(userData[1]);
@@ -140,23 +71,27 @@ describe.only('User', () => {
   //   expect(user1.avgData(hydration, 'numOunces', '2019/06/15' )).to.deep.equal('37')
   // })
 
-  it('Should get users average water consumed per day', () => {
+  it('Should get user/s water consume for day', () => {
     expect(user1.getAvgFluidCons(hydrationData, 'numOunces', '2019/06/15')).to.equal(37);
     // expect(user2.getAvgFluidCons(hydrationData, 'numOunces', '2019/06/15')).to.equal(75);
   });
 
-  it('Should return user/s slept hours per day', () => {
+  it('Should return user/s slept hours for a day', () => {
     expect(user1.hrsSleptQuality(sleepData, 'hoursSlept', '2019/06/15')).to.equal(6.1);
     // expect(user2.hrsSleptQuality(sleepData, 'hoursSlept', '2019/06/15')).to.equal(7);
   });
 
-  it('Should return user/s sleeping quality', () => {
+  it('Should return user/s sleeping quality for a day', () => {
     expect(user1.hrsSleptQuality(sleepData, 'sleepQuality', '2019/06/15')).to.equal(2.2);
     // expect(user2.hrsSleptQuality(sleepData, 'sleepQuality', '2019/06/15')).to.equal(4.7);
   });
 
-  it('Should return user who slept the most amongs other user/s', () => {
+  it('Should return user who slept the most amongs other user/s for a day', () => {
     expect(users.mostSleptUser(sleepData, userData, '2019/06/15')).to.equal('Jordon Lind');
+  });
+  
+  it('Should return number of teps taken for a day', () => {
+    expect(user1.numSteps(activityData, 'numSteps', '2019/06/15')).to.equal(3577);
   });
 
   it('Should have user/s steps for a day in miles', () => {
@@ -168,7 +103,7 @@ describe.only('User', () => {
     // expect(user2.activeMinutes(activityData, 'minutesActive', '2019/06/15')).to.equal(138);
   });
 
-  it('Should check if user reached his/hers/them daily step goal', () => {
+  it('Should check if user reached his/hers/them daily step goal for a day', () => {
     expect(user1.dailyStepGoals(activityData, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal(`You are almost there, you have 6423 left!`);
     // expect(user2.dailyStepGoals(activityData, userData, 'dailyStepGoal', '2019/06/15', 2)).to.equal(`You are almost there, you have 706 left!`);
 

@@ -22,20 +22,20 @@ import UserRepository from './UserRepository';
 //// this code will be moved ////
 /////////////////////////////////
 
-const labels = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-];
+// const labels = [
+//   'January',
+//   'February',
+//   'March',
+//   'April',
+//   'May',
+//   'June',
+// ];
 
 const data = {
-  labels: ['You', 'Community'],
+  labels: [' ', ' '],
   datasets: [{
-    label: 'My First dataset',
-    backgroundColor: 'rgb(255, 99, 132)',
+    // label: 'My First dataset',
+    backgroundColor: 'rgb(224, 117, 129)',
     // borderColor: 'rgb(255, 99, 132)',
     data: [40, 400],
   }]

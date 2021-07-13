@@ -80,6 +80,7 @@ class User {
     return convertToMiles;
 
   }
+  
   activeMinutes(activityData, property, date) {
     let activity = this.avgData(activityData, property, date);
     return activity;

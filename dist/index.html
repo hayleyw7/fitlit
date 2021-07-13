@@ -4,23 +4,20 @@
     <meta charset='UTF-8'>
     <!-- <link rel='stylesheet' href='/src/css/styles.css'> -->
     <!-- <link rel='shortcut icon' href='.images/favicon.ico'/> -->
-
   </head>
-
-
   <body>
 
-    <aside class='sidebar'>
-      <h1>FitLit</h1>
-      <section class='sidebar-text'>
+    <!-- <aside class='sidebar'> -->
+
+      <nav class='nav-bar'>
+        <h1>FitLit</h1>
         <h3>Hi, John Johnson!</h3>
         <p>[### street]<br/>[city, state ##zip]<br/>[email]<br/><br/>User ID: [###]</p>
-      </section>
-    </aside>
-    <main>
-
+      </nav>
+    <!-- </aside> -->
+    <main class= 'widget-container'>
       <h2 class='goals-header'>Goals</h2>
-      <div class='widget-category'>
+      <div class='widget-goals'>
         <article class='widget-half'>
           <h3>Your Goal</h3>
           <p>[step goal]</p>
@@ -31,8 +28,8 @@
         </article>
       </div>
 
-      <h2 class='activity-header'>Activity</h2>        
-      <div class='widget-category'>
+      <h2 class='activity-header'>Activity</h2>
+      <div class='widget-activity'>
         <article class='widget-half'>
           <h3>Today</h3>
           <p>[steps today]</br>[miles today]</br>[min active today]</p>
@@ -42,7 +39,7 @@
           <p>[total steps this wk]</br>[total miles this wk]</br>[total min active this wk]</p>
         </article>
       </div>
-      <div class='widget-category'>
+      <div class='widget-activity'>
         <article class='widget-full'>
           <h3>Community</h3>
           <p>[CHART - compare your activity today to all users: minutes, steps, flights]</p>
@@ -50,7 +47,7 @@
       </section>
 
       <h2 class='hydration-header'>Hydration</h2>
-      <section class='widget-category'>
+      <section class='widget-hydration'>
         <article class='widget-half'>
           <h3>Today</h3>
           <p>[water drank today in oz]</p>
@@ -62,7 +59,7 @@
       </div>
 
       <h2 class='sleep-header'>Sleep</h2>
-      <div class='widget-category'>
+      <div class='widget-sleep'>
         <article class='widget-half'>
           <h3>Last Night</h3>
           <p>[hrs slept last night]</br>[total hrs slept this wk]</p>
@@ -72,13 +69,12 @@
           <p>[quality sleep last night]</br>[avg quality of sleep this wk]</p>
         </article>
       </section>
-      <div class='widget-category'>
+      <div class='widget-sleep'>
         <article class='widget-full'>
           <h3>All Time</h3>
           <p>[avg hrs sleep all time]</br>[avg quality sleep all time]</p>
         </article>
       </div>
-
     </main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src='bundle.js'></script>

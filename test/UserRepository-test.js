@@ -33,4 +33,8 @@ describe('User Repository', () => {
   it('Should have all user/s credentials', () => {
     expect(userRepo.users).to.deep.equal(users);
   });
+
+  it('Should user/s data by it/s own unique id', () => {
+    expect(userRepo.getUser(1)).to.equal(user1);
+  });
 });

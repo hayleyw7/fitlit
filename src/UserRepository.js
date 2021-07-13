@@ -5,6 +5,10 @@ class UserRepository {
   constructor(userData) {
     this.users = userData;
   }
+  getUser(id) {
+    const currentUser = this.users.find(user=> user.id === id)
+    return currentUser;
+  }
 }
 
 module.exports =  UserRepository;

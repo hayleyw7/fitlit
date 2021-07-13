@@ -26,6 +26,7 @@ body {
   font-family: 'Arial';
   background-color: var(--background);
   color: var(--white);
+  margin: 0;
 }
 
 /* HEADERS */
@@ -73,7 +74,6 @@ h3 {
   padding: 1rem;
   width: 13.5rem;
   background-color: var(--sidebar);
-  height: 295vh;
 }
 
 .sidebar-text {

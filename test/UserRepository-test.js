@@ -48,4 +48,8 @@ describe('User Repository', () => {
     expect(userRepo.waterConsumedOverWeek(hydrationData).length).to.equal(7);
   });
 
+  // it('Should find a user/s average sleep quality per day over all time', () => {
+  //   expect(userRepo.getAvgSleepQualityOfUser()).to.equal(2.614285714285714);
+  // });
+
 });

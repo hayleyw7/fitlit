@@ -14,11 +14,10 @@ import {
 
 
 describe('User', () => {
-  let users, user1, user2;
+  let users, user1;
   beforeEach(() => {
     users = new User(userData);
     user1 = new User(userData[0]);
-    user2 = new User(userData[1]);
   });
 
   it('Should be a function', () => {
@@ -61,8 +60,8 @@ describe('User', () => {
     expect(user1.getName()).to.equal('Luisa');
   });
 
-  it('Should get user/s water consume for day', () => {
-    expect(user1.getFluid(hydrationData, 'numOunces', '2019/06/15')).to.equal(37);
+  it.only('Should get user/s water consume for day', () => {
+    expect(user1.dailyTrackOfData(hydrationData, 'numOunces', '2019/06/15')).to.equal(37);
   });
 
   it('Should return user/s slept hours for a day', () => {
@@ -94,7 +93,7 @@ describe('User', () => {
     // expect(user1.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal('You reached your daily goal!');
   });
 
-  it.only('Should return how much average water consumed for all times', () => {
+  it('Should return how much average water consumed for all times', () => {
     expect(user1.waterConsumedAllTime(hydrationData)).to.equal(65);
   });
 

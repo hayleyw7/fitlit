@@ -117,3 +117,10 @@ h2 {
 } */
 /*
 //// MEDIA QUERY //// */
+
+@media only screen and  (min-width: 425px) {
+  html {
+    display:flex;
+  }
+  
+}

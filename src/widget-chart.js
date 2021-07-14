@@ -49,3 +49,33 @@ var myChart = new Chart(
   document.getElementById('myGoalChart'),
   config
 );
+
+// USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
+
+const stepsMinsMiles = {
+  labels: [
+    'Steps',
+    'Miles',
+    'Active Minutes'
+  ],
+  datasets: [{
+    label: 'Activity',
+    data: [300, 50, 100],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+};
+
+const activityChart = {
+  type: 'pie',
+  data: stepsMinsMiles,
+};
+
+let activeChart = new Chart(
+  document.getElementById('activity-chart'),
+  activityChart
+)

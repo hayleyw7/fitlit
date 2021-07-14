@@ -46,7 +46,7 @@ describe('User Repository', () => {
     expect(userRepo.waterConsumedAllTime(hydrationData)).to.equal(65);
   });
 
-  it('Should find how many fluid ounces of water consumed each day over the course of a week', () => {
+  it.only('Should find how many fluid ounces of water consumed each day over the course of a week', () => {
     expect(userRepo.waterConsumedOverWeek(hydrationData).length).to.equal(7);
   });
 

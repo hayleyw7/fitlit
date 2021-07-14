@@ -1,5 +1,4 @@
-const activityData = [
-  {
+const activityData = [{
     "userID": 1,
     "date": "2019/06/15",
     "numSteps": 3577,
@@ -50,8 +49,7 @@ const activityData = [
   }
 ]
 
-const hydrationData = [
-  {
+const hydrationData = [{
     "userID": 1,
     "date": "2019/06/15",
     "numOunces": 37
@@ -85,10 +83,10 @@ const hydrationData = [
     "userID": 1,
     "date": "2019/06/21",
     "numOunces": 50
-  }]
+  }
+]
 
-const sleepData = [
-  {
+const sleepData = [{
     "userID": 1,
     "date": "2019/06/15",
     "hoursSlept": 6.1,

@@ -27,6 +27,5 @@ const fetchSleepData = () => {
 }
 
 export default {
-  getData,
-  fetchSingleUser
+  // ???
 }

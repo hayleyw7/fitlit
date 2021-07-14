@@ -135,6 +135,10 @@ h2 {
     align-items: center;
   }
 
+  h3 {
+   font-size: xx-large;
+  }
+
   .nav-bar {
     padding: 1rem;
     background-color: var(--background);
@@ -151,10 +155,5 @@ h2 {
     flex-wrap: wrap;
     align-items: center;
   }
-  /* .widget-half {
-    width: 69rem;
-    height: 20rem;
-    min-width: 30rem;
-  } */
 
 }

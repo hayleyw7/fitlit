@@ -122,5 +122,16 @@ h2 {
   html {
     display:flex;
   }
+  body {
+  display: flex;
+    font-family: 'Arial';
+    background-color: var(--black);
+    color: var(--white);
+    margin: 0;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
   
 }

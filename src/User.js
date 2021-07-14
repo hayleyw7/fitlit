@@ -61,6 +61,37 @@ class User {
     return Math.round(hydrationAvg / hydrationData.length)
   }
 
+
+  trackOfDataOverWeek(hydrationData, property) {
+    let hydration = hydrationData.sort((a, b) => a.date - b.date);
+    // console.log(hydration);
+    let perChunk = 7 // items per chunk
+    let inputArray = hydration
+    let result = inputArray.reduce((resultArray, item, index) => {
+      const chunkIndex = Math.floor(index / perChunk)
+      if (!resultArray[chunkIndex]) {
+        resultArray[chunkIndex] = [] // start a new chunk
+      }
+      resultArray[chunkIndex].push(item.date)
+      return resultArray
+    }, [])
+    let week = result.flat();
+    let waters = hydrationData.reduce((hydrate, currentVal) => {
+      if (currentVal.userID === this.id) {
+        if (week.includes(currentVal.date)) {
+          hydrate.push({
+            date: currentVal.date,
+            [property]: currentVal[property]
+          });
+        }
+      }
+      return hydrate;
+    }, [])
+    // console.log('Array of fluids for every day for week',waters);
+    return waters;
+  }
+
+
   hrsSleptQuality(currentData, property, date) {
     let hrs = this.avgData(currentData, property, date);
     // console.log(hrs)
@@ -139,34 +170,7 @@ class User {
   }
 
 
-  waterConsumedOverWeek(hydrationData, property) {
-    let hydration = hydrationData.sort((a, b) => a.date - b.date);
-    // console.log(hydration);
-    let perChunk = 7 // items per chunk
-    let inputArray = hydration
-    let result = inputArray.reduce((resultArray, item, index) => {
-      const chunkIndex = Math.floor(index / perChunk)
-      if (!resultArray[chunkIndex]) {
-        resultArray[chunkIndex] = [] // start a new chunk
-      }
-      resultArray[chunkIndex].push(item.date)
-      return resultArray
-    }, [])
-    let week = result.flat();
-    let waters = hydrationData.reduce((hydrate, currentVal) => {
-      if (currentVal.userID === this.id) {
-        if (week.includes(currentVal.date)) {
-          hydrate.push({
-            date: currentVal.date,
-            [property]: currentVal[property]
-          });
-        }
-      }
-      return hydrate;
-    }, [])
-    // console.log(waters);
-    return waters;
-  }
+
 
   getHoursSleptOverWeek(sleepData, property) {
     let result = this.waterConsumedOverWeek(sleepData, property)
@@ -193,6 +197,6 @@ module.exports = User;
 
 // Create classes and methods that can calculate:
 
-// For a user (identified by their userID - this is the same for all methods requiring a specific user’s data), the average fluid ounces consumed per day for all time
-// For a user, how many fluid ounces they consumed for a specific day (identified by a date)
-// For a user, how many fluid ounces of water consumed each day over the course of a week (7 days) - return the amount for each day
+//[X] For a user (identified by their userID - this is the same for all methods requiring a specific user’s data), the average fluid ounces consumed per day for all time
+//[X] For a user, how many fluid ounces they consumed for a specific day (identified by a date)
+//[x] For a user, how many fluid ounces of water consumed each day over the course of a week (7 days) - return the amount for each day

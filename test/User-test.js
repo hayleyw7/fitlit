@@ -68,6 +68,11 @@ describe('User', () => {
     expect(user1.allTimeTrackOfData(hydrationData, 'numOunces')).to.equal(65);
   });
 
+  it.only('Should find how many fluid ounces of water consumed each day over the course of a week', () => {
+    expect(user1.trackOfDataOverWeek(hydrationData, 'numOunces').length).to.equal(7);
+  });
+
+
   it('Should return user/s slept hours for a day', () => {
     expect(user1.hrsSleptQuality(sleepData, 'hoursSlept', '2019/06/15')).to.equal(6.1);
   });
@@ -101,10 +106,6 @@ describe('User', () => {
     expect(user1.getAvgSleepQualityOfUser(sleepData)).to.equal(3);
   });
 
-
-  it('Should find how many fluid ounces of water consumed each day over the course of a week', () => {
-    expect(user1.waterConsumedOverWeek(hydrationData, 'numOunces').length).to.equal(7);
-  });
 
   it('Should find a user/s hours slept each day over the course of a given week', () => {
     expect(user1.getHoursSleptOverWeek(sleepData, 'hoursSlept').length).to.equal(7);

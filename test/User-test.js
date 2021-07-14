@@ -64,6 +64,10 @@ describe('User', () => {
     expect(user1.dailyTrackOfData(hydrationData, 'numOunces', '2019/06/15')).to.equal(37);
   });
 
+  it.only('Should return how much average water consumed for all times', () => {
+    expect(user1.allTimeTrackOfData(hydrationData, 'numOunces')).to.equal(65);
+  });
+
   it('Should return user/s slept hours for a day', () => {
     expect(user1.hrsSleptQuality(sleepData, 'hoursSlept', '2019/06/15')).to.equal(6.1);
   });
@@ -91,10 +95,6 @@ describe('User', () => {
   it('Should check if user reached his/hers/them daily step goal for a day', () => {
     expect(user1.dailyStepGoals(activityData, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal(`You are almost there, you have 6423 left!`);
     // expect(user1.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal('You reached your daily goal!');
-  });
-
-  it('Should return how much average water consumed for all times', () => {
-    expect(user1.waterConsumedAllTime(hydrationData)).to.equal(65);
   });
 
   it('Should find a user/s average sleep quality per day over all time', () => {

@@ -133,5 +133,11 @@ h2 {
     justify-content: center;
     align-items: center;
   }
-  
+  .widget-goals,.widget-sleep,.widget-hydration,.widget-activity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }

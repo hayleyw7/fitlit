@@ -145,15 +145,22 @@ class User {
     return activity;
   }
 
-  stepsActiveDay(activityData, userData, date, id) {
+  stepsCountInMiles(activityData, userData, date, id) {
     const userStride = userData[id - 1].strideLength;
-    let steps = this.avgData(activityData, 'numSteps', date);
+    let steps = this.dailyTrackOfData(activityData, 'numSteps', date);
     let convertToMiles = parseFloat(((steps * userStride) / 5280).toFixed(2))
     return convertToMiles;
 
   }
 
-  dailyStepGoals(activityData, userData, property, date, id) {
+
+  getMinActiveForWeek(activityData, property) {
+    let result = this.trackOfDataOverWeek(activityData, property);
+    // console.log('Avg minutes active for given week', result)
+    return result;
+  }
+
+  reachedStepGoals(activityData, userData, property, date, id) {
     let steps = activityData.reduce((num, currentVal) => {
       if ((currentVal.userID === id) && (currentVal.date === date)) {
         num = currentVal.numSteps;
@@ -175,14 +182,18 @@ class User {
     }
   }
 
-
-
-
-  getMinActiveForWeek(activityData, property) {
-    let result = this.waterConsumedOverWeek(activityData, property);
-    console.log('Here', result)
-    return result;
+  exceededStepGoal(activityData, property) {
+    let daysOfReached = activityData.reduce((arr, currentVal) => {
+      if ((currentVal.userID === this.id) && (currentVal[property] > this.dailyStepGoal)) {
+        arr.push(currentVal.date)
+      }
+      return arr
+    }, []);
+    // console.log('days when they pass step goal', daysOfReached);
+    return daysOfReached;
   }
+
+
 }
 
 module.exports = User;
@@ -208,12 +219,22 @@ module.exports = User;
 
 // Create classes and methods that can calculate:
 // [x] For a specific day (specified by a date), return the miles a user has walked based on their number of steps (use their strideLength to help calculate this)
-// For a user, (identified by their userID) how many minutes were they active for a given day (specified by a date)?
-// For a user, how many minutes active did they average for a given week (7 days)?
-// For a user, did they reach their step goal for a given day (specified by a date)?
-// For a user, find all the days where they exceeded their step goal
+// [x] For a user, (identified by their userID) how many minutes were they active for a given day (specified by a date)?
+// [x] For a user, how many minutes active did they average for a given week (7 days)?
+// [x] For a user, did they reach their step goal for a given day (specified by a date)?
+// [x] For a user, find all the days where they exceeded their step goal
 // For a user, find their all-time stair climbing record
 // For all users, what is the average number of:
 // stairs climbed for a specified date
 // steps taken for a specific date
 // minutes active for a specific date
+
+
+// Dashboard
+// Items to add to the dashboard:
+//
+// [x] For a user, the number of steps for the latest day
+// [x] For a user, the number minutes active for the latest day
+// [x] For a user, the distance they have walked (in miles) for the latest day based on their step count
+// How their number of steps, minutes active, and flights of stairs climbed compares to all users for the latest day
+// For a user, a weekly view of their step count, flights of stairs climbed, and minutes active

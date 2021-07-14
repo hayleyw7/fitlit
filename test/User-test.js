@@ -109,20 +109,22 @@ describe('User', () => {
     expect(user1.activeMinutes(activityData, 'minutesActive', '2019/06/15')).to.equal(140);
   });
 
-  it('Should have user/s steps for a day in miles', () => {
-    expect(user1.stepsActiveDay(activityData, userData, '2019/06/15', 1)).to.equal(2.91);
+  it.only('Should have user/s steps for a day in miles', () => {
+    expect(user1.stepsCountInMiles(activityData, userData, '2019/06/15', 1)).to.equal(2.91);
   });
 
+  it.only('Should find a user/s average minutes active per day over the course of a given week', () => {
+    expect(user1.getMinActiveForWeek(activityData, 'minutesActive').length).to.equal(7);
+  });
 
-
-  it('Should check if user reached his/hers/them daily step goal for a day', () => {
-    expect(user1.dailyStepGoals(activityData, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal(`You are almost there, you have 6423 left!`);
+  it.only('Should check if user reached his/hers/them daily step goal for a day', () => {
+    expect(user1.reachedStepGoals(activityData, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal(`You are almost there, you have 6423 left!`);
     // expect(user1.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal('You reached your daily goal!');
   });
 
-  it('Should find a user/s average minutes active per day over the course of a given week', () => {
-    expect(user1.getMinActiveForWeek(activityData, 'minutesActive').length).to.equal(7);
-  });
+  it.only('Should find all days where user exceeded their step goal', () => {
+    expect(user1.exceededStepGoal(activityData, 'numSteps').length).to.equal(2);
+  })
 
 
 });

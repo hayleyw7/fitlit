@@ -39,7 +39,7 @@ class User {
       total + currentVal) / array.length;
   }
 
-  getAvgFluidCons(currentData, property, date) {
+  getFluid(currentData, property, date) {
     let avgFluid = this.avgData(currentData, property, date);
     // console.log(avgFluid);
     return avgFluid;
@@ -112,11 +112,13 @@ class User {
       return `You are almost there, you have ${goals - steps} left!`
     }
   }
+
   waterConsumedAllTime(hydrationData) {
-    /// i think we need to check here maybe users id, because we are checking this
-    //for specific user
     let hydrationAvg = hydrationData.reduce((total, userHydration) => {
-      return total + userHydration.numOunces
+      if (userHydration.userID === this.id) {
+        total += userHydration.numOunces
+      }
+      return total
     }, 0)
     return Math.round(hydrationAvg / hydrationData.length)
   }

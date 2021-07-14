@@ -62,7 +62,7 @@ describe('User', () => {
   });
 
   it('Should get user/s water consume for day', () => {
-    expect(user1.getAvgFluidCons(hydrationData, 'numOunces', '2019/06/15')).to.equal(37);
+    expect(user1.getFluid(hydrationData, 'numOunces', '2019/06/15')).to.equal(37);
   });
 
   it('Should return user/s slept hours for a day', () => {
@@ -94,18 +94,19 @@ describe('User', () => {
     // expect(user1.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal('You reached your daily goal!');
   });
 
-  it('Should return how much average water consumed for all times', () => {
+  it.only('Should return how much average water consumed for all times', () => {
     expect(user1.waterConsumedAllTime(hydrationData)).to.equal(65);
   });
+
+  it('Should find a user/s average sleep quality per day over all time', () => {
+    expect(user1.getAvgSleepQualityOfUser(sleepData)).to.equal(3);
+  });
+
 
   it('Should find how many fluid ounces of water consumed each day over the course of a week', () => {
     expect(user1.waterConsumedOverWeek(hydrationData, 'numOunces').length).to.equal(7);
   });
 
-  // it('Should find a user/s average sleep quality per day over all time', () => {
-  //   expect(user1.getAvgSleepQualityOfUser(sleepData)).to.equal(3);
-  // });
-  //
   it('Should find a user/s hours slept each day over the course of a given week', () => {
     expect(user1.getHoursSleptOverWeek(sleepData, 'hoursSlept').length).to.equal(7);
   });

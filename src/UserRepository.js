@@ -38,32 +38,10 @@ class UserRepository {
     return totalSleepQualityOfUser / sleepData.length;
   }
 
-
-  getHoursSleptOverWeek(sleepData, id, day1, day2, day3, day4, day5, day6, day7) {
-
-    // This will need refactored A LOT but it works if weeks are entered really strangely (AKA one day at a time). This is a start, & it's definitely fixable.
-  
-		let result = [];
-		
-		sleepData.forEach(day => {
-
-			if (day.date === day1 || day.date === day2 || day.date === day3 || day.date === day4 || day.date === day5 || day.date === day6 || day.date === day7) {
-
-				if (day.userID = id) {
-					result.push(day.hoursSlept);
-				}
-
-			}
-		})
-
-		return result;
-	}
-
   // The next 2 functions will need refactored A LOT but it works if weeks are entered really strangely (AKA one day at a time). This is a start, & it's definitely fixable.
 
   getHoursSleptOverWeek(sleepData, id, day1, day2, day3, day4, day5, day6, day7) {
 		let result = [];
-
 		sleepData.forEach(day => {
 			if (day.date === day1 || day.date === day2 || day.date === day3 || day.date === day4 || day.date === day5 || day.date === day6 || day.date === day7) {
 				if (day.userID = id) {

@@ -183,3 +183,30 @@ let sleepChart = new Chart(
   document.getElementById('sleep-chart'),
   sleepConfig
 )
+
+
+const allTimeSleepQuality = {
+  labels: [
+    'All Time Avg Sleep Quality',
+    'All Time Avg Sleep Hours',
+  ],
+  datasets: [{
+    label: 'Data',
+    data: [4, 9],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+    ],
+    hoverOffset: 4
+  }]
+};
+
+const allConfig = {
+  type: 'doughnut',
+  data: allTimeSleepQuality,
+};
+
+let sleepChart1 = new Chart(
+  document.getElementById('sleep-chart2'),
+  allConfig
+)

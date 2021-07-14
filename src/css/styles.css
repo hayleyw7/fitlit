@@ -133,6 +133,11 @@ h2 {
     justify-content: center;
     align-items: center;
   }
+  .nav-bar {
+    padding: 1rem;
+    background-color: var(--background);
+    width: 100%;
+}
   .widget-goals,.widget-sleep,.widget-hydration,.widget-activity {
     display: flex;
     flex-direction: column;

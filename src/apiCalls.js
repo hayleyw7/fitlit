@@ -19,9 +19,14 @@ const fetchHydrationData = () => {
     .catch(error => console.error("hydration promise rejected"));
 }
 
-const sleepData = (id) => {
+const fetchSleepData = () => {
   return fetch(`http://localhost:3001/api/v1/sleep`)
     .then(response => response.json())
     .then(data => data)
     .catch(error => console.error("sleep promise rejected"));
+}
+
+export default {
+  getData,
+  fetchSingleUser
 }

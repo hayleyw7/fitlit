@@ -59,6 +59,7 @@ describe('User', () => {
   it('Should display user/s first name', () => {
     expect(user1.getName()).to.equal('Luisa');
   });
+  /// HYDRATION ///
 
   it.only('Should get user/s water consume for day', () => {
     expect(user1.dailyTrackOfData(hydrationData, 'numOunces', '2019/06/15')).to.equal(37);
@@ -72,10 +73,13 @@ describe('User', () => {
     expect(user1.trackOfDataOverWeek(hydrationData, 'numOunces').length).to.equal(7);
   });
 
+  /// SLEEP ///
 
-  it('Should return user/s slept hours for a day', () => {
-    expect(user1.hrsSleptQuality(sleepData, 'hoursSlept', '2019/06/15')).to.equal(6.1);
+  it.only('Should return user/s slept hours for a day', () => {
+    expect(user1.hrsOfSleep(sleepData, 'hoursSlept', '2019/06/15')).to.equal(6.1);
   });
+
+
 
   it('Should return user/s sleeping quality for a day', () => {
     expect(user1.hrsSleptQuality(sleepData, 'sleepQuality', '2019/06/15')).to.equal(2.2);

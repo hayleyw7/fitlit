@@ -91,10 +91,11 @@ class User {
     return waters;
   }
 
+  /// SLEEP DATA ///
 
-  hrsSleptQuality(currentData, property, date) {
-    let hrs = this.avgData(currentData, property, date);
-    // console.log(hrs)
+  hrsOfSleep(sleepData, property, date) {
+    let hrs = this.dailyTrackOfData(sleepData, property, date)
+    // console.log('sleep hours', hrs)
     return hrs;
   }
 
@@ -200,3 +201,16 @@ module.exports = User;
 //[X] For a user (identified by their userID - this is the same for all methods requiring a specific user’s data), the average fluid ounces consumed per day for all time
 //[X] For a user, how many fluid ounces they consumed for a specific day (identified by a date)
 //[x] For a user, how many fluid ounces of water consumed each day over the course of a week (7 days) - return the amount for each day
+
+
+// Create classes and methods that can calculate:
+//
+// For a user (identified by their userID), the average number of hours slept per day
+// For a user, their average sleep quality per day over all time
+// [x] For a user, how many hours they slept for a specific day (identified by a date)
+// For a user, their sleep quality for a specific day (identified by a date)
+// For a user, how many hours slept each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week
+// For a user, their sleep quality each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week
+// For all users, the average sleep quality
+// Find all users who average a sleep quality greater than 3 for a given week (7 days) - you should be able to calculate this for any week, not just the latest week
+// For a given day (identified by the date), find the users who slept the most number of hours (one or more if they tied)

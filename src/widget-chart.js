@@ -79,3 +79,31 @@ let activeChart = new Chart(
   document.getElementById('activity-chart'),
   activityChart
 )
+
+
+
+
+
+
+// / USER HYDRATION CHART /////
+
+const waterInDay = {
+  labels: [
+    'Oz water consumed today'
+  ],
+  datasets: [{
+    label: 'Oz of Water',
+    data: [11],
+    backgroundColor: 'rgb(54, 162, 235)'
+  }]
+};
+
+const waterConfig = {
+  type: 'polarArea',
+  data: waterInDay,
+};
+
+let waterChart = new Chart(
+  document.getElementById('hydration-chart'),
+  waterConfig
+)

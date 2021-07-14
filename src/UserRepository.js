@@ -38,6 +38,7 @@ class UserRepository {
     return totalSleepQualityOfUser / sleepData.length;
   }
 
+
 }
 
 module.exports =  UserRepository;
@@ -59,7 +60,7 @@ module.exports =  UserRepository;
 //- [ ]  For a user, their all-time average sleep quality and all-time average number of hours slept
 //- [ ]  For a user, how many hours slept each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week
 // - [ ]  For a user, their sleep quality each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week
-// - [ ]  For all users, the average sleep quality
+// - [x]  For all users, the average sleep quality
 // - [ ]  Find all users who average a sleep quality greater than `3` for a given week (7 days) - you should be able to calculate this for any week, not just the latest week
 // - [ ]  For a user, how many minutes active did they average for a given week (7 days)?
 //- [ ]  For a user, find their all-time stair climbing record

@@ -20,10 +20,11 @@
       <article class='widget-half'>
         <h3>Your Goal</h3>
         <p>[step goal]</p>
+        <div><canvas class='first-one' id="mySetGoalChart" width="450px" height="120px ">test</canvas></div>
       </article>
       <article class='widget-half'>
         <h3>You vs Community</h3>
-        <div><canvas id="myChart" width="5px" height="5px ">test</canvas></div>
+        <div><canvas class="second-one" id="myGoalChart" width="450px" height="120px ">test</canvas></div>
       </article>
     </div>
 
@@ -32,10 +33,12 @@
       <article class='widget-half'>
         <h3>Today</h3>
         <p>[steps today]</br>[miles today]</br>[min active today]</p>
+        <canvas id="activity-chart" width="10px" height="10px"></canvas>
       </article>
       <article class='widget-half'>
         <h3>Week</h3>
         <p>[total steps this wk]</br>[total miles this wk]</br>[total min active this wk]</p>
+        <canvas id="activity1-chart" width="10px" height="10px"></canvas>
       </article>
     </div>
     <div class='widget-activity'>
@@ -43,8 +46,7 @@
         <h3>Community</h3>
         <p>[CHART - compare your activity today to all users: minutes, steps, flights]</p>
       </article>
-      </section>
-
+    </div>
       <h2 class='hydration-header'>Hydration</h2>
       <section class='widget-hydration'>
         <article class='widget-half'>
@@ -55,7 +57,7 @@
           <h3>Week</h3>
           <p>[avg oz water day for this week]</p>
         </article>
-    </div>
+    </section>
 
     <h2 class='sleep-header'>Sleep</h2>
     <div class='widget-sleep'>
@@ -77,6 +79,7 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src='bundle.js'></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 </body>
 
 </html>

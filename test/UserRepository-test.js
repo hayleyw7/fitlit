@@ -1,4 +1,6 @@
-import { expect } from 'chai';
+import {
+  expect
+} from 'chai';
 import UserRepository from '../src/UserRepository';
 import User from '../src/User';
 import {
@@ -15,11 +17,11 @@ console.log(userData)
 
 describe('User Repository', () => {
   let users, userRepo, user1, user2;
-  beforeEach(()=> {
+  beforeEach(() => {
     users = userData
     userRepo = new UserRepository(users);
   })
-  it('should be a function', function () {
+  it('should be a function', function() {
     expect(UserRepository).to.be.a('function');
   });
 
@@ -49,7 +51,7 @@ describe('User Repository', () => {
   });
 
   it('Should find a user/s average sleep quality per day over all time', () => {
-    expect(userRepo.getAvgSleepQualityOfUser(sleepData)).to.equal(2.614285714285714);
+    expect(userRepo.getAvgSleepQualityOfUser(sleepData)).to.equal(3);
   });
 
   it('Should find a user/s hours slept each day over the course of a given week', () => {

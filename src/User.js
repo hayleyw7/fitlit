@@ -111,11 +111,10 @@ class User {
     return avgHrs;
   }
 
-  AvgSleepQuality(sleepData) {
-    const totalSleepQualityOfUser = sleepData.reduce((sleep, day) => {
-      return sleep += day.sleepQuality;
-    }, 0);
-    return Math.round(totalSleepQualityOfUser / sleepData.length);
+  avgSleepQuality(sleepData, property) {
+    let sleepQuality = this.allTimeTrackOfData(sleepData, property);
+    console.log('all time sleep quality avg', sleepQuality);
+    return sleepQuality;
   }
 
   mostSleptUser(sleepData, userData, date) {

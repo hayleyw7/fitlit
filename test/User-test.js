@@ -87,9 +87,8 @@ describe('User', () => {
     expect(user1.getAvgSleep(sleepData, 'hoursSlept')).to.equal(8);
   });
 
-
   it('Should find a user/s average sleep quality per day over all time', () => {
-    expect(user1.getAvgSleepQualityOfUser(sleepData)).to.equal(3);
+    expect(user1.avgSleepQuality(sleepData, 'sleepQuality')).to.equal(3);
   });
 
 

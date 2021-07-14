@@ -170,18 +170,11 @@ class User {
     return result;
   }
 
-  getMinActiveForWeek(activityData, id, day1, day2, day3, day4, day5, day6, day7) {
-    let dailyActivity = [];
-    activityData.forEach(day => {
-      if (this.getWeek()) {
-        if (day.userID === id) {
-          dailyActivity.push(day.minutesActive);
-        }
-      }
-    })
-    return (dailyActivity.reduce((dayA, dayB) => (dayA + dayB), 0)) / 7;
+  getMinActiveForWeek(activityData, property) {
+    let result = this.waterConsumedOverWeek(activityData, property);
+    console.log('Here', result)
+    return result;
   }
-
 }
 
 module.exports = User;

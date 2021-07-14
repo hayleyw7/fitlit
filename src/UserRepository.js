@@ -24,3 +24,10 @@ class UserRepository {
 }
 
 module.exports = UserRepository;
+
+
+
+
+/// Sleep ////
+
+//  For all users, the average sleep quality

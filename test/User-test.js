@@ -99,13 +99,9 @@ describe('User', () => {
     expect(user1.getSleepQualityForWeek(sleepData, 'sleepQuality').length).to.equal(7);
   });
 
+  //// ACTIVITY ///
 
-
-  it('Should return user who slept the most amongs other user/s for a day', () => {
-    expect(users.mostSleptUser(sleepData, userData, '2019/06/15')).to.equal('Jordon Lind');
-  });
-
-  it('Should return number of teps taken for a day', () => {
+  it.only('Should return number of teps taken for a day', () => {
     expect(user1.numSteps(activityData, 'numSteps', '2019/06/15')).to.equal(3577);
   });
 
@@ -121,7 +117,6 @@ describe('User', () => {
     expect(user1.dailyStepGoals(activityData, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal(`You are almost there, you have 6423 left!`);
     // expect(user1.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal('You reached your daily goal!');
   });
-
 
   it('Should find a user/s average minutes active per day over the course of a given week', () => {
     expect(user1.getMinActiveForWeek(activityData, 'minutesActive').length).to.equal(7);

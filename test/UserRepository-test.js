@@ -52,4 +52,9 @@ describe('User Repository', () => {
     expect(userRepo.getAvgSleepQualityOfUser(sleepData)).to.equal(2.614285714285714);
   });
 
+  it('Should find a user/s hours slept each day over the course of a given week', () => {
+    expect(userRepo.getHoursSleptOverWeek(sleepData, 1, "2019/06/15", "2019/06/16", "2019/06/17", "2019/06/18", "2019/06/19", "2019/06/20", "2019/06/21")).to.deep.equal([6.1, 4.1, 8, 10.4, 10.7, 9.3, 7.8]);
+  });
+
 });
+

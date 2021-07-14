@@ -113,9 +113,3 @@ h2 {
 
 /*
 //// MEDIA QUERY //// */
-
-
-canvas {
-  width: 32rem !important;
-  height: 10rem !important;
-}

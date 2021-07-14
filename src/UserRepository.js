@@ -49,7 +49,7 @@ class UserRepository {
 		let result = [];
 		sleepData.forEach(day => {
 			if (this.getWeek()) {
-				if (day.userID ==== id) {
+				if (day.userID === id) {
 					result.push(day.hoursSlept);
 				}
 			}
@@ -68,12 +68,6 @@ class UserRepository {
 		})
 		return result;
 	}
-
-
-
-  function getWeek() {
-    return `day.date === day1 || day.date === day2 || day.date === day3 || day.date === day4 || day.date === day5 || day.date === day6 || day.date === day7`;
-  }
 
   getMinActiveForWeek(activityData, id, day1, day2, day3, day4, day5, day6, day7) {
 		let dailyActivity = [];

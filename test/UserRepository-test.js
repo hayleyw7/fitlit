@@ -60,5 +60,8 @@ describe('User Repository', () => {
     expect(userRepo.getSleepQualityForWeek(sleepData, 1, "2019/06/15", "2019/06/16", "2019/06/17", "2019/06/18", "2019/06/19", "2019/06/20", "2019/06/21")).to.deep.equal([2.2, 3.8, 2.6, 3.1, 1.2, 1.2, 4.2]);
   });
 
-});
+  it('Should find a user/s average minutes active per day over the course of a given week', () => {
+    expect(userRepo.getMinActiveForWeek(activityData, 1, "2019/06/15", "2019/06/16", "2019/06/17", "2019/06/18", "2019/06/19", "2019/06/20", "2019/06/21")).to.equal(171.14285714285714);
+  });
 
+});

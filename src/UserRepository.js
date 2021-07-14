@@ -3,10 +3,10 @@ class UserRepository {
     this.users = userData;
   }
 
-  getWeek() {
-    console.log(`day.date === day1 || day.date === day2 || day.date === day3 || day.date === day4 || day.date === day5 || day.date === day6 || day.date === day7`)
-    return `day.date === day1 || day.date === day2 || day.date === day3 || day.date === day4 || day.date === day5 || day.date === day6 || day.date === day7`;
-  }
+  // getWeek() {
+  //   console.log(`day.date === day1 || day.date === day2 || day.date === day3 || day.date === day4 || day.date === day5 || day.date === day6 || day.date === day7`)
+  //   return `day.date === day1 || day.date === day2 || day.date === day3 || day.date === day4 || day.date === day5 || day.date === day6 || day.date === day7`;
+  // }
 
   getUser(id) {
     const currentUser = this.users.find(user => user.id === id)
@@ -20,92 +20,6 @@ class UserRepository {
     return totalStepGoalOfAllUsers / this.users.length;
   }
 
-  waterConsumedAllTime(hydrationData) {
-    let hydrationAvg = hydrationData.reduce((total, userHydration) => {
-      return total + userHydration.numOunces
-    }, 0)
-    return Math.round(hydrationAvg / hydrationData.length)
-  }
-
-  waterConsumedOverWeek(hydrationData) {
-    let hydration = hydrationData.sort((a, b) => a.date - b.date);
-    // console.log(hydration);
-    let perChunk = 7 // items per chunk
-    let inputArray = hydration
-    let result = inputArray.reduce((resultArray, item, index) => {
-      const chunkIndex = Math.floor(index / perChunk)
-      if (!resultArray[chunkIndex]) {
-        resultArray[chunkIndex] = [] // start a new chunk
-      }
-      resultArray[chunkIndex].push(item.date)
-
-      return resultArray
-    }, [])
-    let week = result.flat();
-
-    let waters = hydrationData.reduce((hydrate, currentVal) => {
-      this.users.forEach((user) => {
-        if (currentVal.userID === user.id) {
-          if (week.includes(currentVal.date)) {
-            console.log('here')
-            hydrate.push(currentVal.numOunces);
-          }
-        }
-      })
-
-      return hydrate;
-    }, [])
-    console.log(waters)
-    return waters;
-  }
-
-  getAvgSleepQualityOfUser(sleepData) {
-    const totalSleepQualityOfUser = sleepData.reduce((sleep, day) => {
-      return sleep += day.sleepQuality;
-    }, 0);
-    return Math.round(totalSleepQualityOfUser / sleepData.length);
-  }
-
-  // The next 3 functions will need refactored A LOT but it works if weeks are entered really strangely (AKA one day at a time). This is a start, & it's definitely fixable.
-
-  getHoursSleptOverWeek(sleepData, id, day1, day2, day3, day4, day5, day6, day7) {
-    let result = [];
-    sleepData.forEach(day => {
-      if (this.getWeek()) {
-        console.log(this.getWeek())
-        console.log('here i am ')
-        if (day.userID === id) {
-          console.log('boolean', day.userID === id)
-          result.push(day.hoursSlept);
-        }
-      }
-    })
-    return result;
-  }
-
-  getSleepQualityForWeek(sleepData, id, day1, day2, day3, day4, day5, day6, day7) {
-    let result = [];
-    sleepData.forEach(day => {
-      if (this.getWeek()) {
-        if (day.userID === id) {
-          result.push(day.sleepQuality);
-        }
-      }
-    })
-    return result;
-  }
-
-  getMinActiveForWeek(activityData, id, day1, day2, day3, day4, day5, day6, day7) {
-    let dailyActivity = [];
-    activityData.forEach(day => {
-      if (this.getWeek()) {
-        if (day.userID === id) {
-          dailyActivity.push(day.minutesActive);
-        }
-      }
-    })
-    return (dailyActivity.reduce((dayA, dayB) => (dayA + dayB), 0)) / 7;
-  }
 
 }
 

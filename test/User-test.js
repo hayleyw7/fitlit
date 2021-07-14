@@ -87,15 +87,11 @@ describe('User', () => {
 
   it('Should have users active minutes for a day', () => {
     expect(user1.activeMinutes(activityData, 'minutesActive', '2019/06/15')).to.equal(140);
-    // expect(user2.activeMinutes(activityData, 'minutesActive', '2019/06/15')).to.equal(138);
   });
 
   it('Should check if user reached his/hers/them daily step goal for a day', () => {
     expect(user1.dailyStepGoals(activityData, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal(`You are almost there, you have 6423 left!`);
-    // expect(user2.dailyStepGoals(activityData, userData, 'dailyStepGoal', '2019/06/15', 2)).to.equal(`You are almost there, you have 706 left!`);
-
     // expect(user1.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal('You reached your daily goal!');
-    // expect(user2.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 2)).to.equal('You reached your daily goal!');
   });
 
   it('Should return how much average water consumed for all times', () => {
@@ -114,9 +110,9 @@ describe('User', () => {
     expect(user1.getHoursSleptOverWeek(sleepData, 'hoursSlept').length).to.equal(7);
   });
 
-  // it('Should find a user/s sleep quality for each day over the course of a given week', () => {
-  //   expect(user1.getSleepQualityForWeek(sleepData, 1, "2019/06/15", "2019/06/16", "2019/06/17", "2019/06/18", "2019/06/19", "2019/06/20", "2019/06/21")).to.deep.equal([2.2, 3.8, 2.6, 3.1, 1.2, 1.2, 4.2]);
-  // });
+  it.only('Should find a user/s sleep quality for each day over the course of a given week', () => {
+    expect(user1.getSleepQualityForWeek(sleepData, 'sleepQuality').length).to.equal(7);
+  });
   //
   // it('Should find a user/s average minutes active per day over the course of a given week', () => {
   //   expect(user1.getMinActiveForWeek(activityData, 1, "2019/06/15", "2019/06/16", "2019/06/17", "2019/06/18", "2019/06/19", "2019/06/20", "2019/06/21")).to.equal(171.14285714285714);

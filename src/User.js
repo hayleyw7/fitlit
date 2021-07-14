@@ -157,12 +157,9 @@ class User {
     return Math.round(totalSleepQualityOfUser / sleepData.length);
   }
 
-  // The next 3 functions will need refactored A LOT but it works if weeks are entered really strangely (AKA one day at a time). This is a start, & it's definitely fixable.
-
   getHoursSleptOverWeek(sleepData, property) {
-    // console.log('HERE', this.waterConsumedOverWeek(hydroData))
     let result = this.waterConsumedOverWeek(sleepData, property)
-    console.log('Here', result)
+    // console.log('Here', result)
     return result;
   }
 

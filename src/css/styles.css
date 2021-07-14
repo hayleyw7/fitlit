@@ -135,9 +135,9 @@ h2 {
     align-items: center;
   }
 
-  h3 {
+  /* h3 {
    font-size: xx-large;
-  }
+  } */
 
   .nav-bar {
     padding: 1rem;
@@ -148,6 +148,12 @@ h2 {
     justify-content: space-around;
     align-items: center;
 }
+
+  /* .user-creadentials {
+   align-self: baseline;
+   font-size: x-large;
+  } */
+
   .widget-goals,.widget-sleep,.widget-hydration,.widget-activity {
     display: flex;
     flex-direction: column;

@@ -104,6 +104,20 @@ class User {
     // console.log('sleep hours', sleepQuality)
     return sleepQuality;
   }
+
+  getAvgSleep(sleepData, property) {
+    let avgHrs = this.allTimeTrackOfData(sleepData, property);
+    // console.log('all time sleep avg', avgHrs);
+    return avgHrs;
+  }
+
+  AvgSleepQuality(sleepData) {
+    const totalSleepQualityOfUser = sleepData.reduce((sleep, day) => {
+      return sleep += day.sleepQuality;
+    }, 0);
+    return Math.round(totalSleepQualityOfUser / sleepData.length);
+  }
+
   mostSleptUser(sleepData, userData, date) {
     let hrs = []
     let user = userData.reduce((userName, currentVal) => {
@@ -167,17 +181,6 @@ class User {
   }
 
 
-
-  getAvgSleepQualityOfUser(sleepData) {
-    const totalSleepQualityOfUser = sleepData.reduce((sleep, day) => {
-      return sleep += day.sleepQuality;
-    }, 0);
-    return Math.round(totalSleepQualityOfUser / sleepData.length);
-  }
-
-
-
-
   getHoursSleptOverWeek(sleepData, property) {
     let result = this.waterConsumedOverWeek(sleepData, property)
     // console.log('Here', result)
@@ -210,8 +213,8 @@ module.exports = User;
 
 // Create classes and methods that can calculate:
 //
-// For a user (identified by their userID), the average number of hours slept per day
-// For a user, their average sleep quality per day over all time
+// [x] For a user (identified by their userID), the average number of hours slept per day
+// [x] For a user, their average sleep quality per day over all time
 // [x] For a user, how many hours they slept for a specific day (identified by a date)
 // [x] For a user, their sleep quality for a specific day (identified by a date)
 // For a user, how many hours slept each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week

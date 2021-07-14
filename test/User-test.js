@@ -79,10 +79,8 @@ describe('User', () => {
     expect(user1.hrsOfSleep(sleepData, 'hoursSlept', '2019/06/15')).to.equal(6.1);
   });
 
-
-
-  it('Should return user/s sleeping quality for a day', () => {
-    expect(user1.hrsSleptQuality(sleepData, 'sleepQuality', '2019/06/15')).to.equal(2.2);
+  it.only('Should return user/s sleeping quality for a day', () => {
+    expect(user1.sleepQuality(sleepData, 'sleepQuality', '2019/06/15')).to.equal(2.2);
   });
 
   it('Should return user who slept the most amongs other user/s for a day', () => {

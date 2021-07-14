@@ -153,3 +153,33 @@ let waterOverWeekChart = new Chart(
   document.getElementById('hydration-chart1'),
   configWater
 )
+
+
+
+// SLEEP WIDGETS //////
+
+
+const hoursQualitySleep = {
+  labels: [
+    'Hours of Sleep',
+    'Quality of Sleep'
+  ],
+  datasets: [{
+    label: 'Sleep',
+    data: [11, 8],
+    backgroundColor: [
+      'rgb(75, 192, 192)',
+      'rgb(201, 203, 207)'
+    ]
+  }]
+};
+
+const sleepConfig = {
+  type: 'polarArea',
+  data: hoursQualitySleep,
+};
+
+let sleepChart = new Chart(
+  document.getElementById('sleep-chart'),
+  sleepConfig
+)

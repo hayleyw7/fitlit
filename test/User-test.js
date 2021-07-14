@@ -87,9 +87,18 @@ describe('User', () => {
     expect(user1.getAvgSleep(sleepData, 'hoursSlept')).to.equal(8);
   });
 
-  it('Should find a user/s average sleep quality per day over all time', () => {
+  it.only('Should find a user/s average sleep quality per day over all time', () => {
     expect(user1.avgSleepQuality(sleepData, 'sleepQuality')).to.equal(3);
   });
+
+  it.only('Should find a user/s hours slept each day over the course of a given week', () => {
+    expect(user1.getHoursSleptOverWeek(sleepData, 'hoursSlept').length).to.equal(7);
+  });
+
+  it.only('Should find a user/s sleep quality for each day over the course of a given week', () => {
+    expect(user1.getSleepQualityForWeek(sleepData, 'sleepQuality').length).to.equal(7);
+  });
+
 
 
   it('Should return user who slept the most amongs other user/s for a day', () => {
@@ -113,13 +122,6 @@ describe('User', () => {
     // expect(user1.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal('You reached your daily goal!');
   });
 
-  it('Should find a user/s hours slept each day over the course of a given week', () => {
-    expect(user1.getHoursSleptOverWeek(sleepData, 'hoursSlept').length).to.equal(7);
-  });
-
-  it('Should find a user/s sleep quality for each day over the course of a given week', () => {
-    expect(user1.getSleepQualityForWeek(sleepData, 'sleepQuality').length).to.equal(7);
-  });
 
   it('Should find a user/s average minutes active per day over the course of a given week', () => {
     expect(user1.getMinActiveForWeek(activityData, 'minutesActive').length).to.equal(7);

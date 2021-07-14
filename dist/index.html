@@ -1,86 +1,87 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='UTF-8'>
-    <!-- <link rel='stylesheet' href='/src/css/styles.css'> -->
-    <!-- <link rel='shortcut icon' href='.images/favicon.ico'/> -->
 
-  </head>
+<head>
+  <meta charset='UTF-8'>
+  <!-- <link rel='stylesheet' href='/src/css/styles.css'> -->
+  <!-- <link rel='shortcut icon' href='.images/favicon.ico'/> -->
+</head>
 
+<body>
+  <nav class='nav-bar'>
+    <h1>FitLit</h1>
+    <h3>Hi, John Johnson!</h3>
+    <p>[### street]<br />[city, state ##zip]<br />[email]<br /><br />User ID: [###]</p>
+    <input type="date" class="calendar" id="calendar">
+  </nav>
+  <main class='widget-container'>
+    <h2 class='goals-header'>Goals</h2>
+    <div class='widget-goals'>
+      <article class='widget-half'>
+        <h3>Your Goal</h3>
+        <canvas id="mySetGoalChart" width="450px" height="160px ">test</canvas>
+      </article>
+      <article class='widget-half'>
+        <h3>You vs Community</h3>
+        <canvas class="second-one" id="myGoalChart" width="450px" height="180px ">test</canvas>
+      </article>
+    </div>
 
-  <body>
-
-    <aside class='sidebar'>
-      <h1>FitLit</h1>
-      <section class='sidebar-text'>
-        <h3>Hi, John Johnson!</h3>
-        <p>[### street]<br/>[city, state ##zip]<br/>[email]<br/><br/>User ID: [###]</p>
-      </section>
-    </aside>
-    <main>
-
-      <h2 class='goals-header'>Goals</h2>
-      <div class='widget-category'>
-        <article class='widget-half'>
-          <h3>Your Goal</h3>
-          <p>[step goal]</p>
-        </article>
-        <article class='widget-half'>
-          <h3>You vs Community</h3>
-          <div><canvas id="myChart" width="5px" height="5px ">test</canvas></div>
-        </article>
-      </div>
-
-      <h2 class='activity-header'>Activity</h2>        
-      <div class='widget-category'>
-        <article class='widget-half'>
-          <h3>Today</h3>
-          <p>[steps today]</br>[miles today]</br>[min active today]</p>
-        </article>
-        <article class='widget-half'>
-          <h3>Week</h3>
-          <p>[total steps this wk]</br>[total miles this wk]</br>[total min active this wk]</p>
-        </article>
-      </div>
-      <div class='widget-category'>
-        <article class='widget-full'>
-          <h3>Community</h3>
-          <p>[CHART - compare your activity today to all users: minutes, steps, flights]</p>
-        </article>
-      </section>
-
+    <h2 class='activity-header'>Activity</h2>
+    <div class='widget-activity'>
+      <article class='widget-half'>
+        <h3>Today</h3>
+        <canvas id="activity-chart" width="500px" height="180px"></canvas>
+      </article>
+      <article class='widget-half'>
+        <h3>Week</h3>
+        <p>[total steps this wk]</br>[total miles this wk]</br>[total min active this wk]</p>
+        <canvas id="activity1-chart" width="10px" height="10px"></canvas>
+      </article>
+    </div>
+    <div class='widget-activity'>
+      <article class='widget-full'>
+        <h3>Community</h3>
+        <p>[CHART - compare your activity today to all users: minutes, steps, flights]</p>
+      </article>
+    </div>
       <h2 class='hydration-header'>Hydration</h2>
-      <section class='widget-category'>
+      <section class='widget-hydration'>
         <article class='widget-half'>
           <h3>Today</h3>
-          <p>[water drank today in oz]</p>
+          <canvas id="hydration-chart" width="500px" height="200px"></canvas>
         </article>
         <article class='widget-half'>
           <h3>Week</h3>
-          <p>[avg oz water day for this week]</p>
+          <canvas id="hydration-chart1" width="500px" height="200px"></canvas>
         </article>
-      </div>
+    </section>
 
-      <h2 class='sleep-header'>Sleep</h2>
-      <div class='widget-category'>
-        <article class='widget-half'>
-          <h3>Last Night</h3>
-          <p>[hrs slept last night]</br>[total hrs slept this wk]</p>
-        </article>
-        <article class='widget-half'>
-          <h3>Week</h3>
-          <p>[quality sleep last night]</br>[avg quality of sleep this wk]</p>
-        </article>
+    <h2 class='sleep-header'>Sleep</h2>
+    <div class='widget-sleep'>
+      <article class='widget-half'>
+        <h3>Last Night</h3>
+        <canvas id="sleep-chart" width="500px" height="200px"></canvas>
+      </article>
+      </article>
+      <article class='widget-half'>
+        <h3>Week</h3>
+        <p>[sleep hrs lates week]</br>[quality of sleep lates wk]</p>
+        <canvas id="sleep-chart1" width="500px" height="200px"></canvas>
+      </article>
+      </article>
       </section>
-      <div class='widget-category'>
+      <div class='widget-sleep'>
         <article class='widget-full'>
           <h3>All Time</h3>
-          <p>[avg hrs sleep all time]</br>[avg quality sleep all time]</p>
+          <canvas id="sleep-chart2" width="500px" height="120px"></canvas>
+        </article>
         </article>
       </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src='bundle.js'></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+</body>
 
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src='bundle.js'></script>
-  </body>
 </html>

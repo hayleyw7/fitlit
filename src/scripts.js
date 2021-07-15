@@ -15,6 +15,7 @@ console.log('This is the JavaScript entry file - your code begins here.');
 // An example of how you tell webpack to use a JS file
 
 import userData from './data/users';
+import User from './User';
 import UserRepository from './UserRepository';
 import apiCalls from './apiCalls';
 // console.log(apiCalls.allData());
@@ -46,9 +47,12 @@ const retrieveData = () => {
     // console.log('activity test', activityData)
     // console.log('hydration test', hydrationData)
     // console.log('sleep test', sleepData)
+    
   })
 }
+
 retrieveData()
+
 
 // *************** EVENT LISTENERS ************
 

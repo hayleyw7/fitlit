@@ -59,74 +59,69 @@ describe('User', () => {
   it('Should display user/s first name', () => {
     expect(user1.getName()).to.equal('Luisa');
   });
-  /// HYDRATION ///
 
-  it.only('Should get user/s water consume for day', () => {
+  it('Should get user/s water consume for day', () => {
     expect(user1.dailyTrackOfData(hydrationData, 'numOunces', '2019/06/15')).to.equal(37);
   });
 
-  it.only('Should return how much average water consumed for all times', () => {
+  it('Should return how much average water consumed for all times', () => {
     expect(user1.allTimeTrackOfData(hydrationData, 'numOunces')).to.equal(65);
   });
 
-  it.only('Should find how many fluid ounces of water consumed each day over the course of a week', () => {
+  it('Should find how many fluid ounces of water consumed each day over the course of a week', () => {
     expect(user1.trackOfDataOverWeek(hydrationData, 'numOunces').length).to.equal(7);
   });
 
-  /// SLEEP ///
-
-  it.only('Should return user/s slept hours for a day', () => {
+  it('Should return user/s slept hours for a day', () => {
     expect(user1.hrsOfSleep(sleepData, 'hoursSlept', '2019/06/15')).to.equal(6.1);
   });
 
-  it.only('Should return user/s sleeping quality for a day', () => {
+  it('Should return user/s sleeping quality for a day', () => {
     expect(user1.sleepQuality(sleepData, 'sleepQuality', '2019/06/15')).to.equal(2.2);
   });
 
-  it.only('Should find a user/s average hours of sleep per day over all time', () => {
+  it('Should find a user/s average hours of sleep per day over all time', () => {
     expect(user1.getAvgSleep(sleepData, 'hoursSlept')).to.equal(8);
   });
 
-  it.only('Should find a user/s average sleep quality per day over all time', () => {
+  it('Should find a user/s average sleep quality per day over all time', () => {
     expect(user1.avgSleepQuality(sleepData, 'sleepQuality')).to.equal(3);
   });
 
-  it.only('Should find a user/s hours slept each day over the course of a given week', () => {
+  it('Should find a user/s hours slept each day over the course of a given week', () => {
     expect(user1.getHoursSleptOverWeek(sleepData, 'hoursSlept').length).to.equal(7);
   });
 
-  it.only('Should find a user/s sleep quality for each day over the course of a given week', () => {
+  it('Should find a user/s sleep quality for each day over the course of a given week', () => {
     expect(user1.getSleepQualityForWeek(sleepData, 'sleepQuality').length).to.equal(7);
   });
 
-  //// ACTIVITY ///
-
-  it.only('Should return number of teps taken for a day', () => {
+  it('Should return number of teps taken for a day', () => {
     expect(user1.numSteps(activityData, 'numSteps', '2019/06/15')).to.equal(3577);
   });
 
-  it.only('Should have users active minutes for a day', () => {
+  it('Should have users active minutes for a day', () => {
     expect(user1.activeMinutes(activityData, 'minutesActive', '2019/06/15')).to.equal(140);
   });
 
-  it.only('Should have user/s steps for a day in miles', () => {
+  it('Should have user/s steps for a day in miles', () => {
     expect(user1.stepsCountInMiles(activityData, userData, '2019/06/15', 1)).to.equal(2.91);
   });
 
-  it.only('Should find a user/s average minutes active per day over the course of a given week', () => {
+  it('Should find a user/s average minutes active per day over the course of a given week', () => {
     expect(user1.getMinActiveForWeek(activityData, 'minutesActive').length).to.equal(7);
   });
 
-  it.only('Should check if user reached his/hers/them daily step goal for a day', () => {
+  it('Should check if user reached his/hers/them daily step goal for a day', () => {
     expect(user1.reachedStepGoals(activityData, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal(`You are almost there, you have 6423 left!`);
     // expect(user1.dailyStepGoals(activity, userData, 'dailyStepGoal', '2019/06/15', 1)).to.equal('You reached your daily goal!');
   });
 
-  it.only('Should find all days where user exceeded their step goal', () => {
+  it('Should find all days where user exceeded their step goal', () => {
     expect(user1.exceededStepGoal(activityData, 'numSteps').length).to.equal(2);
   });
 
-  it.only('Should find user/s all time stair climbing record', () => {
+  it('Should find user/s all time stair climbing record', () => {
     expect(user1.allTimeRecord(activityData)).to.equal(36);
   });
 });

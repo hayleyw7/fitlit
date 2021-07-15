@@ -12,32 +12,6 @@ class User {
   getName() {
     return this.name.split(' ')[0];
   }
-  //
-  // avgData(currentData, property, date) {
-  //   // check first to make sure user id from given data matches this.id;
-  //   let array = currentData.filter(data => data.userID === this.id)
-  //
-  //   // run condition to check if given date data is a string or number
-  //   if (typeof date === "string") {
-  //     // console.log('YOOO');
-  //     array = array.filter(data => data.date === date);
-  //     // console.log('DIS THE ARRAY',array);
-  //     if (!array.length) {
-  //       return 0;
-  //     }
-  //     // check if date is instance of the array if it is we want to get data, if its not
-  //     // just leave array emty;
-  //   } else if (date instanceof Array) {
-  //     array = array.filter(data => date.some(date => data.date === date));
-  //     if (!array.length) {
-  //       return 0;
-  //     }
-  //   }
-  //   // else, we want to iterate over array and match the property of the data
-  //   // and we want to add data together and devide to the length of arrays length, to get avg num;
-  //   return array.map(data => data[property]).reduce((total, currentVal) =>
-  //     total + currentVal) / array.length;
-  // }
 
   /// HYDRATION DATA METHODS ///
   dailyTrackOfData(hydrationData, property, date) {
@@ -192,6 +166,7 @@ class User {
     // console.log('days when they pass step goal', daysOfReached);
     return daysOfReached;
   }
+
   allTimeRecord(activityData) {
     let highestStairCount =
       activityData.sort((a, b) => a.flightsOfStairs > b.flightsOfStairs ? -1 : 1);
@@ -205,12 +180,22 @@ module.exports = User;
 
 //// THESE METHODS ARE DONE IN THIS CLASS //////
 
+/// HYDRATION DATA BULLET POINT ////
+
 // Create classes and methods that can calculate:
 
 //[X] For a user (identified by their userID - this is the same for all methods requiring a specific user’s data), the average fluid ounces consumed per day for all time
 //[X] For a user, how many fluid ounces they consumed for a specific day (identified by a date)
 //[x] For a user, how many fluid ounces of water consumed each day over the course of a week (7 days) - return the amount for each day
 
+// Dashboard
+// For your user (or any user you choose), add:
+// A display to show how much water they have consumed today (these displays are often called “widgets” in the FE tech world)
+// A display to show much water they have consumed each day over the course of the latest week
+
+
+
+// SLEEP DATA BULLET POINT////
 
 // Create classes and methods that can calculate:
 //
@@ -221,6 +206,15 @@ module.exports = User;
 // [x] For a user, how many hours slept each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week
 // [x] For a user, their sleep quality each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week
 
+
+// Dashboard
+// Items to add to the dashboard:
+
+// For a user, their sleep data for the latest day (hours slept and quality of sleep)
+// For a user, their sleep data over the course of the latest week (hours slept and quality of sleep)
+// For a user, their all-time average sleep quality and all-time average number of hours slept
+
+//// ATIVITY DATA BULLET POINTS ////
 
 // Create classes and methods that can calculate:
 // [x] For a specific day (specified by a date), return the miles a user has walked based on their number of steps (use their strideLength to help calculate this)
@@ -233,9 +227,8 @@ module.exports = User;
 
 // Dashboard
 // Items to add to the dashboard:
-//
 // [x] For a user, the number of steps for the latest day
 // [x] For a user, the number minutes active for the latest day
 // [x] For a user, the distance they have walked (in miles) for the latest day based on their step count
-// How their number of steps, minutes active, and flights of stairs climbed compares to all users for the latest day
-// For a user, a weekly view of their step count, flights of stairs climbed, and minutes active
+// [x] How their number of steps, minutes active, and flights of stairs climbed compares to all users for the latest day
+// [x] For a user, a weekly view of their step count, flights of stairs climbed, and minutes active

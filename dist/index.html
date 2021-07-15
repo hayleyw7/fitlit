@@ -10,11 +10,13 @@
 <body>
   <nav class='nav-bar'>
     <h1>FitLit</h1>
-    <h3>Hi, John Johnson!</h3>
-    <p>[### street]<br />[city, state ##zip]<br />[email]<br /><br />User ID: [###]</p>
+    <h3 id='userName'></h3>
+    <p id='userAddress'>address</p>
+    <p id='userEmail'>email</p>
     <input type="date" class="calendar" id="calendar">
   </nav>
   <main class='widget-container'>
+
     <h2 class='goals-header'>Goals</h2>
     <div class='widget-goals'>
       <article class='widget-half'>
@@ -35,27 +37,30 @@
       </article>
       <article class='widget-half'>
         <h3>Week</h3>
-        <p>[total steps this wk]</br>[total miles this wk]</br>[total min active this wk]</p>
+        <p id='totalStepsThisWeek'>[total steps this wk]</p>
+        <p id='totalMilesThisWeek'>[total miles this wk]</p>
+        <p id='totalMinThisWeek'>[total min active this wk]</p>
         <canvas id="activity1-chart" width="10px" height="10px"></canvas>
       </article>
     </div>
     <div class='widget-activity'>
       <article class='widget-full'>
         <h3>Community</h3>
-        <p>[CHART - compare your activity today to all users: minutes, steps, flights]</p>
+        <canvas id="activity2-chart" width="10px" height="10px">[CHART - compare your activity today to all users: minutes, steps, flights]</canvas>
       </article>
     </div>
-      <h2 class='hydration-header'>Hydration</h2>
-      <section class='widget-hydration'>
-        <article class='widget-half'>
-          <h3>Today</h3>
-          <canvas id="hydration-chart" width="500px" height="200px"></canvas>
-        </article>
-        <article class='widget-half'>
-          <h3>Week</h3>
-          <canvas id="hydration-chart1" width="500px" height="200px"></canvas>
-        </article>
-    </section>
+
+    <h2 class='hydration-header'>Hydration</h2>
+    <div class='widget-hydration'>
+      <article class='widget-half'>
+        <h3>Today</h3>
+        <canvas id="hydration-chart" width="500px" height="200px"></canvas>
+      </article>
+      <article class='widget-half'>
+        <h3>Week</h3>
+        <canvas id="hydration-chart1" width="500px" height="200px"></canvas>
+      </article>
+    </div>
 
     <h2 class='sleep-header'>Sleep</h2>
     <div class='widget-sleep'>
@@ -63,25 +68,20 @@
         <h3>Last Night</h3>
         <canvas id="sleep-chart" width="500px" height="200px"></canvas>
       </article>
-      </article>
       <article class='widget-half'>
         <h3>Week</h3>
-        <p>[sleep hrs lates week]</br>[quality of sleep lates wk]</p>
+        <p id='sleepHrsForWeek'>[sleep hrs last week]</p>
+        <p id='sleepQualityForWeek'>[quality of sleep last wk]</p>
         <canvas id="sleep-chart1" width="500px" height="200px"></canvas>
       </article>
-      </article>
-      </section>
       <div class='widget-sleep'>
         <article class='widget-full'>
           <h3>All Time</h3>
           <canvas id="sleep-chart2" width="500px" height="120px"></canvas>
         </article>
-        </article>
       </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src='bundle.js'></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 </body>
-
 </html>

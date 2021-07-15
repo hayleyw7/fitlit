@@ -50,37 +50,47 @@ let activityData;
 let hydrationData;
 let usersData;
 let sleepData;
+let currentUser;
 
-const retrieveData = () => {
-  apiCalls.allData()
-  .then(data => {
-    usersData = data[0] 
-    activityData = data[1]
-    hydrationData = data[2]
-    sleepData = data[3]
-    // console.log('user test', usersData)
-    // console.log('activity test', activityData)
-    // console.log('hydration test', hydrationData)
-    // console.log('sleep test', sleepData)
+// const retrieveData = () => {
+//   apiCalls.allData()
+//   .then(data => {
+//     usersData = data[0] 
+//     activityData = data[1]
+//     hydrationData = data[2]
+//     sleepData = data[3]
+//     // console.log('user test', usersData)
+//     // console.log('activity test', activityData)
+//     // console.log('hydration test', hydrationData)
+//     // console.log('sleep test', sleepData)
     
-  })
-}
+//   })
+// }
 
-retrieveData()
+// retrieveData()
 
 
 // *************** EVENT LISTENERS ************
 
-// window.addEventListener('load', () => {
+const getRandomIndex = (array) => {
+  return Math.floor(Math.random() * array.length)
+}
 
-//   getRandomIndex(array) {
-//     return Math.floor(Math.random()*array.length);
-//   }
-
-//   findCurrentCustomer(33)
-// })
-
-
+window.addEventListener('load', function() {
+  apiCalls.allData()
+    .then(data => {
+      usersData = new UserRepository(data[0])
+      activityData = data[1]
+      hydrationData = data[2]
+      sleepData = data[3]
+      // console.log('user test ---->', usersData)
+      // console.log('activity test ---->', activityData)
+      // console.log('hydration test ---->', hydrationData)
+      // console.log('sleep test ----->', sleepData)
+      currentUser = usersData.users.userData[getRandomIndex(usersData.users.userData)]
+      console.log('currentUser ---->', currentUser)
+    })
+})
 
 
 // *************** EVENT HANDLERS AND FUNCTIONS  ************

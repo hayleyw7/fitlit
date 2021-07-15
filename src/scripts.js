@@ -2,9 +2,12 @@
 // Do not delete or rename this file ********
 
 // An example of how you tell webpack to use a CSS file
-import './css/styles.css';
+
+// *************** IMPORTS ************
+
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
+import './css/styles.css';
 import './images/turing-logo.png'
 import './widget-chart.js'
 console.log('This is the JavaScript entry file - your code begins here.');
@@ -13,3 +16,29 @@ console.log('This is the JavaScript entry file - your code begins here.');
 
 import userData from './data/users';
 import UserRepository from './UserRepository';
+import apiCalls from './apiCalls';
+console.log(apiCalls.allData());
+
+
+// *************** QUERY SELECTORS ************
+
+
+
+
+
+
+
+// *************** GLOBAL VARIBALES ************
+
+
+
+
+
+// *************** EVENT LISTENERS ************
+
+
+
+
+
+
+// *************** EVENT HANDLERS AND FUNCTIONS  ************

@@ -1,16 +1,12 @@
-
 class UserRepository {
   constructor(userData) {
     this.users = userData;
-  }
-
-  getWeek() {
-    return `day.date === day1 || day.date === day2 || day.date === day3 || day.date === day4 || day.date === day5 || day.date === day6 || day.date === day7`;
+    // console.log('here',
+    //   this.users[0].getName())
   }
 
   getUser(id) {
-    const currentUser = this.users.find(user=> user.id === id)
-    console.log(currentUser)
+    const currentUser = this.users.find(user => user.id === id)
     return currentUser;
   }
 
@@ -21,88 +17,50 @@ class UserRepository {
     return totalStepGoalOfAllUsers / this.users.length;
   }
 
-  waterConsumedAllTime(hydrationData) {
-    let hydrationAvg = hydrationData.reduce((total, userHydration) => {
-      return total + userHydration.numOunces
+  avgSleepQuality(sleepData, property) {
+    let avgQual = sleepData.reduce((quality, currentVal) => {
+      this.users.forEach(user => {
+        if (currentVal.userID === user.id) {
+          quality += currentVal[property]
+        }
+      })
+      return quality;
     }, 0)
-    return Math.round(hydrationAvg / hydrationData.length)
+    return Math.round(avgQual / sleepData.length);
+
   }
 
-  waterConsumedOverWeek(hydrationData) {
-    let hydration = hydrationData.map(hydrate => {
-      hydrate.userID === this.users.id;
-      return hydrate.numOunces;
-    })
-    return hydration;
+  allActivityAvg(activityData, date) {
+    let avgActivity = activityData.reduce((obj, currentVal) => {
+      this.users.forEach(user => {
+        if ((user.id === currentVal.userID) && (!obj[currentVal]) && (currentVal.date === date)) {
+          obj.flightsOfStairs = currentVal.flightsOfStairs;
+          obj.numSteps = currentVal.numSteps;
+          obj.minutesActive = currentVal.minutesActive;
+        }
+      })
+      return obj;
+    }, {})
+    // console.log(avgActivity);
+    return avgActivity;
   }
-
-  getAvgSleepQualityOfUser(sleepData) {
-    const totalSleepQualityOfUser = sleepData.reduce((sleep, day) => {
-      return sleep += day.sleepQuality;
-    }, 0);
-    return totalSleepQualityOfUser / sleepData.length;
-  }
-
-  // The next 3 functions will need refactored A LOT but it works if weeks are entered really strangely (AKA one day at a time). This is a start, & it's definitely fixable.
-
-  getHoursSleptOverWeek(sleepData, id, day1, day2, day3, day4, day5, day6, day7) {
-		let result = [];
-		sleepData.forEach(day => {
-			if (this.getWeek()) {
-				if (day.userID === id) {
-					result.push(day.hoursSlept);
-				}
-			}
-		})
-		return result;
-	}
-
-  getSleepQualityForWeek(sleepData, id, day1, day2, day3, day4, day5, day6, day7) {
-		let result = [];
-		sleepData.forEach(day => {
-			if (this.getWeek()) {
-				if (day.userID === id) {
-					result.push(day.sleepQuality);
-				}
-			}
-		})
-		return result;
-	}
-
-  getMinActiveForWeek(activityData, id, day1, day2, day3, day4, day5, day6, day7) {
-		let dailyActivity = [];
-		activityData.forEach(day => {
-			if (this.getWeek()) {
-				if (day.userID === id) {
-					dailyActivity.push(day.minutesActive);
-				}
-			}
-		})
-		return (dailyActivity.reduce((dayA, dayB) => (dayA + dayB), 0)) / 7;
-	}
 
 }
 
-module.exports =  UserRepository;
+module.exports = UserRepository;
+
+// Dashboard
+// [x] The average step goal amongst all users
 
 
+/// Sleep ////
+
+// [x] For all users, the average sleep quality
 
 
-/// Methods to use in UserRepository Class/////
-// [ ]  `new UserRepository(data);`
-// - [X]  A `UserRepository` holds onto all of the `User` objects
-// - [X]  It should have a parameter to take in user `data`
-// - [X]  It should have methods to determine:
-// - [X]  Given a user’s ID, what is their user data?
-// - [x]  The average step goal amongst all users
-//- [X]  For a user (identified by their `userID` - this is the same for all methods requiring a specific user’s data), the average fluid ounces consumed per day for all time
- //[X]  For a user, how many fluid ounces of water consumed each day over the course of a week (7 days) - return the amount for each day
- //- [x]  For a user, their average sleep quality per day over all time
- //- [ ]  For a user, their sleep data over the course of the latest week (hours slept and quality of sleep)
-//- [ ]  For a user, their all-time average sleep quality and all-time average number of hours slept
-//- [x]  For a user, how many hours slept each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week
-// - [x]  For a user, their sleep quality each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week
-// - [x]  For all users, the average sleep quality
-// - [ ]  Find all users who average a sleep quality greater than `3` for a given week (7 days) - you should be able to calculate this for any week, not just the latest week
-// - [x]  For a user, how many minutes active did they average for a given week (7 days)?
-//- [ ]  For a user, find their all-time stair climbing record
+/// Activity ////
+//[x]
+// For all users, what is the average number of:
+// stairs climbed for a specified date
+// steps taken for a specific date
+// minutes active for a specific date

@@ -80,6 +80,8 @@ window.addEventListener('load', function() {
 const renderPage = (currentUser) => {
   // console.log("inside render page", currentUser);
   userName.innerText = `Hi, ${currentUser.name}!`;
+  userAddress.innerText = currentUser.address;
+  userEmail.innerText = currentUser.email;
 }
 
 

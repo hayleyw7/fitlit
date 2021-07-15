@@ -29,12 +29,16 @@ const userName = document.getElementById('userName');
 const userAddress = document.getElementById('userAddress');
 const userEmail = document.getElementById('userEmail');
 
-// weekly totals
+// weekly user totals
 
 const totalStepsThisWeek = document.getElementById('totalStepsThisWeek');
 const totalMilesThisWeek = document.getElementById('totalMilesThisWeek');
 const totalMinThisWeek = document.getElementById('totalMinThisWeek');
 
+// weekly sleep totals
+
+const sleepHrsForWeek = document.getElementById('sleepHrsForWeek');
+const sleepQualityForWeek = document.getElementById('sleepQualityForWeek');
 
 
 

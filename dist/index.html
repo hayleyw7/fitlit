@@ -16,6 +16,7 @@
     <input type="date" class="calendar" id="calendar">
   </nav>
   <main class='widget-container'>
+
     <h2 class='goals-header'>Goals</h2>
     <div class='widget-goals'>
       <article class='widget-half'>
@@ -48,16 +49,17 @@
         <canvas id="activity2-chart" width="10px" height="10px">[CHART - compare your activity today to all users: minutes, steps, flights]</canvas>
       </article>
     </div>
-      <h2 class='hydration-header'>Hydration</h2>
-      <section class='widget-hydration'>
-        <article class='widget-half'>
-          <h3>Today</h3>
-          <canvas id="hydration-chart" width="500px" height="200px"></canvas>
-        </article>
-        <article class='widget-half'>
-          <h3>Week</h3>
-          <canvas id="hydration-chart1" width="500px" height="200px"></canvas>
-        </article>
+
+    <h2 class='hydration-header'>Hydration</h2>
+    <div class='widget-hydration'>
+      <article class='widget-half'>
+        <h3>Today</h3>
+        <canvas id="hydration-chart" width="500px" height="200px"></canvas>
+      </article>
+      <article class='widget-half'>
+        <h3>Week</h3>
+        <canvas id="hydration-chart1" width="500px" height="200px"></canvas>
+      </article>
     </section>
 
     <h2 class='sleep-header'>Sleep</h2>
@@ -85,7 +87,5 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src='bundle.js'></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 </body>
-
 </html>

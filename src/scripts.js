@@ -29,7 +29,7 @@ const userName = document.getElementById('userName');
 const userAddress = document.getElementById('userAddress');
 const userEmail = document.getElementById('userEmail');
 
-// weekly user totals
+// weekly activity totals
 
 const totalStepsThisWeek = document.getElementById('totalStepsThisWeek');
 const totalMilesThisWeek = document.getElementById('totalMilesThisWeek');
@@ -71,14 +71,14 @@ retrieveData()
 
 // *************** EVENT LISTENERS ************
 
-window.addEventListener('load', () => {
+// window.addEventListener('load', () => {
 
-  getRandomIndex(array) {
-    return Math.floor(Math.random()*array.length);
-  }
+//   getRandomIndex(array) {
+//     return Math.floor(Math.random()*array.length);
+//   }
 
-  findCurrentCustomer(33)
-})
+//   findCurrentCustomer(33)
+// })
 
 
 

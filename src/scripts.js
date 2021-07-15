@@ -23,9 +23,20 @@ import apiCalls from './apiCalls';
 
 // *************** QUERY SELECTORS ************
 
+// user info card
+
 const userName = document.getElementById('userName');
 const userAddress = document.getElementById('userAddress');
 const userEmail = document.getElementById('userEmail');
+
+// weekly totals
+
+const totalStepsThisWeek = document.getElementById('totalStepsThisWeek');
+const totalMilesThisWeek = document.getElementById('totalMilesThisWeek');
+const totalMinThisWeek = document.getElementById('totalMinThisWeek');
+
+
+
 
 
 
@@ -56,7 +67,14 @@ retrieveData()
 
 // *************** EVENT LISTENERS ************
 
+window.addEventListener('load', () => {
 
+  getRandomIndex(array) {
+    return Math.floor(Math.random()*array.length);
+  }
+
+  findCurrentCustomer(33)
+})
 
 
 

@@ -1,12 +1,9 @@
 class UserRepository {
   constructor(userData) {
     this.users = userData;
+    // console.log('here',
+    //   this.users[0].getName())
   }
-
-  // getWeek() {
-  //   console.log(`day.date === day1 || day.date === day2 || day.date === day3 || day.date === day4 || day.date === day5 || day.date === day6 || day.date === day7`)
-  //   return `day.date === day1 || day.date === day2 || day.date === day3 || day.date === day4 || day.date === day5 || day.date === day6 || day.date === day7`;
-  // }
 
   getUser(id) {
     const currentUser = this.users.find(user => user.id === id)
@@ -20,12 +17,44 @@ class UserRepository {
     return totalStepGoalOfAllUsers / this.users.length;
   }
 
+  avgSleepQuality(sleepData, property) {
+    let avgQual = sleepData.reduce((quality, currentVal) => {
+      this.users.forEach(user => {
+        if (currentVal.userID === user.id) {
+          quality += currentVal[property]
+        }
+      })
+      return quality;
+    }, 0)
+    return Math.round(avgQual / sleepData.length);
+
+  }
+
+
+  // let hydrationAvg = hydrationData.reduce((total, userHydration) => {
+  //   if (userHydration.userID === this.id) {
+  //     total += userHydration[property]
+  //   }
+  //   return total
+  // }, 0)
+  // return Math.round(hydrationAvg / hydrationData.length)
+  // allActivityAvg(activityData, date) {
+  //   const dataForActivity = activityData.reduce((obj, currentVal) => {
+  //     if (currentVal.date === date) {
+  //       if (!obj[currentVal]) {
+  //         obj.flightsOfStairs =
+  //       }
+  //     }
+  //     return obj;
+  //   }, {})
+  // }
 
 }
 
 module.exports = UserRepository;
 
-
+// Dashboard
+// [x] The average step goal amongst all users
 
 
 /// Sleep ////

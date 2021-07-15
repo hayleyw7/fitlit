@@ -15,10 +15,10 @@ import {
 
 
 describe('User Repository', () => {
-  let users, userRepo, user1, user2;
+  let users, userRepo, allUsers;
   beforeEach(() => {
-    users = userData
-    userRepo = new UserRepository(users);
+    allUsers = userData.map(user => new User(user))
+    userRepo = new UserRepository(allUsers);
   })
   it('should be a function', function() {
     expect(UserRepository).to.be.a('function');
@@ -29,19 +29,25 @@ describe('User Repository', () => {
   });
 
   it('Should have all user/s credentials', () => {
-    expect(userRepo.users).to.deep.equal(users);
+    expect(userRepo.users).to.deep.equal(allUsers);
     expect(userRepo.users.length).to.equal(50)
   });
 
   it('Should user/s data by it/s own unique id', () => {
-    expect(userRepo.getUser(1)).to.equal(userData[0]);
+    expect(userRepo.getUser(1)).to.equal(allUsers[0]);
   });
 
   it('Should return the average step goal amongst all users', () => {
     expect(userRepo.getAvgStepGoalOfAllUsers()).to.equal(6700);
   });
 
+  it('Should return all users average sleep quality', () => {
+    expect(userRepo.avgSleepQuality(sleepData, 'sleepQuality')).to.equal(3);
+  });
 
+  it('For all users, what is the average number of stairs climber, steps taken, minutes active for current day', () => {
+    expect(userRepo.allActivityAvg(activityData, '2019/06/15')).to.equal('')
+  });
 
 
 });

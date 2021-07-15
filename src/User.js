@@ -189,9 +189,9 @@ module.exports = User;
 //[x] For a user, how many fluid ounces of water consumed each day over the course of a week (7 days) - return the amount for each day
 
 // Dashboard
-// For your user (or any user you choose), add:
-// A display to show how much water they have consumed today (these displays are often called “widgets” in the FE tech world)
-// A display to show much water they have consumed each day over the course of the latest week
+// [x]For your user (or any user you choose), add:
+// [x]A display to show how much water they have consumed today (these displays are often called “widgets” in the FE tech world)
+//[x] A display to show much water they have consumed each day over the course of the latest week
 
 
 
@@ -210,9 +210,9 @@ module.exports = User;
 // Dashboard
 // Items to add to the dashboard:
 
-// For a user, their sleep data for the latest day (hours slept and quality of sleep)
-// For a user, their sleep data over the course of the latest week (hours slept and quality of sleep)
-// For a user, their all-time average sleep quality and all-time average number of hours slept
+// [x]For a user, their sleep data for the latest day (hours slept and quality of sleep)
+//[x] For a user, their sleep data over the course of the latest week (hours slept and quality of sleep)
+// [x] For a user, their all-time average sleep quality and all-time average number of hours slept
 
 //// ATIVITY DATA BULLET POINTS ////
 

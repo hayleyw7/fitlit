@@ -17,7 +17,7 @@ console.log('This is the JavaScript entry file - your code begins here.');
 import userData from './data/users';
 import UserRepository from './UserRepository';
 import apiCalls from './apiCalls';
-console.log(apiCalls.allData());
+// console.log(apiCalls.allData());
 
 
 // *************** QUERY SELECTORS ************
@@ -28,11 +28,27 @@ console.log(apiCalls.allData());
 
 
 
-// *************** GLOBAL VARIBALES ************
+// *************** GLOBAL VARIABLES ************
 
+let activityData;
+let hydrationData;
+let usersData;
+let sleepData;
 
-
-
+const retrieveData = () => {
+  apiCalls.allData()
+  .then(data => {
+    usersData = data[0] 
+    activityData = data[1]
+    hydrationData = data[2]
+    sleepData = data[3]
+    // console.log('user test', usersData)
+    // console.log('activity test', activityData)
+    // console.log('hydration test', hydrationData)
+    // console.log('sleep test', sleepData)
+  })
+}
+retrieveData()
 
 // *************** EVENT LISTENERS ************
 

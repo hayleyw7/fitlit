@@ -62,3 +62,16 @@ retrieveData()
 
 
 // *************** EVENT HANDLERS AND FUNCTIONS  ************
+
+
+
+
+
+// UserRepository & User Class Dashboard
+// Use the scripts.js file to add information to the DOM. This JS file should call methods from your classes to retrieve information. There should not be any DOM manipulation within the User or UserRepository class files.
+
+// To develop this dashboard, first choose a user at random - someone with a randomly generated name that speaks to you. On the dashboard for a user:
+
+// [] Create an info card on the dashboard with all of user’s info on the page
+// [] Display their first name somewhere prominently on the page to welcome them
+// [] For a specific user, display how their step goal compares to the average step goal amongst all users (this display should not be hard-coded)

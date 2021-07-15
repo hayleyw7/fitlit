@@ -1,6 +1,6 @@
-const fetchUserData = () => {
-  return fetch('http://localhost:3001/api/v1/user')
-    .then(response => response.json());
+const fetchUsersData = () => {
+  return fetch('http://localhost:3001/api/v1/users')
+    .then(response => response.json())
     .then(data => data)
     .catch(error => console.error("user promise rejected"));
 }
@@ -26,6 +26,9 @@ const fetchSleepData = () => {
     .catch(error => console.error("sleep promise rejected"));
 }
 
+const allData = () => {
+  return Promise.all([fetchUsersData(), fetchActivityData(), fetchHydrationData(), fetchSleepData()])
+}
 export default {
-  // ???
+  allData
 }

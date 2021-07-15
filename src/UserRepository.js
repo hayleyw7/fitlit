@@ -31,3 +31,11 @@ module.exports = UserRepository;
 /// Sleep ////
 
 //  For all users, the average sleep quality
+
+
+/// Activity ////
+
+// For all users, what is the average number of:
+// stairs climbed for a specified date
+// steps taken for a specific date
+// minutes active for a specific date

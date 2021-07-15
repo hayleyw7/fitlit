@@ -124,7 +124,9 @@ describe('User', () => {
 
   it.only('Should find all days where user exceeded their step goal', () => {
     expect(user1.exceededStepGoal(activityData, 'numSteps').length).to.equal(2);
-  })
+  });
 
-
+  it.only('Should find user/s all time stair climbing record', () => {
+    expect(user1.allTimeRecord(activityData)).to.equal(36);
+  });
 });

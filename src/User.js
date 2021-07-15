@@ -192,6 +192,11 @@ class User {
     // console.log('days when they pass step goal', daysOfReached);
     return daysOfReached;
   }
+  allTimeRecord(activityData) {
+    let highestStairCount =
+      activityData.sort((a, b) => a.flightsOfStairs > b.flightsOfStairs ? -1 : 1);
+    return highestStairCount[0].flightsOfStairs;
+  }
 
 
 }
@@ -223,11 +228,7 @@ module.exports = User;
 // [x] For a user, how many minutes active did they average for a given week (7 days)?
 // [x] For a user, did they reach their step goal for a given day (specified by a date)?
 // [x] For a user, find all the days where they exceeded their step goal
-// For a user, find their all-time stair climbing record
-// For all users, what is the average number of:
-// stairs climbed for a specified date
-// steps taken for a specific date
-// minutes active for a specific date
+// [x] For a user, find their all-time stair climbing record
 
 
 // Dashboard

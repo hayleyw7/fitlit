@@ -30,24 +30,20 @@ class UserRepository {
 
   }
 
-
-  // let hydrationAvg = hydrationData.reduce((total, userHydration) => {
-  //   if (userHydration.userID === this.id) {
-  //     total += userHydration[property]
-  //   }
-  //   return total
-  // }, 0)
-  // return Math.round(hydrationAvg / hydrationData.length)
-  // allActivityAvg(activityData, date) {
-  //   const dataForActivity = activityData.reduce((obj, currentVal) => {
-  //     if (currentVal.date === date) {
-  //       if (!obj[currentVal]) {
-  //         obj.flightsOfStairs =
-  //       }
-  //     }
-  //     return obj;
-  //   }, {})
-  // }
+  allActivityAvg(activityData, date) {
+    let avgActivity = activityData.reduce((obj, currentVal) => {
+      this.users.forEach(user => {
+        if ((user.id === currentVal.userID) && (!obj[currentVal]) && (currentVal.date === date)) {
+          obj.flightsOfStairs = currentVal.flightsOfStairs;
+          obj.numSteps = currentVal.numSteps;
+          obj.minutesActive = currentVal.minutesActive;
+        }
+      })
+      return obj;
+    }, {})
+    // console.log(avgActivity);
+    return avgActivity;
+  }
 
 }
 

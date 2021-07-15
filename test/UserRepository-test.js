@@ -46,8 +46,10 @@ describe('User Repository', () => {
   });
 
   it('For all users, what is the average number of stairs climber, steps taken, minutes active for current day', () => {
-    expect(userRepo.allActivityAvg(activityData, '2019/06/15')).to.equal('')
+    expect(userRepo.allActivityAvg(activityData, '2019/06/15')).to.deep.equal({
+      flightsOfStairs: 16,
+      numSteps: 3577,
+      minutesActive: 140
+    })
   });
-
-
 });

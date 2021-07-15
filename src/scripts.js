@@ -23,9 +23,9 @@ import apiCalls from './apiCalls';
 
 // *************** QUERY SELECTORS ************
 
-
-
-
+const userName = document.getElementById('userName');
+const userAddress = document.getElementById('userAddress');
+const userEmail = document.getElementById('userEmail');
 
 
 

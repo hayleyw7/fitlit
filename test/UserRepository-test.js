@@ -15,7 +15,7 @@ import {
 
 
 describe('User Repository', () => {
-  let users, userRepo, allUsers;
+  let userRepo, allUsers;
   beforeEach(() => {
     allUsers = userData.map(user => new User(user))
     userRepo = new UserRepository(allUsers);

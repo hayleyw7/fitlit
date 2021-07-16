@@ -75,13 +75,13 @@ window.addEventListener('load', function() {
     .then(data => {
       allUsers = data[0].userData.map(user => new User(user));
       usersData = new UserRepository(allUsers);
-      activityData = data[1];
-      hydrationData = data[2];
-      sleepData = data[3];
+      activityData = data[1].activityData;
+      hydrationData = data[2].hydrationData;
+      sleepData = data[3].sleepData;
       // console.log('user test ---->', usersData)
-      console.log('activity test ---->', activityData)
-      console.log('hydration test ---->', hydrationData)
-      console.log('sleep test ----->', sleepData)
+      // console.log('activity test ---->', activityData)
+      // console.log('hydration test ---->', hydrationData)
+      // console.log('sleep test ----->', sleepData)
       currentUser = usersData.users[getRandomIndex(usersData.users)];
       // console.log('currentUser ---->', currentUser)
       renderPage(currentUser, activityData, hydrationData, sleepData, 'numSteps', convertDate(currentDate));
@@ -100,7 +100,7 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, propert
   // console.log('activity test ---->', activityData)
   // console.log('hydration test ---->', hydrationData)
   // console.log('sleep test ----->', sleepData)
-  userStepGoal(currentUser, hydrationData, property, date)
+  userStepGoal(currentUser, activityData, property, date)
 }
 
 

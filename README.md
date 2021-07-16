@@ -1,82 +1,54 @@
-# FitLit Starter Kit
+# FitLit
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+This is a website that can log data from a fitness tracker and present it on a user dashboard. A user will be able to see their latest activity data, goals, and milestones.
 
-## Setup
 
-1. Within your group, decide on one person to have the project repository (repo) on their GitHub account. Then, that person should fork this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `npm start` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
-1. Make sure both members of your team are collaborators on the forked repo.
+## Motivation and rubric
 
-## Testing
+This project was completed as a project at Turing School of Software & Design during Module 2.
 
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran `npm install`, then the tooling you need to start testing is already installed (`mocha` and `chai`).
+[The rubric is linked here.](https://frontend.turing.edu/projects/fitlit.html)
 
-## Linting Your Code
+## Reflections
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit, but that's ok - the linter is still running successfully.
+[list a challenge]
 
-Your linter will look only at the JavaScript files you have within the `src` and the `test` directories.
+[list a learning experience]
 
-## Data Model
+## Languages
 
-**Users**
+Written in JavaScript (Mocha, Chai), HTML, & CSS
 
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
+## Technology used
 
-**Activity**
+Built with Visual Studio Code & Atom
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
+[Code stored on GitHub](https://github.com/hayleyw7/fitlit)
 
-**Hydration**
+[Project board on GitHub](https://github.com/hayleyw7/fitlit/projects) 
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
+## Install & setup
 
-**Sleep**
+[instructions]
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
+
+## Use the website
+
+[how to access & navigate the website as a user]
+
+## GIF
+
+<!-- replace this with a gif -->
+![FitLit GIF will be here](assets/fitlit.gif) 
+
+## Future additions
+
+* The user will be able to design a step challenge between friends.
+
+* The user will have the ability to select the widgets that they always want to see at the top of the page.
+
+## Contributors
+
+Project completed by [Fara Akhatova](https://github.com/Fakhatova) & [Hayley Witherell](https://github.com/hayleyw7)
+
+Project designed by, [Travis Rollins](https://github.com/Kalikoze), [Khalid Williams](https://github.com/khalidwilliams), [Brittany Dionigi](https://github.com/brittanydionigi), [Robbie Jaeger](https://github.com/robbiejaeger), & [Hannah Hudson](https://github.com/hannahhch) 

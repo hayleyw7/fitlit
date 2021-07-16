@@ -27,6 +27,12 @@ Built with Visual Studio Code & Atom
 
 [Project board on GitHub](https://github.com/hayleyw7/fitlit/projects) 
 
-## Install and setup
+## Install & setup
 
 [instructions]
+
+
+## Use the website
+
+[how to access & navigate the website as a user]
+

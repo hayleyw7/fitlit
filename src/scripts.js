@@ -16,6 +16,9 @@ import {
 import {
   userAvgStepGoalVsOthers
 } from './widget-chart.js'
+import {
+  stepMilesMinutesForDay
+} from './widget-chart.js'
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
@@ -103,8 +106,9 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, propert
   // console.log('activity test ---->', activityData)
   // console.log('hydration test ---->', hydrationData)
   // console.log('sleep test ----->', sleepData)
-  userStepGoal(currentUser, activityData, property, date)
-  userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser, activityData, property, date))
+  userStepGoal(currentUser)
+  userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser))
+  stepMilesMinutesForDay(currentUser, activityData, property, date, usersData)
 }
 
 

@@ -1,7 +1,7 @@
 // SINGLE USER GOAL CHART //
-export const userStepGoal = (currentUser, activityData, property, date) => {
+export const userStepGoal = (currentUser) => {
 
-  let steps = currentUser.numSteps(activityData, property, date)
+  let steps = currentUser.dailyStepGoal;
   const stepGoal = {
     labels: ['Steps'],
     datasets: [{
@@ -27,8 +27,8 @@ export const userStepGoal = (currentUser, activityData, property, date) => {
 
 /// USER GOAL VS OTHER USERS ///
 export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
+
   let avgStepGoal = usersData.getAvgStepGoalOfAllUsers()
-  console.log(avgStepGoal)
   const data = {
     labels: ['Community', 'You'],
     datasets: [{
@@ -61,34 +61,40 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
 
 
 // USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
+export const stepMilesMinutesForDay = (currentUser, activityData, property, date, usersData) => {
 
-const stepsMinsMiles = {
-  labels: [
-    'Steps',
-    'Miles',
-    'Active Minutes'
-  ],
-  datasets: [{
-    label: 'Activity',
-    data: [300, 50, 100],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
+  let numSteps = currentUser.numSteps(activityData, property, date);
+  let minsActive = currentUser.activeMinutes(activityData, 'minutesActive', date);
+  let miles = currentUser.stepsCountInMiles(activityData, usersData, date);
+  const stepsMinsMiles = {
+    labels: [
+      'Steps',
+      'Miles',
+      'Active Minutes'
     ],
-    hoverOffset: 4
-  }]
-};
+    datasets: [{
+      label: 'Activity',
+      data: [numSteps, minsActive, miles],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86'
+      ],
+      hoverOffset: 4
+    }]
+  };
 
-const activityChart = {
-  type: 'pie',
-  data: stepsMinsMiles,
-};
+  const activityChart = {
+    type: 'pie',
+    data: stepsMinsMiles,
+  };
 
-let activeChart = new Chart(
-  document.getElementById('activity-chart'),
-  activityChart
-)
+  let activeChart = new Chart(
+    document.getElementById('activity-chart'),
+    activityChart
+  )
+
+}
 
 
 

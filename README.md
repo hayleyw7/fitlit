@@ -41,3 +41,9 @@ Built with Visual Studio Code & Atom
 <!-- replace this with a gif -->
 ![FitLits GIF](assets/fitlit.gif) 
 
+## Future additions
+
+* The user will be able to design a step challenge between friends.
+
+* The user will have the ability to select the widgets that they always want to see at the top of the page.
+

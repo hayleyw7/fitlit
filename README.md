@@ -36,3 +36,8 @@ Built with Visual Studio Code & Atom
 
 [how to access & navigate the website as a user]
 
+## GIF
+
+<!-- replace this with a gif -->
+![FitLits GIF](assets/fitlit.gif) 
+

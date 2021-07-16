@@ -9,3 +9,9 @@ This project was completed as a project at Turing School of Software & Design du
 
 [The rubric is linked here.](https://frontend.turing.edu/projects/fitlit.html)
 
+## Reflections
+
+[list a challenge]
+
+[list a learning experience]
+

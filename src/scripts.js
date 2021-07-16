@@ -13,6 +13,9 @@ import './widget-chart.js'
 import {
   userStepGoal
 } from './widget-chart.js'
+import {
+  userAvgStepGoalVsOthers
+} from './widget-chart.js'
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
@@ -84,14 +87,14 @@ window.addEventListener('load', function() {
       // console.log('sleep test ----->', sleepData)
       currentUser = usersData.users[getRandomIndex(usersData.users)];
       // console.log('currentUser ---->', currentUser)
-      renderPage(currentUser, activityData, hydrationData, sleepData, 'numSteps', convertDate(currentDate));
+      renderPage(currentUser, activityData, hydrationData, sleepData, 'numSteps', convertDate(currentDate), usersData);
     })
 })
 
-const renderPage = (currentUser, activityData, hydrationData, sleepData, property, date) => {
+const renderPage = (currentUser, activityData, hydrationData, sleepData, property, date, usersData) => {
   // console.log("inside render page", currentUser);
   // currentDate = new Date().toISOString().slice(0, 10);
-  // console.log(date)
+  // console.log(usersData)
   userName.innerText = `Welcome, ${currentUser.getName()}!`;
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
@@ -101,6 +104,7 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, propert
   // console.log('hydration test ---->', hydrationData)
   // console.log('sleep test ----->', sleepData)
   userStepGoal(currentUser, activityData, property, date)
+  userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser, activityData, property, date))
 }
 
 

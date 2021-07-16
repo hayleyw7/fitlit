@@ -2,7 +2,6 @@
 export const userStepGoal = (currentUser, activityData, property, date) => {
 
   let steps = currentUser.numSteps(activityData, property, date)
-
   const stepGoal = {
     labels: ['Steps'],
     datasets: [{
@@ -22,39 +21,44 @@ export const userStepGoal = (currentUser, activityData, property, date) => {
     document.getElementById('mySetGoalChart'),
     stepGoalDay
   );
+  return steps
 }
 
 
 /// USER GOAL VS OTHER USERS ///
+export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
+  let avgStepGoal = usersData.getAvgStepGoalOfAllUsers()
+  console.log(avgStepGoal)
+  const data = {
+    labels: ['Community', 'You'],
+    datasets: [{
+      backgroundColor: 'rgb(224, 117, 129)',
+      data: [avgStepGoal, stepGoal],
+    }]
+  };
 
-const data = {
-  labels: ['fara', 'Hayley'],
-  datasets: [{
-    backgroundColor: 'rgb(224, 117, 129)',
-    data: [40, 400],
-  }]
-};
-
-const config = {
-  type: 'horizontalBar',
-  data,
-  options: {
-    tooltips: {
-      enabled: false
-    },
-    hover: {
-      mode: null
-    },
-    legend: {
-      display: false
+  const config = {
+    type: 'horizontalBar',
+    data,
+    options: {
+      tooltips: {
+        enabled: false
+      },
+      hover: {
+        mode: null
+      },
+      legend: {
+        display: false
+      }
     }
-  }
-};
+  };
 
-var myChart = new Chart(
-  document.getElementById('myGoalChart'),
-  config
-);
+  var myChart = new Chart(
+    document.getElementById('myGoalChart'),
+    config
+  );
+}
+
 
 // USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
 

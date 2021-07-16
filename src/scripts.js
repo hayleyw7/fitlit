@@ -13,6 +13,20 @@ import './widget-chart.js'
 import {
   userStepGoal
 } from './widget-chart.js'
+import {
+  userAvgStepGoalVsOthers
+} from './widget-chart.js'
+import {
+  stepMilesMinutesForDay
+} from './widget-chart.js'
+
+import {
+  waterConsumptionDay
+} from './widget-chart.js'
+
+import {
+  waterOverLatestWeek
+} from './widget-chart.js'
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
@@ -75,32 +89,27 @@ window.addEventListener('load', function() {
     .then(data => {
       allUsers = data[0].userData.map(user => new User(user));
       usersData = new UserRepository(allUsers);
-      activityData = data[1];
-      hydrationData = data[2];
-      sleepData = data[3];
+      activityData = data[1].activityData;
+      hydrationData = data[2].hydrationData;
+      sleepData = data[3].sleepData;
       // console.log('user test ---->', usersData)
-      console.log('activity test ---->', activityData)
-      console.log('hydration test ---->', hydrationData)
-      console.log('sleep test ----->', sleepData)
+      // console.log('activity test ---->', activityData)
+      // console.log('hydration test ---->', hydrationData)
+      // console.log('sleep test ----->', sleepData)
       currentUser = usersData.users[getRandomIndex(usersData.users)];
-      // console.log('currentUser ---->', currentUser)
-      renderPage(currentUser, activityData, hydrationData, sleepData, 'numSteps', convertDate(currentDate));
+      renderPage(currentUser, activityData, hydrationData, sleepData, 'numSteps', convertDate(currentDate), usersData);
     })
 })
 
-const renderPage = (currentUser, activityData, hydrationData, sleepData, property, date) => {
-  // console.log("inside render page", currentUser);
-  // currentDate = new Date().toISOString().slice(0, 10);
-  // console.log(date)
+const renderPage = (currentUser, activityData, hydrationData, sleepData, property, date, usersData) => {
   userName.innerText = `Welcome, ${currentUser.getName()}!`;
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
-  // console.log(calendar.max)
-  // console.log('user test ---->', currentUser)
-  // console.log('activity test ---->', activityData)
-  // console.log('hydration test ---->', hydrationData)
-  // console.log('sleep test ----->', sleepData)
-  userStepGoal(currentUser, hydrationData, property, date)
+  userStepGoal(currentUser)
+  userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser))
+  stepMilesMinutesForDay(currentUser, activityData, property, date, usersData)
+  waterConsumptionDay(currentUser, hydrationData, property, date);
+  waterOverLatestWeek(currentUser, hydrationData, 'numOunces');
 }
 
 

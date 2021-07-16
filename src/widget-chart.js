@@ -1,23 +1,26 @@
 // SINGLE USER GOAL CHART //
-const stepGoal = {
-  labels: ['Steps'],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [100],
-    backgroundColor: 'rgb(54, 162, 235)',
-    color: 'blue'
-  }]
-};
+export const userStepGoal = (currentUser, activityData, property, currentDate) => {
+  const stepGoal = {
+    labels: ['Steps'],
+    datasets: [{
+      label: 'My First Dataset',
+      data: [100],
+      backgroundColor: 'rgb(54, 162, 235)',
+      color: 'blue'
+    }]
+  };
 
-const stepGoalDay = {
-  type: 'doughnut',
-  data: stepGoal,
-};
+  const stepGoalDay = {
+    type: 'doughnut',
+    data: stepGoal,
+  };
 
-let stepGoalChart = new Chart(
-  document.getElementById('mySetGoalChart'),
-  stepGoalDay
-);
+  let stepGoalChart = new Chart(
+    document.getElementById('mySetGoalChart'),
+    stepGoalDay
+  );
+}
+
 
 /// USER GOAL VS OTHER USERS ///
 

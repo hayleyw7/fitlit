@@ -19,3 +19,11 @@ This project was completed as a project at Turing School of Software & Design du
 
 Written in JavaScript (Mocha, Chai), HTML, & CSS
 
+## Technology used
+
+Built with Visual Studio Code & Atom
+
+[Code stored on GitHub](https://github.com/hayleyw7/fitlit)
+
+[Project board on GitHub](https://github.com/hayleyw7/fitlit/projects) 
+

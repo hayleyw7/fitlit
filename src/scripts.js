@@ -51,8 +51,8 @@ const calendar = document.getElementById('dropDownCalendar');
 
 // *************** GLOBAL VARIABLES ************
 
-let activityData, hydrationData, usersData, sleepData, currentUser, allUsers;
-
+let activityData, hydrationData, usersData, sleepData, currentUser, allUsers, currentDate, currentDate1;
+currentDate = calendar.max;
 
 
 
@@ -64,6 +64,12 @@ const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length)
 }
 
+
+const convertDate = (date) => {
+  return date.split("-").join("/");
+
+}
+
 window.addEventListener('load', function() {
   apiCalls.allData()
     .then(data => {
@@ -73,16 +79,19 @@ window.addEventListener('load', function() {
       hydrationData = data[2];
       sleepData = data[3];
       // console.log('user test ---->', usersData)
-      // console.log('activity test ---->', activityData)
-      // console.log('hydration test ---->', hydrationData)
-      // console.log('sleep test ----->', sleepData)
+      console.log('activity test ---->', activityData)
+      console.log('hydration test ---->', hydrationData)
+      console.log('sleep test ----->', sleepData)
       currentUser = usersData.users[getRandomIndex(usersData.users)];
       // console.log('currentUser ---->', currentUser)
-      renderPage(currentUser, activityData, hydrationData, sleepData, 'numSteps', calendar.max);
+      renderPage(currentUser, activityData, hydrationData, sleepData, 'numSteps', convertDate(currentDate));
     })
 })
-const renderPage = (currentUser, activityData, hydrationData, sleepData, property, currentDate) => {
+
+const renderPage = (currentUser, activityData, hydrationData, sleepData, property, date) => {
   // console.log("inside render page", currentUser);
+  // currentDate = new Date().toISOString().slice(0, 10);
+  // console.log(date)
   userName.innerText = `Welcome, ${currentUser.getName()}!`;
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
@@ -91,10 +100,8 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, propert
   // console.log('activity test ---->', activityData)
   // console.log('hydration test ---->', hydrationData)
   // console.log('sleep test ----->', sleepData)
-  userStepGoal(currentUser, activityData, property, currentDate)
+  userStepGoal(currentUser, hydrationData, property, date)
 }
-
-
 
 
 

@@ -1,5 +1,11 @@
 // SINGLE USER GOAL CHART //
 export const userStepGoal = (currentUser, activityData, property, currentDate) => {
+  // console.log(currentUser)
+  // console.log(activityData)
+  // console.log(property)
+  // console.log(currentDate)
+  // let steps = currentUser.numSteps(currentUser, activityData, property, currentDate)
+  // console.log(steps)
   const stepGoal = {
     labels: ['Steps'],
     datasets: [{

@@ -15,3 +15,7 @@ This project was completed as a project at Turing School of Software & Design du
 
 [list a learning experience]
 
+## Languages
+
+Written in JavaScript (Mocha, Chai), HTML, & CSS
+

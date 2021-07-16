@@ -47,3 +47,8 @@ Built with Visual Studio Code & Atom
 
 * The user will have the ability to select the widgets that they always want to see at the top of the page.
 
+## Contributors
+
+Project completed by [Hayley Witherell](https://github.com/hayleyw7) & [Fara Akhatova](https://github.com/Fakhatova)
+
+Project designed by, [Travis Rollins](https://github.com/Kalikoze), [Khalid Williams](https://github.com/khalidwilliams), [Brittany Dionigi](https://github.com/brittanydionigi), [Robbie Jaeger](https://github.com/robbiejaeger), & [Hannah Hudson](https://github.com/hannahhch) 

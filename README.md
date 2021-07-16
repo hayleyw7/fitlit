@@ -49,6 +49,6 @@ Built with Visual Studio Code & Atom
 
 ## Contributors
 
-Project completed by [Hayley Witherell](https://github.com/hayleyw7) & [Fara Akhatova](https://github.com/Fakhatova)
+Project completed by [Fara Akhatova](https://github.com/Fakhatova) & [Hayley Witherell](https://github.com/hayleyw7)
 
 Project designed by, [Travis Rollins](https://github.com/Kalikoze), [Khalid Williams](https://github.com/khalidwilliams), [Brittany Dionigi](https://github.com/brittanydionigi), [Robbie Jaeger](https://github.com/robbiejaeger), & [Hannah Hudson](https://github.com/hannahhch) 

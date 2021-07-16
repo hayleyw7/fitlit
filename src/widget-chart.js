@@ -1,4 +1,14 @@
-// SINGLE USER GOAL CHART //
+// COLORS - DELETE LATER
+
+// GREEN - rgb(172, 224, 117)
+// RED - rgb(224, 117, 129)
+// YELLOW - rgb(245, 200, 127)
+// BLUE - rgb(127, 182, 245)
+// PURPLE - rgb(195, 177, 225)
+// WHITE - rgb(255,255,255)
+// BLACK - rgb(0, 0, 0)
+
+// GOALS - SINGLE USER GOAL CHART //
 export const userStepGoal = (currentUser) => {
 
   let steps = currentUser.dailyStepGoal;
@@ -7,7 +17,7 @@ export const userStepGoal = (currentUser) => {
     datasets: [{
       label: 'My First Dataset',
       data: [steps],
-      backgroundColor: 'rgb(54, 162, 235)',
+      backgroundColor: 'rgb(224, 117, 129)',
       color: 'blue'
     }]
   };
@@ -25,7 +35,7 @@ export const userStepGoal = (currentUser) => {
 }
 
 
-/// USER GOAL VS OTHER USERS ///
+/// GOALS - USER GOAL VS OTHER USERS ///
 export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
 
   let avgStepGoal = usersData.getAvgStepGoalOfAllUsers()
@@ -60,7 +70,7 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
 }
 
 
-// USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
+// ACTIVITY - USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
 export const stepMilesMinutesForDay = (currentUser, activityData, property, date, usersData) => {
 
   let numSteps = currentUser.numSteps(activityData, property, date);
@@ -77,8 +87,8 @@ export const stepMilesMinutesForDay = (currentUser, activityData, property, date
       label: 'Latest day steps, miles, active minutes',
       data: [numSteps, miles, minsActive],
       backgroundColor: [
-        'rgb(255, 99, 132)',
-        'rgb(54, 162, 235)',
+        'rgb(245, 200, 127)',
+        'rgb(224, 117, 129)',
         'rgb(255, 205, 86'
       ],
       hoverOffset: 4
@@ -101,7 +111,7 @@ export const stepMilesMinutesForDay = (currentUser, activityData, property, date
 
 
 
-// / USER HYDRATION CHART /////
+// / HYDRATION - USER HYDRATION CHART /////
 export const waterConsumptionDay = (currentUser, hydrationData, property, date) => {
 
   let water = currentUser.dailyTrackOfData(hydrationData, 'numOunces', date)

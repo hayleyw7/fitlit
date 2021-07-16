@@ -119,8 +119,8 @@ class User {
     return activity;
   }
 
-  stepsCountInMiles(activityData, userData, date, id) {
-    const userStride = userData[id - 1].strideLength;
+  stepsCountInMiles(activityData, userData, date) {
+    const userStride = userData[this.id - 1].strideLength;
     let steps = this.dailyTrackOfData(activityData, 'numSteps', date);
     let convertToMiles = parseFloat(((steps * userStride) / 5280).toFixed(2))
     return convertToMiles;
@@ -134,16 +134,16 @@ class User {
     return result;
   }
 
-  reachedStepGoals(activityData, userData, property, date, id) {
+  reachedStepGoals(activityData, userData, property, date) {
     let steps = activityData.reduce((num, currentVal) => {
-      if ((currentVal.userID === id) && (currentVal.date === date)) {
+      if ((currentVal.userID === this.id) && (currentVal.date === date)) {
         num = currentVal.numSteps;
       }
       return num;
     }, 0);
 
     let goals = userData.reduce((num, currentVal) => {
-      if (currentVal.id === id) {
+      if (currentVal.id === this.id) {
         num = currentVal[property];
       }
       return num;

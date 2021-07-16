@@ -46,11 +46,10 @@ const sleepQualityForWeek = document.getElementById('sleepQualityForWeek');
 
 // *************** GLOBAL VARIABLES ************
 
-let activityData;
-let hydrationData;
-let usersData;
-let sleepData;
-let currentUser;
+let activityData, hydrationData, usersData, sleepData, currentUser, allUsers;
+
+
+
 
 
 
@@ -63,26 +62,27 @@ const getRandomIndex = (array) => {
 window.addEventListener('load', function() {
   apiCalls.allData()
     .then(data => {
-      usersData = new UserRepository(data[0]);
+      allUsers = data[0].userData.map(user => new User(user));
+      usersData = new UserRepository(allUsers);
       activityData = data[1];
       hydrationData = data[2];
       sleepData = data[3];
       // console.log('user test ---->', usersData)
-      console.log('activity test ---->', activityData)
-      console.log('hydration test ---->', hydrationData)
-      console.log('sleep test ----->', sleepData)
-      currentUser = usersData.users.userData[getRandomIndex(usersData.users.userData)];
-      // console.log('currentUser ---->', currentUser)
+      // console.log('activity test ---->', activityData)
+      // console.log('hydration test ---->', hydrationData)
+      // console.log('sleep test ----->', sleepData)
+      currentUser = usersData.users[getRandomIndex(usersData.users)];
+      console.log('currentUser ---->', currentUser)
       renderPage(currentUser);
     })
 })
-
 const renderPage = (currentUser) => {
   // console.log("inside render page", currentUser);
-  userName.innerText = `Hi, ${currentUser.name}!`;
+  userName.innerText = `Welcome,  ${currentUser.getName()}!`;
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
 }
+
 
 
 

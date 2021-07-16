@@ -66,6 +66,7 @@ export const stepMilesMinutesForDay = (currentUser, activityData, property, date
   let numSteps = currentUser.numSteps(activityData, property, date);
   let minsActive = currentUser.activeMinutes(activityData, 'minutesActive', date);
   let miles = currentUser.stepsCountInMiles(activityData, usersData, date);
+
   const stepsMinsMiles = {
     labels: [
       'Steps',
@@ -73,8 +74,8 @@ export const stepMilesMinutesForDay = (currentUser, activityData, property, date
       'Active Minutes'
     ],
     datasets: [{
-      label: 'Activity',
-      data: [numSteps, minsActive, miles],
+      label: 'Latest day steps, miles, active minutes',
+      data: [numSteps, miles, minsActive],
       backgroundColor: [
         'rgb(255, 99, 132)',
         'rgb(54, 162, 235)',
@@ -84,45 +85,47 @@ export const stepMilesMinutesForDay = (currentUser, activityData, property, date
     }]
   };
 
-  const activityChart = {
-    type: 'pie',
+  const allActivityConfig = {
+    type: 'doughnut',
     data: stepsMinsMiles,
   };
 
+
+
   let activeChart = new Chart(
     document.getElementById('activity-chart'),
-    activityChart
+    allActivityConfig
   )
 
 }
 
 
 
-
-
-
 // / USER HYDRATION CHART /////
+export const waterConsumptionDay = (currentUser, hydrationData, property, date) => {
+  let water = currentUser.dailyTrackOfData(hydrationData, 'numOunces', date)
+  const waterInDay = {
+    labels: [
+      'Oz water consumed today'
+    ],
+    datasets: [{
+      label: 'Oz of Water',
+      data: [11],
+      backgroundColor: 'rgb(54, 162, 235)'
+    }]
+  };
 
-const waterInDay = {
-  labels: [
-    'Oz water consumed today'
-  ],
-  datasets: [{
-    label: 'Oz of Water',
-    data: [11],
-    backgroundColor: 'rgb(54, 162, 235)'
-  }]
-};
+  const waterConfig = {
+    type: 'polarArea',
+    data: waterInDay,
+  };
 
-const waterConfig = {
-  type: 'polarArea',
-  data: waterInDay,
-};
+  let waterChart = new Chart(
+    document.getElementById('hydration-chart'),
+    waterConfig
+  )
+}
 
-let waterChart = new Chart(
-  document.getElementById('hydration-chart'),
-  waterConfig
-)
 
 
 const labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']

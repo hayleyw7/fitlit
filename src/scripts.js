@@ -24,6 +24,10 @@ import {
   waterConsumptionDay
 } from './widget-chart.js'
 
+import {
+  waterOverLatestWeek
+} from './widget-chart.js'
+
 console.log('This is the JavaScript entry file - your code begins here.');
 
 // An example of how you tell webpack to use a JS file
@@ -114,6 +118,7 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, propert
   userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser))
   stepMilesMinutesForDay(currentUser, activityData, property, date, usersData)
   waterConsumptionDay(currentUser, hydrationData, property, date);
+  waterOverLatestWeek(currentUser, hydrationData, 'numOunces');
 }
 
 

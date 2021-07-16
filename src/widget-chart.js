@@ -103,6 +103,7 @@ export const stepMilesMinutesForDay = (currentUser, activityData, property, date
 
 // / USER HYDRATION CHART /////
 export const waterConsumptionDay = (currentUser, hydrationData, property, date) => {
+
   let water = currentUser.dailyTrackOfData(hydrationData, 'numOunces', date)
   const waterInDay = {
     labels: [
@@ -127,51 +128,58 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
 }
 
 
+export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
 
-const labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-const waterOverWeek = {
-  labels: labels,
-  datasets: [{
-    label: 'My First Dataset',
-    data: [65, 59, 80, 81, 56, 55, 40],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(255, 159, 64, 0.2)',
-      'rgba(255, 205, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(201, 203, 207, 0.2)'
-    ],
-    borderColor: [
-      'rgb(255, 99, 132)',
-      'rgb(255, 159, 64)',
-      'rgb(255, 205, 86)',
-      'rgb(75, 192, 192)',
-      'rgb(54, 162, 235)',
-      'rgb(153, 102, 255)',
-      'rgb(201, 203, 207)'
-    ],
-    borderWidth: 1
-  }]
-};
+  let weeklyArray = currentUser.trackOfDataOverWeek(hydrationData, property)
+  let spliced = weeklyArray.slice(194, -1)
+  let date = spliced.map(date => date.date);
+  let values = spliced.map(date => date.numOunces);
+  const labels = date
+  const waterOverWeek = {
+    labels,
+    datasets: [{
+      label: 'My First Dataset',
+      data: values,
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(255, 205, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(201, 203, 207, 0.2)'
+      ],
+      borderColor: [
+        'rgb(255, 99, 132)',
+        'rgb(255, 159, 64)',
+        'rgb(255, 205, 86)',
+        'rgb(75, 192, 192)',
+        'rgb(54, 162, 235)',
+        'rgb(153, 102, 255)',
+        'rgb(201, 203, 207)'
+      ],
+      borderWidth: 1
+    }]
+  };
 
-const configWater = {
-  type: 'bar',
-  data: waterOverWeek,
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
+  const configWater = {
+    type: 'bar',
+    data: waterOverWeek,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
       }
-    }
-  },
-};
+    },
+  };
 
-let waterOverWeekChart = new Chart(
-  document.getElementById('hydration-chart1'),
-  configWater
-)
+  let waterOverWeekChart = new Chart(
+    document.getElementById('hydration-chart1'),
+    configWater
+  )
+}
+
 
 
 

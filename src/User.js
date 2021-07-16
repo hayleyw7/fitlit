@@ -120,7 +120,7 @@ class User {
   }
 
   stepsCountInMiles(activityData, userData, date) {
-    const userStride = userData[this.id - 1].strideLength;
+    const userStride = this.strideLength;
     let steps = this.dailyTrackOfData(activityData, 'numSteps', date);
     let convertToMiles = parseFloat(((steps * userStride) / 5280).toFixed(2))
     return convertToMiles;

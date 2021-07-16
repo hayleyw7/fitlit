@@ -129,14 +129,13 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
 
 
 export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
-
   let weeklyArray = currentUser.trackOfDataOverWeek(hydrationData, property)
   let spliced = weeklyArray.slice(194, -1)
   let date = spliced.map(date => date.date);
   let values = spliced.map(date => date.numOunces);
   const labels = date
   const waterOverWeek = {
-    labels,
+    labels: labels,
     datasets: [{
       label: 'My First Dataset',
       data: values,

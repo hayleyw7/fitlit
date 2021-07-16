@@ -97,23 +97,14 @@ window.addEventListener('load', function() {
       // console.log('hydration test ---->', hydrationData)
       // console.log('sleep test ----->', sleepData)
       currentUser = usersData.users[getRandomIndex(usersData.users)];
-      // console.log('currentUser ---->', currentUser)
       renderPage(currentUser, activityData, hydrationData, sleepData, 'numSteps', convertDate(currentDate), usersData);
     })
 })
 
 const renderPage = (currentUser, activityData, hydrationData, sleepData, property, date, usersData) => {
-  // console.log("inside render page", currentUser);
-  // currentDate = new Date().toISOString().slice(0, 10);
-  // console.log(usersData)
   userName.innerText = `Welcome, ${currentUser.getName()}!`;
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
-  // console.log(calendar.max)
-  // console.log('user test ---->', currentUser)
-  // console.log('activity test ---->', activityData)
-  // console.log('hydration test ---->', hydrationData)
-  // console.log('sleep test ----->', sleepData)
   userStepGoal(currentUser)
   userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser))
   stepMilesMinutesForDay(currentUser, activityData, property, date, usersData)

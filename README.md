@@ -39,7 +39,7 @@ Built with Visual Studio Code & Atom
 ## GIF
 
 <!-- replace this with a gif -->
-![FitLits GIF](assets/fitlit.gif) 
+![FitLit GIF will be here](assets/fitlit.gif) 
 
 ## Future additions
 

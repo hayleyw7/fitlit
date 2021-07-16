@@ -28,7 +28,6 @@ import apiCalls from './apiCalls';
 const userName = document.getElementById('userName');
 const userAddress = document.getElementById('userAddress');
 const userEmail = document.getElementById('userEmail');
-
 // weekly activity totals
 
 const totalStepsThisWeek = document.getElementById('totalStepsThisWeek');
@@ -41,7 +40,9 @@ const sleepHrsForWeek = document.getElementById('sleepHrsForWeek');
 const sleepQualityForWeek = document.getElementById('sleepQualityForWeek');
 
 
+// calendar
 
+const calendar = document.getElementById('dropDownCalendar');
 
 
 // *************** GLOBAL VARIABLES ************
@@ -72,15 +73,16 @@ window.addEventListener('load', function() {
       // console.log('hydration test ---->', hydrationData)
       // console.log('sleep test ----->', sleepData)
       currentUser = usersData.users[getRandomIndex(usersData.users)];
-      console.log('currentUser ---->', currentUser)
+      // console.log('currentUser ---->', currentUser)
       renderPage(currentUser);
     })
 })
-const renderPage = (currentUser) => {
+const renderPage = (currentUser, activityData, hydrationData, sleepData, property) => {
   // console.log("inside render page", currentUser);
-  userName.innerText = `Welcome,  ${currentUser.getName()}!`;
+  userName.innerText = `Welcome, ${currentUser.getName()}!`;
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
+  // console.log(calendar.max)
 }
 
 

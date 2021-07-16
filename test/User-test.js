@@ -105,7 +105,7 @@ describe('User', () => {
   });
 
   it('Should have user/s steps for a day in miles', () => {
-    expect(user1.stepsCountInMiles(activityData, userData, '2019/06/15', 1)).to.equal(2.91);
+    expect(user1.stepsCountInMiles(activityData, userData, '2019/06/15')).to.equal(2.91);
   });
 
   it('Should find a user/s average minutes active per day over the course of a given week', () => {

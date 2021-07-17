@@ -89,7 +89,7 @@ export const stepMilesMinutesForDay = (currentUser, activityData, property, date
       backgroundColor: [
         'rgb(245, 200, 127)',
         'rgb(224, 117, 129)',
-        'rgb(255, 205, 86'
+        'rgb(195, 177, 225)'
       ],
       hoverOffset: 4
     }]
@@ -122,7 +122,7 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
     datasets: [{
       label: 'Oz of Water',
       data: [11],
-      backgroundColor: 'rgb(54, 162, 235)'
+      backgroundColor: 'rgb(127, 182, 245)'
     }]
   };
 
@@ -137,6 +137,7 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
   )
 }
 
+// / HYDRATION - WEEKLY HYDRATION CHART /////
 
 export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
   let weeklyArray = currentUser.trackOfDataOverWeek(hydrationData, property)
@@ -147,25 +148,29 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
   const waterOverWeek = {
     labels: labels,
     datasets: [{
-      label: 'My First Dataset',
+      label: '[delete this title]',
       data: values,
+      // backgroundColor: [
+      //   'rgba(127, 182, 245)',
+      //   'rgba(172, 224, 117)',
+      //   'rgba(224, 117, 129)',
+      //   'rgba(245, 200, 127)',
+      //   'rgba(195, 177, 225)',
+      //   'rgba(255, 255, 255)',
+      //   'rgba(127, 182, 245)'
+      // ],
+
       backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-        'rgba(255, 205, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(201, 203, 207, 0.2)'
+        'rgba(127, 182, 245)',
+        'rgba(224, 117, 129)',
+        'rgba(172, 224, 117)',
+        'rgba(127, 182, 245)',
+        'rgba(224, 117, 129)',
+        'rgba(172, 224, 117)',
+        'rgba(127, 182, 245)',
       ],
       borderColor: [
-        'rgb(255, 99, 132)',
-        'rgb(255, 159, 64)',
-        'rgb(255, 205, 86)',
-        'rgb(75, 192, 192)',
-        'rgb(54, 162, 235)',
-        'rgb(153, 102, 255)',
-        'rgb(201, 203, 207)'
+        'rgb(255, 255, 255)'
       ],
       borderWidth: 1
     }]

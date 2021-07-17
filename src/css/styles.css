@@ -103,18 +103,19 @@ h3 {
   padding: 0 1rem 3rem 1rem;
   border-radius: 1rem;
   margin: 0 1rem 1rem 1rem;
-  height: 18rem;
 }
 
 .widget-half {
   width: 32.5rem;
   min-width: 15rem;
+  height: 18rem;
 }
 
 .widget-full {
   width: 69rem;
   min-width: 30rem;
   margin-top: 1rem;
+  height: 22rem;
 }
 
 //// MEDIA QUERY //// */

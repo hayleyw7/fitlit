@@ -136,8 +136,6 @@ h3 {
     align-items: center;
   }
 
-
-
   .nav-bar {
     padding: 1rem;
     background-color: var(--background);
@@ -180,17 +178,21 @@ h3 {
 
 .activity-num-1,
 .activity-num-2,
-.activity-num-3 {
+.activity-num-3,
+.sleep-num-1,
+.sleep-num-2 {
   font-size: 3rem;
   margin: 3rem 1rem 0 0;
   font-weight: bold;
 }
 
-.activity-num-1 {
+.activity-num-1,
+.sleep-num-1 {
   color: var(--yellow);
 }
 
-.activity-num-2 {
+.activity-num-2,
+.sleep-num-2 {
   color: var(--red);
 }
 

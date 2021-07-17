@@ -37,8 +37,13 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 2.1rem 1rem 1.25rem 1rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 1.5rem 0 1.75rem 1rem;
 }
 
 .goals-header {
@@ -97,17 +102,16 @@ h2 {
   padding: 0 1rem 3rem 1rem;
   border-radius: 1rem;
   margin: 0 1rem 1rem 1rem;
+  height: 18rem;
 }
 
 .widget-half {
   width: 32.5rem;
-  height: 15rem;
   min-width: 15rem;
 }
 
 .widget-full {
   width: 69rem;
-  height: 20rem;
   min-width: 30rem;
 }
 
@@ -135,9 +139,7 @@ h2 {
     align-items: center;
   }
 
-  /* h3 {
-   font-size: xx-large;
-  } */
+
 
   .nav-bar {
     padding: 1rem;
@@ -179,10 +181,29 @@ h2 {
   clear: both;
 } */
 
-.activityNums {
+.activityNums1,
+.activityNums2,
+.activityNums3 {
   font-size: 3rem;
+  margin: 2rem 1rem 0 0;
+  font-weight: bold;
 }
+
+.activityNums1 {
+  color: var(--red)
+}
+
+.activityNums2 {
+  color: var(--purple)
+}
+
+
+.activityNums3 {
+  color: var(--blue)
+}
+
 
 .activity-label {
   font-size: 2rem;
+  margin: 0;
 }

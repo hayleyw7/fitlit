@@ -184,6 +184,12 @@ h3 {
   font-size: 3rem;
   margin: 3rem 1rem 0 0;
   font-weight: bold;
+  text-align: center;
+}
+
+.sleep-num-1,
+.sleep-num-2 {
+  margin-left: 1.2rem;
 }
 
 .activity-num-1,
@@ -205,6 +211,7 @@ h3 {
 .activity-label {
   font-size: 2rem;
   margin: 0;
+  text-align: center;
 }
 
 .user-name {

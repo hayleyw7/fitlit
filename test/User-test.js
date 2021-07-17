@@ -81,7 +81,7 @@ describe('User', () => {
   });
 
   it('Should find a user/s average hours of sleep per day over all time', () => {
-    expect(user1.getAvgSleep(sleepData, 'hoursSlept')).to.equal(8);
+    expect(user1.getAvgSleep(sleepData, 'hoursSlept')).to.equal(9);
   });
 
   it('Should find a user/s average sleep quality per day over all time', () => {
@@ -123,5 +123,22 @@ describe('User', () => {
 
   it('Should find user/s all time stair climbing record', () => {
     expect(user1.allTimeRecord(activityData)).to.equal(36);
+  });
+
+  it('should check all activity total step, minutes active, and stairs climbed for week', () => {
+    let date = [
+      '2019/06/16',
+      '2019/06/17',
+      '2019/06/18',
+      '2019/06/19',
+      '2019/06/20',
+      '2019/06/21',
+      '2019/06/22',
+    ]
+    expect(user1.findAllActivityOnWeek(activityData, date)).to.deep.equal({
+      totalMinutes: 1058,
+      allSteps: 55052,
+      allStairs: 107
+    })
   });
 });

@@ -131,7 +131,6 @@ class User {
 
   getMinActiveForWeek(activityData, property) {
     let result = this.trackOfDataOverWeek(activityData, property);
-    // console.log('Avg minutes active for given week', result)
     return result;
   }
 
@@ -174,7 +173,21 @@ class User {
     return highestStairCount[0].flightsOfStairs;
   }
 
-
+  findAllActivityOnWeek(activityData, date) {
+    const findAllStuff = activityData.reduce((obj, currentVal) => {
+      if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
+        obj.totalMinutes += currentVal.minutesActive;
+        obj.allSteps += currentVal.numSteps;
+        obj.allStairs += currentVal.flightsOfStairs;
+      }
+      return obj
+    }, {
+      totalMinutes: 0,
+      allSteps: 0,
+      allStairs: 0
+    });
+    return findAllStuff
+  }
 }
 
 module.exports = User;

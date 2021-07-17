@@ -39,7 +39,7 @@
 
       <article class='widget-half'>
 
-        <h3>Day</h3>
+        <h3>Today</h3>
 
         <canvas id="activity-chart" width="500px" height="180px"></canvas>
 
@@ -49,16 +49,16 @@
 
         <h3>Week</h3>
         <div class="row">
-          <div class="column">
-            <p id='totalMinThisWeek' class='activityNums1'>400</p>
+          <div class="column column-activity">
+            <p id='totalMinThisWeek' class='activity-num-1'>400</p>
             <p class='activity-label'>mins</p>
           </div>
-          <div class="column">
-            <p id='totalMilesThisWeek' class='activityNums2'>500</p>
+          <div class="column column-activity">
+            <p id='totalMilesThisWeek' class='activity-num-2'>500</p>
             <p class='activity-label'>miles</p>
           </div>
-          <div class="column">
-            <p id='totalStepsThisWeek' class='activityNums3'>12000</p>
+          <div class="column column-activity">
+            <p id='totalStepsThisWeek' class='activity-num-3'>12000</p>
             <p class='activity-label'>steps</p>
           </div>         
         </div>
@@ -93,9 +93,37 @@
       </article>
       <article class='widget-half'>
         <h3>Week</h3>
-        <p id='sleepHrsForWeek'>[sleep hrs last week]</p>
-        <p id='sleepQualityForWeek'>[quality of sleep last wk]</p>
-        <canvas id="sleep-chart1" width="500px" height="200px"></canvas>
+
+
+
+
+        <div class="row">
+          <div class="column column-sleep">
+            <p id='sleepHrsForWeek' class='sleep-num-1'>9</p>
+            <p class='activity-label'>hours</p>
+          </div>
+          <div class="column column-sleep">
+            <p id='totalMilesThisWeek' class='sleep-num-2'>5</p>
+            <p class='activity-label'>quality</p>
+          </div>   
+        </div>
+
+<!-- 
+        <div class="row">
+          <div class="column column-activity">
+            <p id='totalMinThisWeek' class='sleepNums1'>400</p>
+            <p class='activity-label'>mins</p>
+          </div>
+          <div class="column column-activity">
+            <p id='totalMilesThisWeek' class='sleepNums2'>500</p>
+            <p class='activity-label'>miles</p>
+          </div>  
+        </div> -->
+
+
+
+
+
       </article>
       <div class='widget-sleep'>
         <article class='widget-full'>

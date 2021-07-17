@@ -61,7 +61,7 @@ const userEmail = document.getElementById('userEmail');
 // weekly activity totals
 
 const totalStepsThisWeek = document.getElementById('totalStepsThisWeek');
-const totalMilesThisWeek = document.getElementById('totalMilesThisWeek');
+const totalFlightsThisWeek = document.getElementById('totalFlightsThisWeek');
 const totalMinThisWeek = document.getElementById('totalMinThisWeek');
 
 // weekly sleep totals
@@ -113,6 +113,9 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   userName.innerText = `Welcome, ${currentUser.getName()}!`;
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
+  totalMinThisWeek.innerText = currentUser.findAllActivityOnWeekMin(activityData, date);
+  // totalFlightsThisWeek.innerText = currentUser.findAllActivityOnWeekFlighst(activityData, date);
+  // totalStepsThisWeek.innerText = currentUser.findAllActivityOnWeekSteps(activityData, date);
   userStepGoal(currentUser);
   userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser));
   stepMilesMinutesForDay(currentUser, activityData, date, usersData);
@@ -126,7 +129,8 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
 }
 
 const findTotalActivityForWeek = (currentUser, activityData, weekData) => {
-  currentUser.findAllActivityOnWeek(currentUser, activityData, weekData)
+  currentUser.findAllActivityOnWeek(currentUser, activityData, weekData);
+  return currentUser.totalMinutes;
 }
 
 // *************** EVENT HANDLERS AND FUNCTIONS  ************

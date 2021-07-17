@@ -173,21 +173,59 @@ class User {
     return highestStairCount[0].flightsOfStairs;
   }
 
-  findAllActivityOnWeek(activityData, date) {
+  findAllActivityOnWeekMin(activityData, date) {
     const findAllStuff = activityData.reduce((obj, currentVal) => {
       if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
         obj.totalMinutes += currentVal.minutesActive;
-        obj.allSteps += currentVal.numSteps;
-        obj.allStairs += currentVal.flightsOfStairs;
+        // obj.allSteps += currentVal.numSteps;
+        // obj.allStairs += currentVal.flightsOfStairs;
       }
       return obj
     }, {
       totalMinutes: 0,
-      allSteps: 0,
-      allStairs: 0
+      // allSteps: 0,
+      // allStairs: 0
     });
-    return findAllStuff
+    
+    return findAllStuff.totalMinutes;
   }
+
+//   findAllActivityOnWeekSteps(activityData, date) {
+//     const findAllStuff = activityData.reduce((obj, currentVal) => {
+//       if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
+//         // obj.totalMinutes += currentVal.minutesActive;
+//         obj.allSteps += currentVal.numSteps;
+//         // obj.allStairs += currentVal.flightsOfStairs;
+//       }
+//       return obj
+//     }, {
+//       totalMinutes: 0,
+//       // allSteps: 0,
+//       // allStairs: 0
+//     });
+
+//     console.log(findAllStuff)
+    
+//     return findAllStuff.numSteps;
+//   }
+// }
+
+  // findAllActivityOnWeekFlights(activityData, date) {
+  //   const findAllStuff = activityData.reduce((obj, currentVal) => {
+  //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
+  //       // obj.totalMinutes += currentVal.minutesActive;
+  //       // obj.allSteps += currentVal.numSteps;
+  //       obj.allStairs += currentVal.flightsOfStairs;
+  //     }
+  //     return obj
+  //   }, {
+  //     // totalMinutes: 0,
+  //     // allSteps: 0,
+  //     allStairs: 0
+  //   });
+    
+  //   return findAllStuff.flightsOfStairs;
+  // };
 }
 
 module.exports = User;

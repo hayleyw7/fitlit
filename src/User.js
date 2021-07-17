@@ -14,14 +14,13 @@ class User {
   }
 
   /// HYDRATION DATA METHODS ///
+
   dailyTrackOfData(hydrationData, property, date) {
     let fluid = hydrationData.find(currentData => {
-      // console.log(currentData[property])
       if ((currentData.date === date) && (currentData.userID === this.id)) {
         return currentData[property];
       }
     })
-    // console.log('Ounces', fluid[property])
     return fluid[property];
   }
 
@@ -37,10 +36,8 @@ class User {
     return Math.ceil(hydrationAvg / num)
   }
 
-
   trackOfDataOverWeek(hydrationData, property) {
     let hydration = hydrationData.sort((a, b) => a.date - b.date);
-    // console.log(hydration);
     let perChunk = 7 // items per chunk
     let inputArray = hydration
     let result = inputArray.reduce((resultArray, item, index) => {
@@ -63,7 +60,6 @@ class User {
       }
       return hydrate;
     }, [])
-    // console.log('Array of fluids for every day for week',waters);
     return waters;
   }
 
@@ -71,13 +67,11 @@ class User {
 
   hrsOfSleep(sleepData, property, date) {
     let hrs = this.dailyTrackOfData(sleepData, property, date)
-    // console.log('sleep hours', hrs)
     return hrs;
   }
 
   sleepQuality(sleepData, property, date) {
     let sleepQuality = this.dailyTrackOfData(sleepData, property, date)
-    // console.log('sleep hours', sleepQuality)
     return sleepQuality;
   }
 
@@ -88,25 +82,19 @@ class User {
 
   avgSleepQuality(sleepData, property) {
     let sleepQuality = this.allTimeTrackOfData(sleepData, property);
-    // console.log('all time sleep quality avg', sleepQuality);
     return sleepQuality;
   }
   getHoursSleptOverWeek(sleepData, property) {
     let result = this.trackOfDataOverWeek(sleepData, property)
-    // console.log('weekly sleep', result)
     return result;
   }
 
   getSleepQualityForWeek(sleepData, property) {
     let result = this.trackOfDataOverWeek(sleepData, property);
-    // console.log('weekly sleep quality', result)
     return result;
   }
 
-
   /// ATIVITY ///
-
-
 
   numSteps(activityData, property, date) {
     let steps = this.dailyTrackOfData(activityData, property, date);
@@ -127,7 +115,6 @@ class User {
     return convertToMiles;
 
   }
-
 
   getMinActiveForWeek(activityData, property) {
     let result = this.trackOfDataOverWeek(activityData, property);
@@ -163,7 +150,6 @@ class User {
       }
       return arr
     }, []);
-    // console.log('days when they pass step goal', daysOfReached);
     return daysOfReached;
   }
 
@@ -191,58 +177,3 @@ class User {
 }
 
 module.exports = User;
-
-//// THESE METHODS ARE DONE IN THIS CLASS //////
-
-/// HYDRATION DATA BULLET POINT ////
-
-// Create classes and methods that can calculate:
-
-//[X] For a user (identified by their userID - this is the same for all methods requiring a specific user’s data), the average fluid ounces consumed per day for all time
-//[X] For a user, how many fluid ounces they consumed for a specific day (identified by a date)
-//[x] For a user, how many fluid ounces of water consumed each day over the course of a week (7 days) - return the amount for each day
-
-// Dashboard
-// [x]For your user (or any user you choose), add:
-// [x]A display to show how much water they have consumed today (these displays are often called “widgets” in the FE tech world)
-//[x] A display to show much water they have consumed each day over the course of the latest week
-
-
-
-// SLEEP DATA BULLET POINT////
-
-// Create classes and methods that can calculate:
-//
-// [x] For a user (identified by their userID), the average number of hours slept per day
-// [x] For a user, their average sleep quality per day over all time
-// [x] For a user, how many hours they slept for a specific day (identified by a date)
-// [x] For a user, their sleep quality for a specific day (identified by a date)
-// [x] For a user, how many hours slept each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week
-// [x] For a user, their sleep quality each day over the course of a given week (7 days) - you should be able to calculate this for any week, not just the latest week
-
-
-// Dashboard
-// Items to add to the dashboard:
-
-// [x]For a user, their sleep data for the latest day (hours slept and quality of sleep)
-//[x] For a user, their sleep data over the course of the latest week (hours slept and quality of sleep)
-// [x] For a user, their all-time average sleep quality and all-time average number of hours slept
-
-//// ATIVITY DATA BULLET POINTS ////
-
-// Create classes and methods that can calculate:
-// [x] For a specific day (specified by a date), return the miles a user has walked based on their number of steps (use their strideLength to help calculate this)
-// [x] For a user, (identified by their userID) how many minutes were they active for a given day (specified by a date)?
-// [x] For a user, how many minutes active did they average for a given week (7 days)?
-// [x] For a user, did they reach their step goal for a given day (specified by a date)?
-// [x] For a user, find all the days where they exceeded their step goal
-// [x] For a user, find their all-time stair climbing record
-
-
-// Dashboard
-// Items to add to the dashboard:
-// [x] For a user, the number of steps for the latest day
-// [x] For a user, the number minutes active for the latest day
-// [x] For a user, the distance they have walked (in miles) for the latest day based on their step count
-// [x] How their number of steps, minutes active, and flights of stairs climbed compares to all users for the latest day
-// [x] For a user, a weekly view of their step count, flights of stairs climbed, and minutes active

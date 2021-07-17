@@ -1,8 +1,6 @@
 class UserRepository {
   constructor(userData) {
     this.users = userData;
-    // console.log('here',
-    //   this.users[0].getName())
   }
 
   getUser(id) {
@@ -41,7 +39,6 @@ class UserRepository {
       })
       return obj;
     }, {})
-    // console.log(avgActivity);
     return avgActivity;
   }
 

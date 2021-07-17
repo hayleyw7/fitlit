@@ -117,9 +117,9 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   userName.innerText = `Welcome, ${currentUser.getName()}!`;
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
-  userStepGoal(currentUser)
-  userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser))
-  stepMilesMinutesForDay(currentUser, activityData, date, usersData)
+  userStepGoal(currentUser);
+  userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser));
+  stepMilesMinutesForDay(currentUser, activityData, date, usersData);
   waterConsumptionDay(currentUser, hydrationData, date);
   waterOverLatestWeek(currentUser, hydrationData, 'numOunces');
   allActivityForDayVsAll(usersData, currentUser, activityData, date);

@@ -299,9 +299,9 @@ export const hoursQualitySleep = (currentUser, sleepData, date) => {
 
 
 export const allTimeSleepQualityUser = (currentUser, sleepData) => {
-  console.log(sleepData);
-  console.log(currentUser)
-  console.log(currentUser.allTimeTrackOfData(sleepData, 'hoursSlept'))
+
+  let avgAllHrs = currentUser.getAvgSleep(sleepData, 'hoursSlept');
+  let avgQuality = currentUser.avgSleepQuality(sleepData, 'sleepQuality');
 
   const allTimeSleepQuality = {
     labels: [
@@ -310,7 +310,7 @@ export const allTimeSleepQualityUser = (currentUser, sleepData) => {
     ],
     datasets: [{
       label: 'Data',
-      data: [4, 9],
+      data: [avgQuality, avgAllHrs],
       backgroundColor: [
         'rgb(224, 117, 129)',
         'rgb(195, 177, 225)',

@@ -45,19 +45,3 @@ class UserRepository {
 }
 
 module.exports = UserRepository;
-
-// Dashboard
-// [x] The average step goal amongst all users
-
-
-/// Sleep ////
-
-// [x] For all users, the average sleep quality
-
-
-/// Activity ////
-//[x]
-// For all users, what is the average number of:
-// stairs climbed for a specified date
-// steps taken for a specific date
-// minutes active for a specific date

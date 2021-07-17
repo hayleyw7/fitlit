@@ -150,25 +150,25 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
     datasets: [{
       label: '[delete this title]',
       data: values,
-      // backgroundColor: [
-      //   'rgba(127, 182, 245)',
-      //   'rgba(172, 224, 117)',
-      //   'rgba(224, 117, 129)',
-      //   'rgba(245, 200, 127)',
-      //   'rgba(195, 177, 225)',
-      //   'rgba(255, 255, 255)',
-      //   'rgba(127, 182, 245)'
-      // ],
-
       backgroundColor: [
         'rgba(127, 182, 245)',
-        'rgba(224, 117, 129)',
         'rgba(172, 224, 117)',
-        'rgba(127, 182, 245)',
         'rgba(224, 117, 129)',
-        'rgba(172, 224, 117)',
+        'rgba(245, 200, 127)',
+        'rgba(195, 177, 225)',
         'rgba(127, 182, 245)',
+        'rgba(172, 224, 117)',
       ],
+
+      // backgroundColor: [
+      //   'rgba(127, 182, 245)',
+      //   'rgba(224, 117, 129)',
+      //   'rgba(172, 224, 117)',
+      //   'rgba(127, 182, 245)',
+      //   'rgba(224, 117, 129)',
+      //   'rgba(172, 224, 117)',
+      //   'rgba(127, 182, 245)',
+      // ],
       borderColor: [
         'rgb(255, 255, 255)'
       ],
@@ -210,7 +210,7 @@ const hoursQualitySleep = {
     data: [11, 8],
     backgroundColor: [
       'rgb(195, 177, 225)',
-      'rgb(172, 224, 117)'
+      'rgb(224, 117, 129)'
     ]
   }]
 };
@@ -228,15 +228,15 @@ let sleepChart = new Chart(
 
 const allTimeSleepQuality = {
   labels: [
-    'All Time Avg Sleep Quality',
-    'All Time Avg Sleep Hours',
+    'Quality',
+    'Hours',
   ],
   datasets: [{
     label: 'Data',
     data: [4, 9],
     backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
+      'rgb(172, 224, 117)',
+      'rgb(245, 200, 127)',
     ],
     hoverOffset: 4
   }]

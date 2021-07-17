@@ -12,41 +12,61 @@
 <body>
   <nav class='nav-bar'>
     <h1>FitLit</h1>
-    <h3 id='userName'></h3>
-    <p id='userAddress'>address</p>
-    <p id='userEmail'>email</p>
+    <img src="assets/shoe2.png" alt="Shoe" class='shoe'>
+    <p id='userName' class='user-name'></p>
+    <p id='userAddress' class='user-info'></p>
+    <p id='userEmail' class='user-info'></p>
     <label for="calendar"></label>
     <input type="date" class="calendar" id="dropDownCalendar"  placeholder = 'yyy/mm/dd' value=""  min='2020-01-16' max='2020-01-22' required>
   </nav>
+
   <main class='widget-container'>
 
     <h2 class='goals-header'>Goals</h2>
     <div class='widget-goals'>
       <article class='widget-half'>
-        <h3>Your Goal</h3>
+        <h3>You</h3>
         <canvas id="mySetGoalChart" width="450px" height="160px ">test</canvas>
       </article>
       <article class='widget-half'>
-        <h3>You vs Community</h3>
+        <h3>Community</h3>
         <canvas class="second-one" id="myGoalChart" width="450px" height="180px ">test</canvas>
       </article>
     </div>
 
     <h2 class='activity-header'>Activity</h2>
     <div class='widget-activity'>
+
       <article class='widget-half'>
+
         <h3>Today</h3>
+
         <canvas id="activity-chart" width="500px" height="180px"></canvas>
+
       </article>
+
       <article class='widget-half'>
+
         <h3>Week</h3>
-        <p id='totalStepsThisWeek'>[total steps this wk]</p>
-        <p id='totalMilesThisWeek'>[total miles this wk]</p>
-        <p id='totalMinThisWeek'>[total min active this wk]</p>
+        <div class="row">
+          <div class="column column-activity">
+            <p id='totalMinThisWeek' class='activity-num-1'>400</p>
+            <p class='activity-label'>mins</p>
+          </div>
+          <div class="column column-activity">
+            <p id='totalMilesThisWeek' class='activity-num-2'>500</p>
+            <p class='activity-label'>miles</p>
+          </div>
+          <div class="column column-activity">
+            <p id='totalStepsThisWeek' class='activity-num-3'>12000</p>
+            <p class='activity-label'>steps</p>
+          </div>         
+        </div>
+
         <canvas id="activity1-chart" width="10px" height="10px"></canvas>
+
       </article>
-    </div>
-    <div class='widget-activity'>
+
       <article class='widget-full'>
         <h3>Community</h3>
         <canvas id="activity2-chart" width="10px" height="10px">[CHART - compare your activity today to all users: minutes, steps, flights]</canvas>
@@ -73,9 +93,30 @@
       </article>
       <article class='widget-half'>
         <h3>Week</h3>
-        <p id='sleepHrsForWeek'>[sleep hrs last week]</p>
-        <p id='sleepQualityForWeek'>[quality of sleep last wk]</p>
-        <canvas id="sleep-chart1" width="500px" height="200px"></canvas>
+
+
+
+
+        <div class="row">
+          <div class="column column-sleep">
+            <p id='sleepHrsForWeek' class='sleep-num-1'>9</p>
+            <p class='activity-label'>hours</p>
+          </div>
+          <div class="column column-sleep">
+            <p id='totalMilesThisWeek' class='sleep-num-2'>5</p>
+            <p class='activity-label'>quality</p>
+          </div>   
+        </div>
+
+
+
+
+
+
+
+
+
+
       </article>
       <div class='widget-sleep'>
         <article class='widget-full'>

@@ -37,8 +37,13 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 2.1rem 1rem 1.25rem 1rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 1.5rem 0 1.75rem 1rem;
 }
 
 .goals-header {
@@ -62,9 +67,10 @@ h2 {
   /* display: flex;
   flex-direction: row; */
   min-width: 13.5rem;
-  padding: 1rem;
-  width: 13.5rem;
+  padding: 2rem;
+  width: 22rem;
   background-color: var(--background);
+  text-align: center;
 }
 
 .nav-bar {
@@ -97,25 +103,20 @@ h2 {
   padding: 0 1rem 3rem 1rem;
   border-radius: 1rem;
   margin: 0 1rem 1rem 1rem;
+  height: 18rem;
 }
 
 .widget-half {
   width: 32.5rem;
-  height: 15rem;
   min-width: 15rem;
 }
 
 .widget-full {
   width: 69rem;
-  height: 20rem;
   min-width: 30rem;
+  margin-top: 1rem;
 }
 
-/* #activity-chart {
-  width:10px;
-  height:10px;
-} */
-/*
 //// MEDIA QUERY //// */
 
 @media only screen and  (max-width: 425px, min-width:420px) {
@@ -134,10 +135,6 @@ h2 {
     justify-content: center;
     align-items: center;
   }
-
-  /* h3 {
-   font-size: xx-large;
-  } */
 
   .nav-bar {
     padding: 1rem;
@@ -162,4 +159,80 @@ h2 {
     align-items: center;
   }
 
+}
+
+
+.column-activity {
+  float: left;
+  width: 28%;
+  vertical-align: center;
+  padding: 0 0 0 1.25rem;
+}
+
+.column-sleep {
+  float: left;
+  width: 15%;
+  vertical-align: center;
+  padding: 0 0 0 7rem;
+}
+
+.activity-num-1,
+.activity-num-2,
+.activity-num-3,
+.sleep-num-1,
+.sleep-num-2 {
+  font-size: 3rem;
+  margin: 3rem 1rem 0 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sleep-num-1,
+.sleep-num-2 {
+  margin-left: 1.2rem;
+}
+
+.activity-num-1,
+.sleep-num-1 {
+  color: var(--yellow);
+}
+
+.activity-num-2,
+.sleep-num-2 {
+  color: var(--red);
+}
+
+
+.activity-num-3 {
+  color: var(--blue);
+}
+
+
+.activity-label {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+}
+
+.user-name {
+  font-size: 2rem;
+  color: var(--yellow);
+}
+
+.user-info {
+  font-size: 1rem;
+}
+
+.calendar {
+  /* background: var(--white); */
+  color: var(--white);
+  border: var(--black);
+  margin: 2rem 0 0 0;
+  width: 13rem;
+  font-size: 22px;
+  font-family: 'Arial';
+}
+
+.shoe {
+  height: 13rem;
 }

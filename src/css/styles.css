@@ -209,3 +209,13 @@ h3 {
 .user-info {
   font-size: 1rem;
 }
+
+.calendar {
+  /* background: var(--white); */
+  color: var(--white);
+  border: var(--black);
+  margin: 2rem 0 0 0;
+  width: 13rem;
+  font-size: 22px;
+  font-family: 'Arial';
+}

@@ -67,9 +67,10 @@ h3 {
   /* display: flex;
   flex-direction: row; */
   min-width: 13.5rem;
-  padding: 1rem;
-  width: 13.5rem;
+  padding: 2rem;
+  width: 20rem;
   background-color: var(--background);
+   text-align: center;
 }
 
 .nav-bar {
@@ -174,13 +175,6 @@ h3 {
   padding: 0 0 0 1.25rem;
 }
 
-/* Clear floats after the columns */
-/* .row:after {
-  content: "";
-  display: table;
-  clear: both;
-} */
-
 .activityNums1,
 .activityNums2,
 .activityNums3 {
@@ -206,4 +200,12 @@ h3 {
 .activity-label {
   font-size: 2rem;
   margin: 0;
+}
+
+.user-name {
+  font-size: 2rem;
+}
+
+.user-info {
+  font-size: 1rem;
 }

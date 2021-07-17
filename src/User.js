@@ -174,7 +174,7 @@ class User {
   }
 
   findAllActivityOnWeekMin(activityData, date) {
-    let findAllStuff = activityData.reduce((obj, currentVal) => {
+    let result = activityData.reduce((obj, currentVal) => {
       if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
         obj.totalMinutes += currentVal.minutesActive;
       }
@@ -183,11 +183,11 @@ class User {
       totalMinutes: 0,
     });
     
-    return findAllStuff.totalMinutes;
+    return result.totalMinutes;
   }
 
   // findAllActivityOnWeekSteps(activityData, date) {
-  //   let findAllStuff = activityData.reduce((obj, currentVal) => {
+  //   let result = activityData.reduce((obj, currentVal) => {
   //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
   //       obj.allSteps += currentVal.numSteps;
   //     }
@@ -196,14 +196,14 @@ class User {
   //     totalMinutes: 0,
   //   });
 
-  //   console.log(findAllStuff)
+  //   console.log(result)
     
-  //   return findAllStuff.numSteps;
+  //   return result.numSteps;
   // }
 
 
   // findAllActivityOnWeekFlights(activityData, date) {
-  //   let findAllStuff = activityData.reduce((obj, currentVal) => {
+  //   let result = activityData.reduce((obj, currentVal) => {
   //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
   //       obj.allStairs += currentVal.flightsOfStairs;
   //     }
@@ -212,9 +212,41 @@ class User {
   //     allStairs: 0
   //   });
     
-  //   return findAllStuff.flightsOfStairs;
+  //   return result.flightsOfStairs;
   // };
+
+  // findAllSleepHoursOnWeek(sleepData, date) {
+  //   let result = activityData.reduce((obj, currentVal) => {
+  //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
+  //       obj.totalMinutes += currentVal.hoursSlept;
+  //     }
+  //     return obj
+  //   }, {
+  //     hoursSlept: 0,
+  //   });
+    
+  //   return result.hoursSlept;
+  // }
+
+  // findAllSleepQualityOnWeek(sleepData, date) {
+  //   let result = activityData.reduce((obj, currentVal) => {
+  //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
+  //       obj.totalMinutes += currentVal.sleepQuality;
+  //     }
+  //     return obj
+  //   }, {
+  //     sleepQuality: 0,
+  //   });
+    
+  //   return result.sleepQuality;
+  // }
+
+
+
+
 }
+
+
 
 module.exports = User;
 

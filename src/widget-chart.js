@@ -18,7 +18,6 @@ export const userStepGoal = (currentUser) => {
       label: 'My First Dataset',
       data: [steps],
       backgroundColor: 'rgb(127, 182, 245)',
-      color: 'blue'
     }]
   };
 
@@ -198,7 +197,7 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
     datasets: [{
       label: 'Oz of Water',
       data: [11],
-      backgroundColor: 'rgb(245, 200, 127)'
+      backgroundColor: 'rgb(127, 182, 245)'
     }]
   };
 
@@ -266,38 +265,42 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
 
 
 // SLEEP WIDGETS //////
+// HOURS AND QUALITY OF SLEEP FOR A DAY.
+export const hoursQualitySleep = (currentUser, sleepData, property, date) => {
+  let hrsSleep = currentUser.hrsOfSleep(sleepData, 'hoursSlept', date);
+  let quality = currentUser.sleepQuality(sleepData, 'sleepQuality', date);
+  const hoursQualitySleep = {
+    labels: [
+      'Hours',
+      'Quality'
+    ],
+    datasets: [{
+      label: 'Sleep',
+      data: [hrsSleep, quality],
+      backgroundColor: [
+        'rgb(172, 224, 117)',
+        'rgb(127, 182, 245)'
+      ]
+    }]
+  };
 
 
-const hoursQualitySleep = {
-  labels: [
-    'Hours',
-    'Quality'
-  ],
-  datasets: [{
-    label: 'Sleep',
-    data: [11, 8],
-    backgroundColor: [
-      'rgb(172, 224, 117)',
-      'rgb(127, 182, 245)'
-    ]
-  }]
-};
+  // GREEN - rgb(172, 224, 117)
+  // RED - rgb(224, 117, 129)
+  // YELLOW - rgb(245, 200, 127)
+  // BLUE - rgb(127, 182, 245)
 
+  const sleepConfig = {
+    type: 'doughnut',
+    data: hoursQualitySleep,
+  };
 
-// GREEN - rgb(172, 224, 117)
-// RED - rgb(224, 117, 129)
-// YELLOW - rgb(245, 200, 127)
-// BLUE - rgb(127, 182, 245)
+  let sleepChart = new Chart(
+    document.getElementById('sleep-chart'),
+    sleepConfig
+  )
 
-const sleepConfig = {
-  type: 'doughnut',
-  data: hoursQualitySleep,
-};
-
-let sleepChart = new Chart(
-  document.getElementById('sleep-chart'),
-  sleepConfig
-)
+}
 
 
 const allTimeSleepQuality = {

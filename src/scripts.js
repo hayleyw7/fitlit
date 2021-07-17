@@ -32,6 +32,10 @@ import {
   allActivityForDayVsAll
 } from './widget-chart.js'
 
+import {
+  hoursQualitySleep
+} from './widget-chart.js'
+
 // console.log('This is the JavaScript entry file - your code begins here.');
 
 // An example of how you tell webpack to use a JS file
@@ -114,7 +118,8 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, propert
   stepMilesMinutesForDay(currentUser, activityData, property, date, usersData)
   waterConsumptionDay(currentUser, hydrationData, property, date);
   waterOverLatestWeek(currentUser, hydrationData, 'numOunces');
-  allActivityForDayVsAll(usersData, currentUser, activityData, date)
+  allActivityForDayVsAll(usersData, currentUser, activityData, date);
+  hoursQualitySleep(currentUser, sleepData, property, date)
 }
 
 
@@ -144,3 +149,11 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, propert
 //[x]For a user, the distance they have walked (in miles) for the latest day based on their step count
 //[x] How their number of steps, minutes active, and flights of stairs climbed compares to all users for the latest day
 // For a user, a weekly view of their step count, flights of stairs climbed, and minutes active
+
+
+
+// sleep dashboard
+
+// [x] For a user, their sleep data for the latest day (hours slept and quality of sleep)
+// [ ] For a user, their sleep data over the course of the latest week (hours slept and quality of sleep)
+// [ ] For a user, their all-time average sleep quality and all-time average number of hours slept

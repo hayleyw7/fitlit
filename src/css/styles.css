@@ -70,7 +70,7 @@ h3 {
   padding: 2rem;
   width: 22rem;
   background-color: var(--background);
-   text-align: center;
+  text-align: center;
 }
 
 .nav-bar {
@@ -114,13 +114,9 @@ h3 {
 .widget-full {
   width: 69rem;
   min-width: 30rem;
+  margin-top: 1rem;
 }
 
-/* #activity-chart {
-  width:10px;
-  height:10px;
-} */
-/*
 //// MEDIA QUERY //// */
 
 @media only screen and  (max-width: 425px, min-width:420px) {
@@ -184,16 +180,16 @@ h3 {
 }
 
 .activityNums1 {
-  color: var(--red)
+  color: var(--yellow);
 }
 
 .activityNums2 {
-  color: var(--purple)
+  color: var(--red);
 }
 
 
 .activityNums3 {
-  color: var(--blue)
+  color: var(--blue);
 }
 
 

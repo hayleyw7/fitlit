@@ -36,65 +36,37 @@
 
     <h2 class='activity-header'>Activity</h2>
     <div class='widget-activity'>
+
       <article class='widget-half'>
 
         <h3>Day</h3>
 
-        <div class="row">
-
-          <div class="column">
-            <p id='totalMinThisWeek' class='activityNums1'>200</p>
-            <p class='activity-label'>mins</p>
-          </div>
-
-          <div class="column">
-            <p id='totalMilesThisWeek' class='activityNums2'>100</p>
-            <p class='activity-label'>miles</p>
-          </div>
-
-          <div class="column"> 
-            <p id='totalStepsThisWeek' class='activityNums3'>5000</p>
-            <p class='activity-label'>steps</p>
-          </div>         
-
-        </div>
-
-
-
-
+        <canvas id="activity-chart" width="500px" height="180px"></canvas>
 
       </article>
 
-
-
       <article class='widget-half'>
+
         <h3>Week</h3>
         <div class="row">
-
           <div class="column">
             <p id='totalMinThisWeek' class='activityNums1'>400</p>
             <p class='activity-label'>mins</p>
           </div>
-
           <div class="column">
             <p id='totalMilesThisWeek' class='activityNums2'>500</p>
             <p class='activity-label'>miles</p>
           </div>
-
           <div class="column">
             <p id='totalStepsThisWeek' class='activityNums3'>12000</p>
             <p class='activity-label'>steps</p>
           </div>         
-
         </div>
 
-
-
-
         <canvas id="activity1-chart" width="10px" height="10px"></canvas>
+
       </article>
-    </div>
-    <div class='widget-activity'>
+
       <article class='widget-full'>
         <h3>Community</h3>
         <canvas id="activity2-chart" width="10px" height="10px">[CHART - compare your activity today to all users: minutes, steps, flights]</canvas>

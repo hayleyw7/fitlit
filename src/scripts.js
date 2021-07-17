@@ -121,11 +121,12 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   allActivityForDayVsAll(usersData, currentUser, activityData, date);
   hoursQualitySleep(currentUser, sleepData, date);
   allTimeSleepQualityUser(currentUser, sleepData);
+  findTotalActivityForWeek(currentUser, activityData, weekData)
 
 }
 
-const findTotalMinsForWeek = () => {
-
+const findTotalActivityForWeek = (currentUser, activityData, weekData) => {
+  currentUser.findAllActivityOnWeek(currentUser, activityData, weekData)
 }
 
 // *************** EVENT HANDLERS AND FUNCTIONS  ************

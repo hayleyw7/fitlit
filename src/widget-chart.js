@@ -61,52 +61,129 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
     }
   };
 
-  var myChart = new Chart(
+  let myChart = new Chart(
     document.getElementById('myGoalChart'),
     config
   );
+  return myChart;
 }
 
 
 // ACTIVITY - USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
-export const stepMilesMinutesForDay = (currentUser, activityData, property, date, usersData) => {
+export const stepMilesMinutesForDay =
+  (currentUser, activityData, property, date, usersData) => {
 
-  let numSteps = currentUser.numSteps(activityData, property, date);
-  let minsActive = currentUser.activeMinutes(activityData, 'minutesActive', date);
-  let miles = currentUser.stepsCountInMiles(activityData, usersData, date);
+    let numSteps = currentUser.numSteps(activityData, property, date);
+    let minsActive =
+      currentUser.activeMinutes(activityData, 'minutesActive', date);
+    let miles = currentUser.stepsCountInMiles(activityData, usersData, date);
 
-  const stepsMinsMiles = {
-    labels: [
-      'Steps',
-      'Miles',
-      'Active Minutes'
-    ],
-    datasets: [{
-      label: 'Latest day steps, miles, active minutes',
-      data: [numSteps, miles, minsActive],
-      backgroundColor: [
-        'rgb(195, 177, 225)',
-        'rgb(224, 117, 129)',
-        'rgb(245, 200, 127)',
-
+    const stepsMinsMiles = {
+      labels: [
+        'Steps',
+        'Miles',
+        'Active Minutes'
       ],
-      hoverOffset: 4
-    }]
-  };
+      datasets: [{
+        label: 'Latest day steps, miles, active minutes',
+        data: [numSteps, miles, minsActive],
+        backgroundColor: [
+          'rgb(195, 177, 225)',
+          'rgb(224, 117, 129)',
+          'rgb(245, 200, 127)',
 
-  const allActivityConfig = {
-    type: 'doughnut',
-    data: stepsMinsMiles,
-  };
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+    const allActivityConfig = {
+      type: 'doughnut',
+      data: stepsMinsMiles,
+    };
+
+    let activeChart = new Chart(
+      document.getElementById('activity-chart'),
+      allActivityConfig
+    )
+    return activeChart;
+  }
 
 
+// Users all activity Vs Community //
 
-  let activeChart = new Chart(
-    document.getElementById('activity-chart'),
-    allActivityConfig
-  )
+export const allActivityForDayVsAll =
+  (usersData, currentUser, activityData, date) => {
 
-}
+    let object = usersData.allActivityAvg(activityData, date)
+    let minutes, steps, stairs;
+    minutes = object.minutesActive;
+    steps = object.numSteps;
+    stairs = object.flightsOfStairs;
+    let singleUser = activityData.find(user => {
+      if (user.userID === currentUser.id) {
+        return user
+      }
+    })
+
+    const labels = ['Steps', 'Active Minutes', 'Stairs']
+    const data = {
+      labels,
+      datasets: [{
+          label: 'Community',
+          data: [steps, minutes, stairs],
+          backgroundColor: 'rgb(172, 224, 117)'
+        },
+        {
+          label: 'You',
+          data: [singleUser.numSteps, singleUser.minutesActive,
+            singleUser.flightsOfStairs
+          ],
+          backgroundColor: 'rgb(127, 182, 245)'
+        }
+      ]
+    };
+
+    const actions = [{
+      name: 'Randomize',
+      handler(chart) {
+        chart.data.datasets.forEach(dataset => {
+          dataset.data = [{
+            count: chart.data.labels.length,
+            min: -100,
+            max: 100
+          }];
+        });
+        chart.update();
+      }
+    }, ];
+
+    const config = {
+      type: 'horizontalBar',
+      data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Chart.js Bar Chart'
+          }
+        }
+      },
+    };
+
+    let allChart = new Chart(
+      document.getElementById('activity2-chart'),
+      config,
+      actions
+    )
+    return allChart;
+  }
+
+
 
 
 
@@ -145,7 +222,7 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
   let values = spliced.map(date => date.numOunces);
   const labels = date
   const waterOverWeek = {
-    labels: labels,
+    labels,
     datasets: [{
       label: 'Ounces',
       data: values,
@@ -158,20 +235,6 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
         'rgba(127, 182, 245)',
         'rgba(172, 224, 117)',
       ],
-
-      // backgroundColor: [
-      //   'rgba(127, 182, 245)',
-      //   'rgba(224, 117, 129)',
-      //   'rgba(172, 224, 117)',
-      //   'rgba(127, 182, 245)',
-      //   'rgba(224, 117, 129)',
-      //   'rgba(172, 224, 117)',
-      //   'rgba(127, 182, 245)',
-      // ],
-      // borderColor: [
-      //   'rgb(255, 255, 255)'
-      // ],
-      // borderWidth: 1
     }]
   };
 

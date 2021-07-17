@@ -164,31 +164,38 @@ h3 {
 }
 
 
-.column {
+.column-activity {
   float: left;
   width: 28%;
   vertical-align: center;
   padding: 0 0 0 1.25rem;
 }
 
-.activityNums1,
-.activityNums2,
-.activityNums3 {
+.column-sleep {
+  float: left;
+  width: 49%;
+  vertical-align: center;
+  padding: 0 0 0 1.25rem;
+}
+
+.activity-num-1,
+.activity-num-2,
+.activity-num-3 {
   font-size: 3rem;
-  margin: 2rem 1rem 0 0;
+  margin: 3rem 1rem 0 0;
   font-weight: bold;
 }
 
-.activityNums1 {
+.activity-num-1 {
   color: var(--yellow);
 }
 
-.activityNums2 {
+.activity-num-2 {
   color: var(--red);
 }
 
 
-.activityNums3 {
+.activity-num-3 {
   color: var(--blue);
 }
 

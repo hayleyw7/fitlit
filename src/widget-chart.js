@@ -17,7 +17,7 @@ export const userStepGoal = (currentUser) => {
     datasets: [{
       label: 'My First Dataset',
       data: [steps],
-      backgroundColor: 'rgb(224, 117, 129)',
+      backgroundColor: 'rgb(127, 182, 245)',
       color: 'blue'
     }]
   };
@@ -42,7 +42,7 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
   const data = {
     labels: ['Community', 'You'],
     datasets: [{
-      backgroundColor: 'rgb(224, 117, 129)',
+      backgroundColor: 'rgb(172, 224, 117)',
       data: [avgStepGoal, stepGoal],
     }]
   };
@@ -87,9 +87,10 @@ export const stepMilesMinutesForDay = (currentUser, activityData, property, date
       label: 'Latest day steps, miles, active minutes',
       data: [numSteps, miles, minsActive],
       backgroundColor: [
-        'rgb(245, 200, 127)',
+        'rgb(195, 177, 225)',
         'rgb(224, 117, 129)',
-        'rgb(195, 177, 225)'
+        'rgb(245, 200, 127)',
+
       ],
       hoverOffset: 4
     }]
@@ -122,12 +123,12 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
     datasets: [{
       label: 'Oz of Water',
       data: [11],
-      backgroundColor: 'rgb(127, 182, 245)'
+      backgroundColor: 'rgb(245, 200, 127)'
     }]
   };
 
   const waterConfig = {
-    type: 'polarArea',
+    type: 'doughnut',
     data: waterInDay,
   };
 
@@ -209,14 +210,20 @@ const hoursQualitySleep = {
     label: 'Sleep',
     data: [11, 8],
     backgroundColor: [
-      'rgb(195, 177, 225)',
-      'rgb(224, 117, 129)'
+      'rgb(172, 224, 117)',
+      'rgb(127, 182, 245)'
     ]
   }]
 };
 
+
+// GREEN - rgb(172, 224, 117)
+// RED - rgb(224, 117, 129)
+// YELLOW - rgb(245, 200, 127)
+// BLUE - rgb(127, 182, 245)
+
 const sleepConfig = {
-  type: 'polarArea',
+  type: 'doughnut',
   data: hoursQualitySleep,
 };
 
@@ -235,8 +242,8 @@ const allTimeSleepQuality = {
     label: 'Data',
     data: [4, 9],
     backgroundColor: [
-      'rgb(172, 224, 117)',
-      'rgb(245, 200, 127)',
+      'rgb(224, 117, 129)',
+      'rgb(195, 177, 225)',
     ],
     hoverOffset: 4
   }]

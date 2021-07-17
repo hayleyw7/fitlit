@@ -44,6 +44,7 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
     datasets: [{
       backgroundColor: 'rgb(172, 224, 117)',
       data: [avgStepGoal, stepGoal],
+      label: 'Steps',
     }]
   };
 
@@ -51,9 +52,6 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
     type: 'horizontalBar',
     data,
     options: {
-      tooltips: {
-        enabled: false
-      },
       hover: {
         mode: null
       },
@@ -149,7 +147,7 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
   const waterOverWeek = {
     labels: labels,
     datasets: [{
-      label: '[delete this title]',
+      label: 'Ounces',
       data: values,
       backgroundColor: [
         'rgba(127, 182, 245)',
@@ -170,10 +168,10 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
       //   'rgba(172, 224, 117)',
       //   'rgba(127, 182, 245)',
       // ],
-      borderColor: [
-        'rgb(255, 255, 255)'
-      ],
-      borderWidth: 1
+      // borderColor: [
+      //   'rgb(255, 255, 255)'
+      // ],
+      // borderWidth: 1
     }]
   };
 
@@ -185,8 +183,14 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
         y: {
           beginAtZero: true
         }
+      },
+      hover: {
+        mode: null
+      },
+      legend: {
+        display: false
       }
-    },
+    }
   };
 
   let waterOverWeekChart = new Chart(

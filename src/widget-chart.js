@@ -18,7 +18,6 @@ export const userStepGoal = (currentUser) => {
       label: 'My First Dataset',
       data: [steps],
       backgroundColor: 'rgb(127, 182, 245)',
-      color: 'blue'
     }]
   };
 
@@ -61,57 +60,134 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
     }
   };
 
-  var myChart = new Chart(
+  let myChart = new Chart(
     document.getElementById('myGoalChart'),
     config
   );
+  return myChart;
 }
 
 
 // ACTIVITY - USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
-export const stepMilesMinutesForDay = (currentUser, activityData, property, date, usersData) => {
+export const stepMilesMinutesForDay =
+  (currentUser, activityData, date, usersData) => {
 
-  let numSteps = currentUser.numSteps(activityData, property, date);
-  let minsActive = currentUser.activeMinutes(activityData, 'minutesActive', date);
-  let miles = currentUser.stepsCountInMiles(activityData, usersData, date);
+    let numSteps = currentUser.numSteps(activityData, 'numSteps', date);
+    let minsActive =
+      currentUser.activeMinutes(activityData, 'minutesActive', date);
+    let miles = currentUser.stepsCountInMiles(activityData, usersData, date);
 
-  const stepsMinsMiles = {
-    labels: [
-      'Steps',
-      'Miles',
-      'Active Minutes'
-    ],
-    datasets: [{
-      label: 'Latest day steps, miles, active minutes',
-      data: [numSteps, miles, minsActive],
-      backgroundColor: [
-        'rgb(195, 177, 225)',
-        'rgb(224, 117, 129)',
-        'rgb(245, 200, 127)',
-
+    const stepsMinsMiles = {
+      labels: [
+        'Steps',
+        'Miles',
+        'Active Minutes'
       ],
-      hoverOffset: 4
-    }]
-  };
+      datasets: [{
+        label: 'Latest day steps, miles, active minutes',
+        data: [numSteps, miles, minsActive],
+        backgroundColor: [
+          'rgb(195, 177, 225)',
+          'rgb(224, 117, 129)',
+          'rgb(245, 200, 127)',
 
-  const allActivityConfig = {
-    type: 'doughnut',
-    data: stepsMinsMiles,
-  };
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+    const allActivityConfig = {
+      type: 'doughnut',
+      data: stepsMinsMiles,
+    };
+
+    let activeChart = new Chart(
+      document.getElementById('activity-chart'),
+      allActivityConfig
+    )
+    return activeChart;
+  }
 
 
+// Users all activity Vs Community //
 
-  let activeChart = new Chart(
-    document.getElementById('activity-chart'),
-    allActivityConfig
-  )
+export const allActivityForDayVsAll =
+  (usersData, currentUser, activityData, date) => {
 
-}
+    let object = usersData.allActivityAvg(activityData, date)
+    let minutes, steps, stairs;
+    minutes = object.minutesActive;
+    steps = object.numSteps;
+    stairs = object.flightsOfStairs;
+    let singleUser = activityData.find(user => {
+      if (user.userID === currentUser.id) {
+        return user
+      }
+    })
+
+    const labels = ['Steps', 'Active Minutes', 'Stairs']
+    const data = {
+      labels,
+      datasets: [{
+          label: 'Community',
+          data: [steps, minutes, stairs],
+          backgroundColor: 'rgb(172, 224, 117)'
+        },
+        {
+          label: 'You',
+          data: [singleUser.numSteps, singleUser.minutesActive,
+            singleUser.flightsOfStairs
+          ],
+          backgroundColor: 'rgb(127, 182, 245)'
+        }
+      ]
+    };
+
+    const actions = [{
+      name: 'Randomize',
+      handler(chart) {
+        chart.data.datasets.forEach(dataset => {
+          dataset.data = [{
+            count: chart.data.labels.length,
+            min: -100,
+            max: 100
+          }];
+        });
+        chart.update();
+      }
+    }, ];
+
+    const config = {
+      type: 'horizontalBar',
+      data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Chart.js Bar Chart'
+          }
+        }
+      },
+    };
+
+    let allChart = new Chart(
+      document.getElementById('activity2-chart'),
+      config,
+      actions
+    )
+    return allChart;
+  }
+
+
 
 
 
 // / HYDRATION - USER HYDRATION CHART /////
-export const waterConsumptionDay = (currentUser, hydrationData, property, date) => {
+export const waterConsumptionDay = (currentUser, hydrationData, date) => {
 
   let water = currentUser.dailyTrackOfData(hydrationData, 'numOunces', date)
   const waterInDay = {
@@ -120,8 +196,8 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
     ],
     datasets: [{
       label: 'Oz of Water',
-      data: [11],
-      backgroundColor: 'rgb(245, 200, 127)'
+      data: [water],
+      backgroundColor: 'rgb(127, 182, 245)'
     }]
   };
 
@@ -134,9 +210,10 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
     document.getElementById('hydration-chart'),
     waterConfig
   )
+  return water;
 }
 
-// / HYDRATION - WEEKLY HYDRATION CHART /////
+// HYDRATION - WEEKLY HYDRATION CHART /////
 
 export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
   let weeklyArray = currentUser.trackOfDataOverWeek(hydrationData, property)
@@ -145,7 +222,7 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
   let values = spliced.map(date => date.numOunces);
   const labels = date
   const waterOverWeek = {
-    labels: labels,
+    labels,
     datasets: [{
       label: 'Ounces',
       data: values,
@@ -158,20 +235,6 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
         'rgba(127, 182, 245)',
         'rgba(172, 224, 117)',
       ],
-
-      // backgroundColor: [
-      //   'rgba(127, 182, 245)',
-      //   'rgba(224, 117, 129)',
-      //   'rgba(172, 224, 117)',
-      //   'rgba(127, 182, 245)',
-      //   'rgba(224, 117, 129)',
-      //   'rgba(172, 224, 117)',
-      //   'rgba(127, 182, 245)',
-      // ],
-      // borderColor: [
-      //   'rgb(255, 255, 255)'
-      // ],
-      // borderWidth: 1
     }]
   };
 
@@ -203,62 +266,66 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
 
 
 // SLEEP WIDGETS //////
-
-
-const hoursQualitySleep = {
-  labels: [
-    'Hours',
-    'Quality'
-  ],
-  datasets: [{
-    label: 'Sleep',
-    data: [11, 8],
-    backgroundColor: [
-      'rgb(172, 224, 117)',
-      'rgb(127, 182, 245)'
-    ]
-  }]
-};
-
-
-// GREEN - rgb(172, 224, 117)
-// RED - rgb(224, 117, 129)
-// YELLOW - rgb(245, 200, 127)
-// BLUE - rgb(127, 182, 245)
-
-const sleepConfig = {
-  type: 'doughnut',
-  data: hoursQualitySleep,
-};
-
-let sleepChart = new Chart(
-  document.getElementById('sleep-chart'),
-  sleepConfig
-)
-
-
-const allTimeSleepQuality = {
-  labels: [
-    'Quality',
-    'Hours',
-  ],
-  datasets: [{
-    label: 'Data',
-    data: [4, 9],
-    backgroundColor: [
-      'rgb(224, 117, 129)',
-      'rgb(195, 177, 225)',
+// HOURS AND QUALITY OF SLEEP FOR A DAY.
+export const hoursQualitySleep = (currentUser, sleepData, date) => {
+  let hrsSleep = currentUser.hrsOfSleep(sleepData, 'hoursSlept', date);
+  let quality = currentUser.sleepQuality(sleepData, 'sleepQuality', date);
+  const hoursQualitySleep = {
+    labels: [
+      'Hours',
+      'Quality'
     ],
-    hoverOffset: 4
-  }]
-};
+    datasets: [{
+      label: 'Sleep',
+      data: [hrsSleep, quality],
+      backgroundColor: [
+        'rgb(172, 224, 117)',
+        'rgb(127, 182, 245)'
+      ]
+    }]
+  };
 
-const allConfig = {
-  type: 'doughnut',
-  data: allTimeSleepQuality,
-};
+  const sleepConfig = {
+    type: 'doughnut',
+    data: hoursQualitySleep,
+  };
 
-let sleepChart1 = new Chart(
-  document.getElementById('sleep-chart2'),
-  allConfig
-)
+  let sleepChart = new Chart(
+    document.getElementById('sleep-chart'),
+    sleepConfig
+  )
+  return sleepChart;
+}
+
+
+export const allTimeSleepQualityUser = (currentUser, sleepData) => {
+
+  let avgAllHrs = currentUser.getAvgSleep(sleepData, 'hoursSlept');
+  let avgQuality = currentUser.avgSleepQuality(sleepData, 'sleepQuality');
+
+  const allTimeSleepQuality = {
+    labels: [
+      'Quality',
+      'Hours',
+    ],
+    datasets: [{
+      label: 'Data',
+      data: [avgQuality, avgAllHrs],
+      backgroundColor: [
+        'rgb(224, 117, 129)',
+        'rgb(195, 177, 225)',
+      ],
+      hoverOffset: 4
+    }]
+  };
+
+  const allConfig = {
+    type: 'doughnut',
+    data: allTimeSleepQuality,
+  };
+
+  let sleepChart1 = new Chart(
+    document.getElementById('sleep-chart2'),
+    allConfig
+  )
+}

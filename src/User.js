@@ -26,13 +26,15 @@ class User {
   }
 
   allTimeTrackOfData(hydrationData, property) {
+    let num = 0;
     let hydrationAvg = hydrationData.reduce((total, userHydration) => {
       if (userHydration.userID === this.id) {
+        num += 1
         total += userHydration[property]
       }
       return total
-    }, 0)
-    return Math.round(hydrationAvg / hydrationData.length)
+    }, 0);
+    return Math.ceil(hydrationAvg / num)
   }
 
 
@@ -81,7 +83,6 @@ class User {
 
   getAvgSleep(sleepData, property) {
     let avgHrs = this.allTimeTrackOfData(sleepData, property);
-    // console.log('all time sleep avg', avgHrs);
     return avgHrs;
   }
 

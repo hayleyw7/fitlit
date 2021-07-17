@@ -204,7 +204,7 @@ h3 {
 
 .user-name {
   font-size: 2rem;
-
+  color: var(--yellow);
 }
 
 .user-info {

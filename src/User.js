@@ -174,53 +174,41 @@ class User {
   }
 
   findAllActivityOnWeekMin(activityData, date) {
-    const findAllStuff = activityData.reduce((obj, currentVal) => {
+    let findAllStuff = activityData.reduce((obj, currentVal) => {
       if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
         obj.totalMinutes += currentVal.minutesActive;
-        // obj.allSteps += currentVal.numSteps;
-        // obj.allStairs += currentVal.flightsOfStairs;
       }
       return obj
     }, {
       totalMinutes: 0,
-      // allSteps: 0,
-      // allStairs: 0
     });
     
     return findAllStuff.totalMinutes;
   }
 
-//   findAllActivityOnWeekSteps(activityData, date) {
-//     const findAllStuff = activityData.reduce((obj, currentVal) => {
-//       if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
-//         // obj.totalMinutes += currentVal.minutesActive;
-//         obj.allSteps += currentVal.numSteps;
-//         // obj.allStairs += currentVal.flightsOfStairs;
-//       }
-//       return obj
-//     }, {
-//       totalMinutes: 0,
-//       // allSteps: 0,
-//       // allStairs: 0
-//     });
+  // findAllActivityOnWeekSteps(activityData, date) {
+  //   let findAllStuff = activityData.reduce((obj, currentVal) => {
+  //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
+  //       obj.allSteps += currentVal.numSteps;
+  //     }
+  //     return obj
+  //   }, {
+  //     totalMinutes: 0,
+  //   });
 
-//     console.log(findAllStuff)
+  //   console.log(findAllStuff)
     
-//     return findAllStuff.numSteps;
-//   }
-// }
+  //   return findAllStuff.numSteps;
+  // }
+
 
   // findAllActivityOnWeekFlights(activityData, date) {
-  //   const findAllStuff = activityData.reduce((obj, currentVal) => {
+  //   let findAllStuff = activityData.reduce((obj, currentVal) => {
   //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
-  //       // obj.totalMinutes += currentVal.minutesActive;
-  //       // obj.allSteps += currentVal.numSteps;
   //       obj.allStairs += currentVal.flightsOfStairs;
   //     }
   //     return obj
   //   }, {
-  //     // totalMinutes: 0,
-  //     // allSteps: 0,
   //     allStairs: 0
   //   });
     

@@ -114,8 +114,8 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
   totalMinThisWeek.innerText = currentUser.findAllActivityOnWeekMin(activityData, date);
-  // totalFlightsThisWeek.innerText = currentUser.findAllActivityOnWeekFlighst(activityData, date);
   // totalStepsThisWeek.innerText = currentUser.findAllActivityOnWeekSteps(activityData, date);
+  // totalFlightsThisWeek.innerText = currentUser.findAllActivityOnWeekFlighst(activityData, date);
   userStepGoal(currentUser);
   userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser));
   stepMilesMinutesForDay(currentUser, activityData, date, usersData);
@@ -126,11 +126,6 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   allTimeSleepQualityUser(currentUser, sleepData);
   findTotalActivityForWeek(currentUser, activityData, weekData)
 
-}
-
-const findTotalActivityForWeek = (currentUser, activityData, weekData) => {
-  currentUser.findAllActivityOnWeek(currentUser, activityData, weekData);
-  return currentUser.totalMinutes;
 }
 
 // *************** EVENT HANDLERS AND FUNCTIONS  ************

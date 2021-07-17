@@ -104,10 +104,6 @@ window.addEventListener('load', function() {
       activityData = data[1].activityData;
       hydrationData = data[2].hydrationData;
       sleepData = data[3].sleepData;
-      // console.log('user test ---->', usersData)
-      // console.log('activity test ---->', activityData)
-      // console.log('hydration test ---->', hydrationData)
-      // console.log('sleep test ----->', sleepData)
       currentUser = usersData.users[getRandomIndex(usersData.users)];
       renderPage(currentUser, activityData, hydrationData, sleepData, convertDate(currentDate), usersData);
     })

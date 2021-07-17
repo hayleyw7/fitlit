@@ -213,7 +213,7 @@ export const waterConsumptionDay = (currentUser, hydrationData, date) => {
   return water;
 }
 
-// / HYDRATION - WEEKLY HYDRATION CHART /////
+// HYDRATION - WEEKLY HYDRATION CHART /////
 
 export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
   let weeklyArray = currentUser.trackOfDataOverWeek(hydrationData, property)

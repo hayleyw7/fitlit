@@ -94,7 +94,7 @@ h2 {
 .widget-half,
 .widget-full {
   background-color: var(--background);
-  padding: 0 1rem 1rem 1rem;
+  padding: 0 1rem 3rem 1rem;
   border-radius: 1rem;
   margin: 0 1rem 1rem 1rem;
 }

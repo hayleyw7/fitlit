@@ -1,4 +1,14 @@
-// SINGLE USER GOAL CHART //
+// COLORS - DELETE LATER
+
+// GREEN - rgb(172, 224, 117)
+// RED - rgb(224, 117, 129)
+// YELLOW - rgb(245, 200, 127)
+// BLUE - rgb(127, 182, 245)
+// PURPLE - rgb(195, 177, 225)
+// WHITE - rgb(255,255,255)
+// BLACK - rgb(0, 0, 0)
+
+// GOALS - SINGLE USER GOAL CHART //
 export const userStepGoal = (currentUser) => {
 
   let steps = currentUser.dailyStepGoal;
@@ -7,7 +17,7 @@ export const userStepGoal = (currentUser) => {
     datasets: [{
       label: 'My First Dataset',
       data: [steps],
-      backgroundColor: 'rgb(54, 162, 235)',
+      backgroundColor: 'rgb(127, 182, 245)',
       color: 'blue'
     }]
   };
@@ -25,15 +35,16 @@ export const userStepGoal = (currentUser) => {
 }
 
 
-/// USER GOAL VS OTHER USERS ///
+/// GOALS - USER GOAL VS OTHER USERS ///
 export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
 
   let avgStepGoal = usersData.getAvgStepGoalOfAllUsers()
   const data = {
     labels: ['Community', 'You'],
     datasets: [{
-      backgroundColor: 'rgb(224, 117, 129)',
+      backgroundColor: 'rgb(172, 224, 117)',
       data: [avgStepGoal, stepGoal],
+      label: 'Steps',
     }]
   };
 
@@ -41,9 +52,6 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
     type: 'horizontalBar',
     data,
     options: {
-      tooltips: {
-        enabled: false
-      },
       hover: {
         mode: null
       },
@@ -60,7 +68,7 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
 }
 
 
-// USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
+// ACTIVITY - USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
 export const stepMilesMinutesForDay = (currentUser, activityData, property, date, usersData) => {
 
   let numSteps = currentUser.numSteps(activityData, property, date);
@@ -77,9 +85,10 @@ export const stepMilesMinutesForDay = (currentUser, activityData, property, date
       label: 'Latest day steps, miles, active minutes',
       data: [numSteps, miles, minsActive],
       backgroundColor: [
-        'rgb(255, 99, 132)',
-        'rgb(54, 162, 235)',
-        'rgb(255, 205, 86'
+        'rgb(195, 177, 225)',
+        'rgb(224, 117, 129)',
+        'rgb(245, 200, 127)',
+
       ],
       hoverOffset: 4
     }]
@@ -101,7 +110,7 @@ export const stepMilesMinutesForDay = (currentUser, activityData, property, date
 
 
 
-// / USER HYDRATION CHART /////
+// / HYDRATION - USER HYDRATION CHART /////
 export const waterConsumptionDay = (currentUser, hydrationData, property, date) => {
 
   let water = currentUser.dailyTrackOfData(hydrationData, 'numOunces', date)
@@ -112,12 +121,12 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
     datasets: [{
       label: 'Oz of Water',
       data: [11],
-      backgroundColor: 'rgb(54, 162, 235)'
+      backgroundColor: 'rgb(245, 200, 127)'
     }]
   };
 
   const waterConfig = {
-    type: 'polarArea',
+    type: 'doughnut',
     data: waterInDay,
   };
 
@@ -127,6 +136,7 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
   )
 }
 
+// / HYDRATION - WEEKLY HYDRATION CHART /////
 
 export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
   let weeklyArray = currentUser.trackOfDataOverWeek(hydrationData, property)
@@ -137,27 +147,31 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
   const waterOverWeek = {
     labels: labels,
     datasets: [{
-      label: 'My First Dataset',
+      label: 'Ounces',
       data: values,
       backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-        'rgba(255, 205, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(201, 203, 207, 0.2)'
+        'rgba(127, 182, 245)',
+        'rgba(172, 224, 117)',
+        'rgba(224, 117, 129)',
+        'rgba(245, 200, 127)',
+        'rgba(195, 177, 225)',
+        'rgba(127, 182, 245)',
+        'rgba(172, 224, 117)',
       ],
-      borderColor: [
-        'rgb(255, 99, 132)',
-        'rgb(255, 159, 64)',
-        'rgb(255, 205, 86)',
-        'rgb(75, 192, 192)',
-        'rgb(54, 162, 235)',
-        'rgb(153, 102, 255)',
-        'rgb(201, 203, 207)'
-      ],
-      borderWidth: 1
+
+      // backgroundColor: [
+      //   'rgba(127, 182, 245)',
+      //   'rgba(224, 117, 129)',
+      //   'rgba(172, 224, 117)',
+      //   'rgba(127, 182, 245)',
+      //   'rgba(224, 117, 129)',
+      //   'rgba(172, 224, 117)',
+      //   'rgba(127, 182, 245)',
+      // ],
+      // borderColor: [
+      //   'rgb(255, 255, 255)'
+      // ],
+      // borderWidth: 1
     }]
   };
 
@@ -169,8 +183,14 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
         y: {
           beginAtZero: true
         }
+      },
+      hover: {
+        mode: null
+      },
+      legend: {
+        display: false
       }
-    },
+    }
   };
 
   let waterOverWeekChart = new Chart(
@@ -187,21 +207,27 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
 
 const hoursQualitySleep = {
   labels: [
-    'Hours of Sleep',
-    'Quality of Sleep'
+    'Hours',
+    'Quality'
   ],
   datasets: [{
     label: 'Sleep',
     data: [11, 8],
     backgroundColor: [
-      'rgb(75, 192, 192)',
-      'rgb(201, 203, 207)'
+      'rgb(172, 224, 117)',
+      'rgb(127, 182, 245)'
     ]
   }]
 };
 
+
+// GREEN - rgb(172, 224, 117)
+// RED - rgb(224, 117, 129)
+// YELLOW - rgb(245, 200, 127)
+// BLUE - rgb(127, 182, 245)
+
 const sleepConfig = {
-  type: 'polarArea',
+  type: 'doughnut',
   data: hoursQualitySleep,
 };
 
@@ -213,15 +239,15 @@ let sleepChart = new Chart(
 
 const allTimeSleepQuality = {
   labels: [
-    'All Time Avg Sleep Quality',
-    'All Time Avg Sleep Hours',
+    'Quality',
+    'Hours',
   ],
   datasets: [{
     label: 'Data',
     data: [4, 9],
     backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
+      'rgb(224, 117, 129)',
+      'rgb(195, 177, 225)',
     ],
     hoverOffset: 4
   }]

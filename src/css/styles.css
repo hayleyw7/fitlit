@@ -68,7 +68,7 @@ h3 {
   flex-direction: row; */
   min-width: 13.5rem;
   padding: 2rem;
-  width: 20rem;
+  width: 22rem;
   background-color: var(--background);
    text-align: center;
 }
@@ -204,6 +204,7 @@ h3 {
 
 .user-name {
   font-size: 2rem;
+
 }
 
 .user-info {
@@ -218,4 +219,8 @@ h3 {
   width: 13rem;
   font-size: 22px;
   font-family: 'Arial';
+}
+
+.shoe {
+  height: 13rem;
 }

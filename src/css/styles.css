@@ -103,7 +103,8 @@ h3 {
   padding: 0 1rem 3rem 1rem;
   border-radius: 1rem;
   margin: 0 1rem 1rem 1rem;
-  height: 18rem;
+  height: 22rem;
+  width: 69rem;
 }
 
 .widget-half {
@@ -111,11 +112,11 @@ h3 {
   min-width: 15rem;
 }
 
-.widget-full {
+/* .widget-full {
   width: 69rem;
   min-width: 30rem;
   margin-top: 1rem;
-}
+} */
 
 //// MEDIA QUERY //// */
 
@@ -224,13 +225,7 @@ h3 {
 }
 
 .calendar {
-  /* background: var(--white); */
-  color: var(--white);
-  border: var(--black);
-  margin: 2rem 0 0 0;
-  width: 13rem;
   font-size: 22px;
-  font-family: 'Arial';
 }
 
 .shoe {

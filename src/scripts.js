@@ -19,23 +19,18 @@ import {
 import {
   stepMilesMinutesForDay
 } from './widget-chart.js'
-
 import {
   waterConsumptionDay
 } from './widget-chart.js'
-
 import {
   waterOverLatestWeek
 } from './widget-chart.js'
-
 import {
   allActivityForDayVsAll
 } from './widget-chart.js'
-
 import {
   hoursQualitySleep
 } from './widget-chart.js'
-
 import {
   allTimeSleepQualityUser
 } from './widget-chart.js'
@@ -121,13 +116,13 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   allActivityForDayVsAll(usersData, currentUser, activityData, date);
   hoursQualitySleep(currentUser, sleepData, date);
   allTimeSleepQualityUser(currentUser, sleepData);
-  findTotalActivityForWeek(currentUser, activityData, weekData)
+  // findTotalActivityForWeek(currentUser, activityData)
 
 }
-
-const findTotalActivityForWeek = (currentUser, activityData, weekData) => {
-  currentUser.findAllActivityOnWeek(currentUser, activityData, weekData)
-}
+//
+// const findTotalActivityForWeek = (currentUser, activityData) => {
+//   currentUser.findAllActivityOnWeek(activityData)
+// }
 
 // *************** EVENT HANDLERS AND FUNCTIONS  ************
 

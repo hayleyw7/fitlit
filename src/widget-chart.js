@@ -70,9 +70,9 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
 
 // ACTIVITY - USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
 export const stepMilesMinutesForDay =
-  (currentUser, activityData, property, date, usersData) => {
+  (currentUser, activityData, date, usersData) => {
 
-    let numSteps = currentUser.numSteps(activityData, property, date);
+    let numSteps = currentUser.numSteps(activityData, 'numSteps', date);
     let minsActive =
       currentUser.activeMinutes(activityData, 'minutesActive', date);
     let miles = currentUser.stepsCountInMiles(activityData, usersData, date);
@@ -187,7 +187,7 @@ export const allActivityForDayVsAll =
 
 
 // / HYDRATION - USER HYDRATION CHART /////
-export const waterConsumptionDay = (currentUser, hydrationData, property, date) => {
+export const waterConsumptionDay = (currentUser, hydrationData, date) => {
 
   let water = currentUser.dailyTrackOfData(hydrationData, 'numOunces', date)
   const waterInDay = {
@@ -196,7 +196,7 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
     ],
     datasets: [{
       label: 'Oz of Water',
-      data: [11],
+      data: [water],
       backgroundColor: 'rgb(127, 182, 245)'
     }]
   };
@@ -210,6 +210,7 @@ export const waterConsumptionDay = (currentUser, hydrationData, property, date) 
     document.getElementById('hydration-chart'),
     waterConfig
   )
+  return water;
 }
 
 // / HYDRATION - WEEKLY HYDRATION CHART /////
@@ -266,7 +267,7 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
 
 // SLEEP WIDGETS //////
 // HOURS AND QUALITY OF SLEEP FOR A DAY.
-export const hoursQualitySleep = (currentUser, sleepData, property, date) => {
+export const hoursQualitySleep = (currentUser, sleepData, date) => {
   let hrsSleep = currentUser.hrsOfSleep(sleepData, 'hoursSlept', date);
   let quality = currentUser.sleepQuality(sleepData, 'sleepQuality', date);
   const hoursQualitySleep = {
@@ -284,12 +285,6 @@ export const hoursQualitySleep = (currentUser, sleepData, property, date) => {
     }]
   };
 
-
-  // GREEN - rgb(172, 224, 117)
-  // RED - rgb(224, 117, 129)
-  // YELLOW - rgb(245, 200, 127)
-  // BLUE - rgb(127, 182, 245)
-
   const sleepConfig = {
     type: 'doughnut',
     data: hoursQualitySleep,
@@ -299,32 +294,38 @@ export const hoursQualitySleep = (currentUser, sleepData, property, date) => {
     document.getElementById('sleep-chart'),
     sleepConfig
   )
-
+  return sleepChart;
 }
 
 
-const allTimeSleepQuality = {
-  labels: [
-    'Quality',
-    'Hours',
-  ],
-  datasets: [{
-    label: 'Data',
-    data: [4, 9],
-    backgroundColor: [
-      'rgb(224, 117, 129)',
-      'rgb(195, 177, 225)',
+export const allTimeSleepQualityUser = (currentUser, sleepData) => {
+  console.log(sleepData);
+  console.log(currentUser)
+  console.log(currentUser.allTimeTrackOfData(sleepData, 'hoursSlept'))
+
+  const allTimeSleepQuality = {
+    labels: [
+      'Quality',
+      'Hours',
     ],
-    hoverOffset: 4
-  }]
-};
+    datasets: [{
+      label: 'Data',
+      data: [4, 9],
+      backgroundColor: [
+        'rgb(224, 117, 129)',
+        'rgb(195, 177, 225)',
+      ],
+      hoverOffset: 4
+    }]
+  };
 
-const allConfig = {
-  type: 'doughnut',
-  data: allTimeSleepQuality,
-};
+  const allConfig = {
+    type: 'doughnut',
+    data: allTimeSleepQuality,
+  };
 
-let sleepChart1 = new Chart(
-  document.getElementById('sleep-chart2'),
-  allConfig
-)
+  let sleepChart1 = new Chart(
+    document.getElementById('sleep-chart2'),
+    allConfig
+  )
+}

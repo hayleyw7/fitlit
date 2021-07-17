@@ -36,6 +36,10 @@ import {
   hoursQualitySleep
 } from './widget-chart.js'
 
+import {
+  allTimeSleepQualityUser
+} from './widget-chart.js'
+
 // console.log('This is the JavaScript entry file - your code begins here.');
 
 // An example of how you tell webpack to use a JS file
@@ -105,21 +109,22 @@ window.addEventListener('load', function() {
       // console.log('hydration test ---->', hydrationData)
       // console.log('sleep test ----->', sleepData)
       currentUser = usersData.users[getRandomIndex(usersData.users)];
-      renderPage(currentUser, activityData, hydrationData, sleepData, 'numSteps', convertDate(currentDate), usersData);
+      renderPage(currentUser, activityData, hydrationData, sleepData, convertDate(currentDate), usersData);
     })
 })
 
-const renderPage = (currentUser, activityData, hydrationData, sleepData, property, date, usersData) => {
+const renderPage = (currentUser, activityData, hydrationData, sleepData, date, usersData) => {
   userName.innerText = `Welcome, ${currentUser.getName()}!`;
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
   userStepGoal(currentUser)
   userAvgStepGoalVsOthers(usersData, userStepGoal(currentUser))
-  stepMilesMinutesForDay(currentUser, activityData, property, date, usersData)
-  waterConsumptionDay(currentUser, hydrationData, property, date);
+  stepMilesMinutesForDay(currentUser, activityData, date, usersData)
+  waterConsumptionDay(currentUser, hydrationData, date);
   waterOverLatestWeek(currentUser, hydrationData, 'numOunces');
   allActivityForDayVsAll(usersData, currentUser, activityData, date);
-  hoursQualitySleep(currentUser, sleepData, property, date)
+  hoursQualitySleep(currentUser, sleepData, date);
+  allTimeSleepQualityUser(currentUser, sleepData);
 }
 
 
@@ -156,4 +161,4 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, propert
 
 // [x] For a user, their sleep data for the latest day (hours slept and quality of sleep)
 // [ ] For a user, their sleep data over the course of the latest week (hours slept and quality of sleep)
-// [ ] For a user, their all-time average sleep quality and all-time average number of hours slept
+// [X] For a user, their all-time average sleep quality and all-time average number of hours slept

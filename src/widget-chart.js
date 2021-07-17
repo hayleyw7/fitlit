@@ -202,15 +202,15 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
 
 const hoursQualitySleep = {
   labels: [
-    'Hours of Sleep',
-    'Quality of Sleep'
+    'Hours',
+    'Quality'
   ],
   datasets: [{
     label: 'Sleep',
     data: [11, 8],
     backgroundColor: [
-      'rgb(75, 192, 192)',
-      'rgb(201, 203, 207)'
+      'rgb(195, 177, 225)',
+      'rgb(172, 224, 117)'
     ]
   }]
 };

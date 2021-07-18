@@ -84,6 +84,7 @@ class User {
     let sleepQuality = this.allTimeTrackOfData(sleepData, property);
     return sleepQuality;
   }
+
   getHoursSleptOverWeek(sleepData, property) {
     let result = this.trackOfDataOverWeek(sleepData, property)
     return result;

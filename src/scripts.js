@@ -34,6 +34,9 @@ import {
 import {
   allTimeSleepQualityUser
 } from './widget-chart.js'
+import {
+  weeklySleepHrsQuality
+} from './widget-chart.js'
 
 // console.log('This is the JavaScript entry file - your code begins here.');
 
@@ -116,12 +119,18 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   allActivityForDayVsAll(usersData, currentUser, activityData, date);
   hoursQualitySleep(currentUser, sleepData, date);
   allTimeSleepQualityUser(currentUser, sleepData);
-  // findTotalActivityForWeek(currentUser, activityData)
+  weeklySleepHrsQuality(currentUser, sleepData);
+  // findTotalActivityForWeek(currentUser, activityData, date)
 
 }
+
 //
-// const findTotalActivityForWeek = (currentUser, activityData) => {
-//   currentUser.findAllActivityOnWeek(activityData)
+// const findTotalActivityForWeek = (currentUser, activityData, date) => {
+//   let object = currentUser.findAllActivityOnWeek(activityData, date)
+//   console.log(object)
+//   totalStepsThisWeek.innerText = object.allSteps;
+//   totalMinThisWeek.innerText = object.totalMinutes;
+//   totalMilesThisWeek.innerText = object.allStairs;
 // }
 
 // *************** EVENT HANDLERS AND FUNCTIONS  ************
@@ -155,5 +164,5 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
 // sleep dashboard
 
 // [x] For a user, their sleep data for the latest day (hours slept and quality of sleep)
-// [ ] For a user, their sleep data over the course of the latest week (hours slept and quality of sleep)
+// [X] For a user, their sleep data over the course of the latest week (hours slept and quality of sleep)
 // [X] For a user, their all-time average sleep quality and all-time average number of hours slept

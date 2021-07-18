@@ -9,6 +9,7 @@
 // BLACK - rgb(0, 0, 0)
 
 // GOALS - SINGLE USER GOAL CHART //
+
 export const userStepGoal = (currentUser) => {
 
   let steps = currentUser.dailyStepGoal;
@@ -35,6 +36,7 @@ export const userStepGoal = (currentUser) => {
 
 
 /// GOALS - USER GOAL VS OTHER USERS ///
+
 export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
 
   let avgStepGoal = usersData.getAvgStepGoalOfAllUsers()
@@ -68,7 +70,8 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
 }
 
 
-// ACTIVITY - USER STEPS/MILES/MINUTESACTIVE FOR A DAY WIDGET/////
+///ACTIVITY - USER STEPS/MILES/MINUTESACTIVE FOR A DAY/////
+
 export const stepMilesMinutesForDay =
   (currentUser, activityData, date, usersData) => {
 
@@ -109,7 +112,7 @@ export const stepMilesMinutesForDay =
   }
 
 
-// Users all activity Vs Community //
+/// USERS ALL ACTIVITY VS COMMUNITY ///
 
 export const allActivityForDayVsAll =
   (usersData, currentUser, activityData, date) => {
@@ -186,7 +189,8 @@ export const allActivityForDayVsAll =
 
 
 
-// / HYDRATION - USER HYDRATION CHART /////
+/// HYDRATION - USER HYDRATION CHART /////
+
 export const waterConsumptionDay = (currentUser, hydrationData, date) => {
 
   let water = currentUser.dailyTrackOfData(hydrationData, 'numOunces', date)
@@ -267,6 +271,7 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
 
 // SLEEP WIDGETS //////
 // HOURS AND QUALITY OF SLEEP FOR A DAY.
+
 export const hoursQualitySleep = (currentUser, sleepData, date) => {
   let hrsSleep = currentUser.hrsOfSleep(sleepData, 'hoursSlept', date);
   let quality = currentUser.sleepQuality(sleepData, 'sleepQuality', date);
@@ -297,6 +302,7 @@ export const hoursQualitySleep = (currentUser, sleepData, date) => {
   return sleepChart;
 }
 
+// ALL TIME SLEEP QUALITY AND SLEEP HOURS FOR A SINGLE USER //
 
 export const allTimeSleepQualityUser = (currentUser, sleepData) => {
 
@@ -328,4 +334,73 @@ export const allTimeSleepQualityUser = (currentUser, sleepData) => {
     document.getElementById('sleep-chart2'),
     allConfig
   )
+}
+
+// USERS SLEEP QUALITY AND SLEEP HOURS FOR WEEK //
+
+export const weeklySleepHrsQuality = (currentUser, sleepData) => {
+  let sleepHrs = currentUser.getHoursSleptOverWeek(sleepData, 'hoursSlept');
+  let slice = sleepHrs.slice(193);
+  let dates = slice.map(date => date.date);
+  let values = slice.map(values => values.hoursSlept);
+  // console.log(dates, values)
+
+  let sleepQuality = currentUser.getSleepQualityForWeek(sleepData, 'sleepQuality');
+  let weeklyData = sleepQuality.slice(193);
+  let quality = weeklyData.map(quality => quality.sleepQuality);
+  console.log(quality)
+
+  const labels = dates;
+  const data = {
+    labels,
+    datasets: [{
+        label: 'Sleep',
+        data: values,
+        backgroundColor: 'rgb(195, 177, 225)'
+      },
+      {
+        label: 'Quality',
+        data: quality,
+        backgroundColor: 'rgb(224, 117, 129)'
+      }
+    ]
+  };
+
+  const actions = [{
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = [{
+          count: chart.data.labels.length,
+          min: -100,
+          max: 100
+        }];
+      });
+      chart.update();
+    }
+  }, ];
+
+  const sleepQualityConfig = {
+    type: 'bar',
+    data,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Chart.js Bar Chart'
+        }
+      }
+    },
+  };
+
+  let allChart = new Chart(
+    document.getElementById('sleepWeek-chart'),
+    sleepQualityConfig,
+    actions
+  )
+  return allChart;
 }

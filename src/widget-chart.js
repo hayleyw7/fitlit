@@ -186,13 +186,6 @@ export const allActivityForDayVsAll =
   }
 
 
-// For a user, a weekly view of their step count, flights of stairs climbed, and minutes active
-
-export const totalActivityOnWeek = () => {
-
-}
-
-
 /// HYDRATION - USER HYDRATION CHART /////
 
 export const waterConsumptionDay = (currentUser, hydrationData, date) => {
@@ -347,12 +340,10 @@ export const weeklySleepHrsQuality = (currentUser, sleepData) => {
   let slice = sleepHrs.slice(193);
   let dates = slice.map(date => date.date);
   let values = slice.map(values => values.hoursSlept);
-  // console.log(dates, values)
 
   let sleepQuality = currentUser.getSleepQualityForWeek(sleepData, 'sleepQuality');
   let weeklyData = sleepQuality.slice(193);
   let quality = weeklyData.map(quality => quality.sleepQuality);
-  console.log(quality)
 
   const labels = dates;
   const data = {

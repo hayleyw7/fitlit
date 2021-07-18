@@ -126,10 +126,6 @@ describe('User', () => {
   });
 
   it('should check all activity total step, minutes active, and stairs climbed for week', () => {
-    expect(user1.findAllActivityOnWeek(activityData, 'minutesActive').length).to.equal({
-      totalSteps: 2872821,
-      totalMinutes: 58702,
-      totalStairs: 6027
-    });
+    expect(user1.findAllActivityOnWeek(activityData).length).to.equal(3);
   });
 });

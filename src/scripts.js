@@ -115,7 +115,7 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   userEmail.innerText = currentUser.email;
   totalMinThisWeek.innerText = currentUser.findAllActivityOnWeekMin(activityData, date);
   totalStepsThisWeek.innerText = currentUser.findAllActivityOnWeekSteps(activityData, date);
-  // totalFlightsThisWeek.innerText = currentUser.findAllActivityOnWeekFlighst(activityData, date);
+  totalFlightsThisWeek.innerText = currentUser.findAllActivityOnWeekFlighst(activityData, date);
   // sleepHrsForWeek.innerText = currentUser.findAllSleepHoursOnWeek(activityData, date);
   // sleepQualityForWeek.innerText = currentUser.findAllSleepQualityOnWeek(activityData, date);
   userStepGoal(currentUser);

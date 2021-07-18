@@ -210,7 +210,7 @@ class User {
       if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
         obj.allSteps += currentVal.numSteps;
       }
-      console.log(obj)
+      console.log(date)
       return obj
     }, {
       allSteps: 0,
@@ -222,18 +222,18 @@ class User {
   }
 
 
-  // findAllActivityOnWeekFlights(activityData, date) {
-  //   let result = activityData.reduce((obj, currentVal) => {
-  //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
-  //       obj.flightsOfStairs += currentVal.allStairs;
-  //     }
-  //     return obj
-  //   }, {
-  //     flightsOfStairs: 0
-  //   });
+  findAllActivityOnWeekFlights(activityData, date) {
+    let result = activityData.reduce((obj, currentVal) => {
+      if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
+        obj.allStairs += currentVal.flightsOfStairs;
+      }
+      return obj
+    }, {
+      allStairs: 0
+    });
     
-  //   return result.flightsOfStairs;
-  // };
+    return result.allStairs;
+  };
 
   // findAllSleepHoursOnWeek(sleepData, date) {
   //   let result = activityData.reduce((obj, currentVal) => {

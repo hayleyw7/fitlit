@@ -5,8 +5,7 @@
   <meta charset='UTF-8'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel='stylesheet' href='/src/css/styles.css'> -->
-  <!-- <link rel='shortcut icon' href='.images/favicon.ico'/> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
 <body>
@@ -17,7 +16,7 @@
     <p id='userAddress' class='user-info'></p>
     <p id='userEmail' class='user-info'></p>
     <label for="calendar"></label>
-    <input type="date" class="calendar" id="dropDownCalendar"  value=""  min='2020-01-16' max='2020-01-22' required>
+    <input type="date" class="calendar" id="dropDownCalendar" value="" min='2020-01-16' max='2020-01-22' required>
   </nav>
 
   <main class='widget-container'>
@@ -26,106 +25,75 @@
     <div class='widget-goals'>
       <article class='widget-half'>
         <h3>You</h3>
-        <canvas id="mySetGoalChart" width="450px" height="160px ">test</canvas>
+        <canvas id="mySetGoalChart" width="450px" height="230px ">test</canvas>
       </article>
       <article class='widget-half'>
         <h3>Community</h3>
-        <canvas class="second-one" id="myGoalChart" width="450px" height="180px ">test</canvas>
+        <canvas class="second-one" id="myGoalChart" width="450px" height="230px">test</canvas>
       </article>
     </div>
-
     <h2 class='activity-header'>Activity</h2>
     <div class='widget-activity'>
-
       <article class='widget-half'>
-
         <h3>Today</h3>
-
-        <canvas id="activity-chart" width="500px" height="180px"></canvas>
-
+        <canvas id="activity-chart" width="500px" height="280px"></canvas>
       </article>
-
       <article class='widget-half'>
-
         <h3>Week</h3>
         <div class="row">
           <div class="column column-activity">
-            <p id='totalMinThisWeek' class='activity-num-1'>400</p>
-            <p class='activity-label'>mins</p>
+            <p id='totalMinThisWeek' class='activity-num-1'></p>
+            <p class='activity-label'>Minutes</p>
           </div>
           <div class="column column-activity">
-            <p id='totalMilesThisWeek' class='activity-num-2'>500</p>
-            <p class='activity-label'>miles</p>
+            <p id='totalStairsThisWeek' class='activity-num-2'></p>
+            <p class='activity-label'>Stairs</p>
           </div>
           <div class="column column-activity">
-            <p id='totalStepsThisWeek' class='activity-num-3'>12000</p>
-            <p class='activity-label'>steps</p>
+            <p id='totalStepsThisWeek' class='activity-num-3'></p>
+            <p class='activity-label'>Steps</p>
           </div>
         </div>
-
-        <canvas id="activity1-chart" width="10px" height="10px"></canvas>
-
+        <canvas id="activity1-chart" width="500px" height="100px"></canvas>
       </article>
-
       <article class='widget-full'>
         <h3>Community</h3>
-        <canvas id="activity2-chart" width="500px" height="130px">[CHART - compare your activity today to all users: minutes, steps, flights]</canvas>
+        <canvas id="activity2-chart" width="500px" height="130px"></canvas>
       </article>
     </div>
-
     <h2 class='hydration-header'>Hydration</h2>
     <div class='widget-hydration'>
       <article class='widget-half'>
         <h3>Today</h3>
-        <canvas id="hydration-chart" width="500px" height="200px"></canvas>
+        <canvas id="hydration-chart" width="500px" height="280px"></canvas>
       </article>
       <article class='widget-half'>
         <h3>Week</h3>
-        <canvas id="hydration-chart1" width="500px" height="200px"></canvas>
+        <canvas id="hydration-chart1" width="500px" height="260px"></canvas>
       </article>
     </div>
-
     <h2 class='sleep-header'>Sleep</h2>
     <div class='widget-sleep'>
       <article class='widget-half'>
         <h3>Last Night</h3>
-        <canvas id="sleep-chart" width="500px" height="200px"></canvas>
+        <canvas id="sleep-chart" width="500px" height="280px"></canvas>
       </article>
       <article class='widget-half'>
         <h3>Week</h3>
-
-
-
-
         <div class="row">
-          <div class="column column-sleep">
-            <p id='sleepHrsForWeek' class='sleep-num-1'>9</p>
-            <p class='activity-label'>hours</p>
-          </div>
-          <div class="column column-sleep">
-            <p id='totalMilesThisWeek' class='sleep-num-2'>5</p>
-            <p class='activity-label'>quality</p>
-          </div>
+          <canvas id="sleepWeek-chart" width="500px" height="280px"></canvas>
         </div>
-
-
-
-
-
-
-
-
-
-
+    </div>
+    </article>
+    <div class='widget-sleep'>
+      <article class='widget-full'>
+        <h3>All Time</h3>
+        <canvas id="sleep-chart2" width="500px" height="130px"></canvas>
       </article>
-      <div class='widget-sleep'>
-        <article class='widget-full'>
-          <h3>All Time</h3>
-          <canvas id="sleep-chart2" width="500px" height="120px"></canvas>
-        </article>
-      </div>
+    </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src='bundle.js'></script>
 </body>
+
 </html>

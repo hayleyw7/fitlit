@@ -1,8 +1,6 @@
 class UserRepository {
   constructor(userData) {
     this.users = userData;
-    // console.log('here',
-    //   this.users[0].getName())
   }
 
   getUser(id) {
@@ -41,26 +39,9 @@ class UserRepository {
       })
       return obj;
     }, {})
-    // console.log(avgActivity);
     return avgActivity;
   }
 
 }
 
 module.exports = UserRepository;
-
-// Dashboard
-// [x] The average step goal amongst all users
-
-
-/// Sleep ////
-
-// [x] For all users, the average sleep quality
-
-
-/// Activity ////
-//[x]
-// For all users, what is the average number of:
-// stairs climbed for a specified date
-// steps taken for a specific date
-// minutes active for a specific date

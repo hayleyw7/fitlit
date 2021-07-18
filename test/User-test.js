@@ -12,7 +12,6 @@ import {
   userData
 } from '../src/data/users.js';
 
-
 describe('User', () => {
   let users, user1;
   beforeEach(() => {
@@ -126,19 +125,6 @@ describe('User', () => {
   });
 
   it('should check all activity total step, minutes active, and stairs climbed for week', () => {
-    let date = [
-      '2019/06/16',
-      '2019/06/17',
-      '2019/06/18',
-      '2019/06/19',
-      '2019/06/20',
-      '2019/06/21',
-      '2019/06/22',
-    ]
-    expect(user1.findAllActivityOnWeek(activityData, date)).to.deep.equal({
-      totalMinutes: 1058,
-      allSteps: 55052,
-      allStairs: 107
-    })
+    expect(user1.findAllActivityOnWeek(activityData).length).to.equal(3);
   });
 });

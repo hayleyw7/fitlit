@@ -5,7 +5,6 @@ import UserRepository from '../src/UserRepository';
 import User from '../src/User';
 import {
   activityData,
-  hydrationData,
   sleepData
 } from '../src/data/sampleData';
 
@@ -13,14 +12,15 @@ import {
   userData
 } from '../src/data/users.js';
 
-
 describe('User Repository', () => {
   let userRepo, allUsers;
+
   beforeEach(() => {
     allUsers = userData.map(user => new User(user))
     userRepo = new UserRepository(allUsers);
-  })
-  it('should be a function', function() {
+  });
+
+  it('Should be a function', function() {
     expect(UserRepository).to.be.a('function');
   });
 

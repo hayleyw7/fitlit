@@ -1,13 +1,4 @@
-/* IN ORIGINAL STARTER KIT FILE /*
-
-/* body, html {
-  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-  background-repeat: no-repeat;
-  height: 100%;
-} */
-
 /* UTILITY */
-
 :root {
   --white: #FFF;
   --black: #000000;
@@ -22,7 +13,7 @@
 
 body {
   display: flex;
-  font-family: 'Arial';
+  font-family: 'Baloo 2';
   background-color: var(--black);
   color: var(--white);
   margin: 0;
@@ -30,7 +21,7 @@ body {
 
 /* HEADERS */
 h1 {
-  color: var(--green);
+  color: rgb(173, 216, 230);
   font-size: 5.4rem;
   margin: .4rem 0 0 0;
   padding: 0;
@@ -62,21 +53,31 @@ h3 {
   color: var(--purple);
 }
 
-/* SIDEBAR */
+/* NAV BAR SECTION */
 .nav-bar {
-  /* display: flex;
-  flex-direction: row; */
   min-width: 13.5rem;
-  padding: 2rem;
-  width: 22rem;
+  padding: 0 1rem 1rem 1rem;
   background-color: var(--background);
   text-align: center;
 }
 
-.nav-bar {
-  padding: 0 1rem 1rem 0.35rem;
+.user-name {
+  font-size: 2rem;
+  color: var(--yellow);
 }
 
+.user-info {
+  font-size: 1rem;
+  color: var(--blue);
+}
+
+.calendar {
+  font-size: 22px;
+}
+
+.shoe {
+  height: 13rem;
+}
 
 /* /////// MAIN ///////  */
 .widget-container {
@@ -87,9 +88,8 @@ h3 {
   align-items: center;
 }
 
-
 /* WIDGETS */
-.widget-goals,.widget-sleep,.widget-hydration,.widget-activity {
+.widget-goals, .widget-sleep, .widget-hydration, .widget-activity {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -103,7 +103,8 @@ h3 {
   padding: 0 1rem 3rem 1rem;
   border-radius: 1rem;
   margin: 0 1rem 1rem 1rem;
-  height: 18rem;
+  height: 22rem;
+  width: 69rem;
 }
 
 .widget-half {
@@ -111,21 +112,50 @@ h3 {
   min-width: 15rem;
 }
 
-.widget-full {
-  width: 69rem;
-  min-width: 30rem;
-  margin-top: 1rem;
+.column-activity {
+  float: left;
+  width: 28%;
+  vertical-align: center;
+  padding: 0 0 0 1.25rem;
 }
 
-//// MEDIA QUERY //// */
+.activity-num-1,
+.activity-num-2,
+.activity-num-3,
+.sleep-num-1,
+.sleep-num-2 {
+  font-size: 3rem;
+  margin: 3rem 1rem 0 0;
+  font-weight: bold;
+  text-align: center;
+}
 
-@media only screen and  (max-width: 425px, min-width:420px) {
+.activity-num-1 {
+  color: var(--yellow);
+}
+
+.activity-num-2 {
+  color: var(--red);
+}
+
+.activity-num-3 {
+  color: var(--blue);
+}
+
+.activity-label {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* //// MEDIA QUERY //// */
+@media only screen and (max-width:411px) {
   html {
-    display:flex;
+    display: flex;
   }
 
   body {
-  display: flex;
+    display: flex;
     font-family: 'Arial';
     background-color: var(--black);
     color: var(--white);
@@ -144,95 +174,13 @@ h3 {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-}
+  }
 
-  /* .user-creadentials {
-   align-self: baseline;
-   font-size: x-large;
-  } */
-
-  .widget-goals,.widget-sleep,.widget-hydration,.widget-activity {
+  .widget-goals, .widget-sleep, .widget-hydration, .widget-activity {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
   }
-
-}
-
-
-.column-activity {
-  float: left;
-  width: 28%;
-  vertical-align: center;
-  padding: 0 0 0 1.25rem;
-}
-
-.column-sleep {
-  float: left;
-  width: 15%;
-  vertical-align: center;
-  padding: 0 0 0 7rem;
-}
-
-.activity-num-1,
-.activity-num-2,
-.activity-num-3,
-.sleep-num-1,
-.sleep-num-2 {
-  font-size: 3rem;
-  margin: 3rem 1rem 0 0;
-  font-weight: bold;
-  text-align: center;
-}
-
-.sleep-num-1,
-.sleep-num-2 {
-  margin-left: 1.2rem;
-}
-
-.activity-num-1,
-.sleep-num-1 {
-  color: var(--yellow);
-}
-
-.activity-num-2,
-.sleep-num-2 {
-  color: var(--red);
-}
-
-
-.activity-num-3 {
-  color: var(--blue);
-}
-
-
-.activity-label {
-  font-size: 2rem;
-  margin: 0;
-  text-align: center;
-}
-
-.user-name {
-  font-size: 2rem;
-  color: var(--yellow);
-}
-
-.user-info {
-  font-size: 1rem;
-}
-
-.calendar {
-  /* background: var(--white); */
-  color: var(--white);
-  border: var(--black);
-  margin: 2rem 0 0 0;
-  width: 13rem;
-  font-size: 22px;
-  font-family: 'Arial';
-}
-
-.shoe {
-  height: 13rem;
 }

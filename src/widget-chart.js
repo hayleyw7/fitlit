@@ -1,13 +1,3 @@
-// COLORS - DELETE LATER
-
-// GREEN - rgb(172, 224, 117)
-// RED - rgb(224, 117, 129)
-// YELLOW - rgb(245, 200, 127)
-// BLUE - rgb(127, 182, 245)
-// PURPLE - rgb(195, 177, 225)
-// WHITE - rgb(255,255,255)
-// BLACK - rgb(0, 0, 0)
-
 // GOALS - SINGLE USER GOAL CHART //
 
 export const userStepGoal = (currentUser) => {

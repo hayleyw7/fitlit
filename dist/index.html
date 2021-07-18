@@ -16,7 +16,7 @@
     <p id='userAddress' class='user-info'></p>
     <p id='userEmail' class='user-info'></p>
     <label for="calendar"></label>
-    <input type="date" class="calendar" id="dropDownCalendar"  value=""  min='2020-01-16' max='2020-01-22' required>
+    <input type="date" class="calendar" id="dropDownCalendar" value="" min='2020-01-16' max='2020-01-22' required>
   </nav>
 
   <main class='widget-container'>
@@ -82,17 +82,18 @@
         <h3>Week</h3>
         <div class="row">
           <canvas id="sleepWeek-chart" width="500px" height="280px"></canvas>
-          </div>
         </div>
+    </div>
+    </article>
+    <div class='widget-sleep'>
+      <article class='widget-full'>
+        <h3>All Time</h3>
+        <canvas id="sleep-chart2" width="500px" height="130px"></canvas>
       </article>
-      <div class='widget-sleep'>
-        <article class='widget-full'>
-          <h3>All Time</h3>
-          <canvas id="sleep-chart2" width="500px" height="130px"></canvas>
-        </article>
-      </div>
+    </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src='bundle.js'></script>
 </body>
+
 </html>

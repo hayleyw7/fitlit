@@ -9,6 +9,7 @@ export const userStepGoal = (currentUser) => {
       label: 'My First Dataset',
       data: [steps],
       backgroundColor: 'rgb(127, 182, 245)',
+      borderColor: 'transparent',
     }]
   };
 
@@ -85,6 +86,7 @@ export const stepMilesMinutesForDay =
           'rgb(245, 200, 127)',
 
         ],
+        borderColor: 'transparent',
         hoverOffset: 4
       }]
     };
@@ -131,7 +133,8 @@ export const allActivityForDayVsAll =
           data: [singleUser.numSteps, singleUser.minutesActive,
             singleUser.flightsOfStairs
           ],
-          backgroundColor: 'rgb(127, 182, 245)'
+          backgroundColor: 'rgb(127, 182, 245)',
+          borderColor: 'transparent',
         }
       ]
     };
@@ -188,7 +191,8 @@ export const waterConsumptionDay = (currentUser, hydrationData, date) => {
     datasets: [{
       label: 'Oz of Water',
       data: [water],
-      backgroundColor: 'rgb(127, 182, 245)'
+      backgroundColor: 'rgb(127, 182, 245)',
+      borderColor: 'transparent',
     }]
   };
 
@@ -226,6 +230,7 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
         'rgba(127, 182, 245)',
         'rgba(172, 224, 117)',
       ],
+      borderColor: 'transparent',
     }]
   };
 
@@ -273,7 +278,8 @@ export const hoursQualitySleep = (currentUser, sleepData, date) => {
       backgroundColor: [
         'rgb(172, 224, 117)',
         'rgb(127, 182, 245)'
-      ]
+      ],
+      borderColor: 'transparent',
     }]
   };
 
@@ -308,6 +314,7 @@ export const allTimeSleepQualityUser = (currentUser, sleepData) => {
         'rgb(224, 117, 129)',
         'rgb(195, 177, 225)',
       ],
+      borderColor: 'transparent',
       hoverOffset: 4
     }]
   };

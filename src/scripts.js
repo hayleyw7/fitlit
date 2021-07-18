@@ -37,6 +37,9 @@ import {
 import {
   weeklySleepHrsQuality
 } from './widget-chart.js'
+import {
+  totalActivityOnWeek
+} from './widget-chart.js'
 
 // console.log('This is the JavaScript entry file - your code begins here.');
 

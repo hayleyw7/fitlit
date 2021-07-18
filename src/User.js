@@ -160,21 +160,29 @@ class User {
     return highestStairCount[0].flightsOfStairs;
   }
 
-  findAllActivityOnWeek(activityData, date) {
-    const findAllStuff = activityData.reduce((obj, currentVal) => {
-      if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
-        obj.totalMinutes += currentVal.minutesActive;
-        obj.allSteps += currentVal.numSteps;
-        obj.allStairs += currentVal.flightsOfStairs;
-      }
+  findAllActivityOnWeek(activityData, property) {
+    let weeklyMinutes = this.trackOfDataOverWeek(activityData, property);
+    let weeklySteps = this.trackOfDataOverWeek(activityData, 'numSteps');
+    let weeklyFlight = this.trackOfDataOverWeek(activityData, 'flightsOfStairs');
+    // console.log(weeklyMinutes, weeklySteps, weeklyFlight)
+    let getData = weeklyMinutes.reduce((obj, currentVal) => {
+      weeklySteps.forEach(date => {
+        weeklyFlight.forEach(flights => {
+          obj.totalSteps += date.numSteps;
+          obj.totalMinutes += currentVal.minutesActive;
+          obj.totalStairs += flights.flightsOfStairs;
+        })
+      })
       return obj
     }, {
+      totalSteps: 0,
       totalMinutes: 0,
-      allSteps: 0,
-      allStairs: 0
+      totalStairs: 0
     });
-    return findAllStuff
+    console.log(getData)
+    return getData
   }
+
 }
 
 module.exports = User;

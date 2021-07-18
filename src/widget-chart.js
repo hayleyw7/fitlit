@@ -186,7 +186,11 @@ export const allActivityForDayVsAll =
   }
 
 
+// For a user, a weekly view of their step count, flights of stairs climbed, and minutes active
 
+export const totalActivityOnWeek = () => {
+
+}
 
 
 /// HYDRATION - USER HYDRATION CHART /////
@@ -402,5 +406,5 @@ export const weeklySleepHrsQuality = (currentUser, sleepData) => {
     sleepQualityConfig,
     actions
   )
-  return allChart;
+  return allChart
 }

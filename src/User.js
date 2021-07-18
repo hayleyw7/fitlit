@@ -173,6 +173,22 @@ class User {
     return highestStairCount[0].flightsOfStairs;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
   findAllActivityOnWeekMin(activityData, date) {
     let result = activityData.reduce((obj, currentVal) => {
       if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
@@ -186,30 +202,34 @@ class User {
     return result.totalMinutes;
   }
 
-  // findAllActivityOnWeekSteps(activityData, date) {
-  //   let result = activityData.reduce((obj, currentVal) => {
-  //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
-  //       obj.allSteps += currentVal.numSteps;
-  //     }
-  //     return obj
-  //   }, {
-  //     totalMinutes: 0,
-  //   });
+  findAllActivityOnWeekSteps(activityData, date) {
 
-  //   console.log(result)
+    // console.log(currentVal)
     
-  //   return result.numSteps;
-  // }
+    let result = activityData.reduce((obj, currentVal) => {
+      if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
+        obj.allSteps += currentVal.numSteps;
+      }
+      console.log(obj)
+      return obj
+    }, {
+      allSteps: 0,
+    });
+
+    // console.log(result)
+    
+    return result.allSteps;
+  }
 
 
   // findAllActivityOnWeekFlights(activityData, date) {
   //   let result = activityData.reduce((obj, currentVal) => {
   //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
-  //       obj.allStairs += currentVal.flightsOfStairs;
+  //       obj.flightsOfStairs += currentVal.allStairs;
   //     }
   //     return obj
   //   }, {
-  //     allStairs: 0
+  //     flightsOfStairs: 0
   //   });
     
   //   return result.flightsOfStairs;
@@ -218,7 +238,7 @@ class User {
   // findAllSleepHoursOnWeek(sleepData, date) {
   //   let result = activityData.reduce((obj, currentVal) => {
   //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
-  //       obj.totalMinutes += currentVal.hoursSlept;
+  //       obj.hoursSlept += currentVal.hoursSlept;
   //     }
   //     return obj
   //   }, {
@@ -231,7 +251,7 @@ class User {
   // findAllSleepQualityOnWeek(sleepData, date) {
   //   let result = activityData.reduce((obj, currentVal) => {
   //     if ((currentVal.userID === this.id) && (date.includes(currentVal.date))) {
-  //       obj.totalMinutes += currentVal.sleepQuality;
+  //       obj.sleepQuality += currentVal.sleepQuality;
   //     }
   //     return obj
   //   }, {

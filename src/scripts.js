@@ -114,7 +114,7 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   userAddress.innerText = currentUser.address;
   userEmail.innerText = currentUser.email;
   totalMinThisWeek.innerText = currentUser.findAllActivityOnWeekMin(activityData, date);
-  // totalStepsThisWeek.innerText = currentUser.findAllActivityOnWeekSteps(activityData, date);
+  totalStepsThisWeek.innerText = currentUser.findAllActivityOnWeekSteps(activityData, date);
   // totalFlightsThisWeek.innerText = currentUser.findAllActivityOnWeekFlighst(activityData, date);
   // sleepHrsForWeek.innerText = currentUser.findAllSleepHoursOnWeek(activityData, date);
   // sleepQualityForWeek.innerText = currentUser.findAllSleepQualityOnWeek(activityData, date);
@@ -126,7 +126,7 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   allActivityForDayVsAll(usersData, currentUser, activityData, date);
   hoursQualitySleep(currentUser, sleepData, date);
   allTimeSleepQualityUser(currentUser, sleepData);
-  findTotalActivityForWeek(currentUser, activityData, weekData)
+  // findTotalActivityForWeek(currentUser, activityData, weekData)
 
 }
 

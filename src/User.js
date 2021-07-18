@@ -146,7 +146,8 @@ class User {
 
   exceededStepGoal(activityData, property) {
     let daysOfReached = activityData.reduce((arr, currentVal) => {
-      if ((currentVal.userID === this.id) && (currentVal[property] > this.dailyStepGoal)) {
+      if ((currentVal.userID === this.id) &&
+        (currentVal[property] > this.dailyStepGoal)) {
         arr.push(currentVal.date)
       }
       return arr

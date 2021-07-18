@@ -63,19 +63,19 @@ window.addEventListener('load', function() {
       sleepData = data[3].sleepData;
       currentUser = usersData.users[getRandomIndex(usersData.users)];
       renderPage(currentUser, activityData, hydrationData, sleepData, convertDate(currentDate), usersData);
-    })
-})
+    });
+});
 
 
 // *************** EVENT HANDLERS AND FUNCTIONS  ************
 
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length)
-}
+};
 
 const convertDate = (date) => {
   return date.split("-").join("/");
-}
+};
 
 const findTotalActivityForWeek = (currentUser, activityData) => {
   let object = currentUser.findAllActivityOnWeek(activityData, 'minutesActive')
@@ -96,9 +96,9 @@ const findTotalActivityForWeek = (currentUser, activityData) => {
     totalMins: 0,
     totalSteps: 0,
     totalStairs: 0
-  })
+  });
   return getData;
-}
+};
 
 const renderPage = (currentUser, activityData, hydrationData, sleepData, date, usersData) => {
   userName.innerText = `Welcome, ${currentUser.getName()}!`;
@@ -116,4 +116,4 @@ const renderPage = (currentUser, activityData, hydrationData, sleepData, date, u
   hoursQualitySleep(currentUser, sleepData, date);
   allTimeSleepQualityUser(currentUser, sleepData);
   weeklySleepHrsQuality(currentUser, sleepData);
-}
+};

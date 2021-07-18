@@ -12,7 +12,6 @@ import {
   userData
 } from '../src/data/users.js';
 
-
 describe('User', () => {
   let users, user1;
   beforeEach(() => {

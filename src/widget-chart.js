@@ -25,7 +25,6 @@ export const userStepGoal = (currentUser) => {
   return steps
 }
 
-
 /// GOALS - USER GOAL VS OTHER USERS ///
 
 export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
@@ -59,7 +58,6 @@ export const userAvgStepGoalVsOthers = (usersData, stepGoal) => {
   );
   return myChart;
 }
-
 
 ///ACTIVITY - USER STEPS/MILES/MINUTESACTIVE FOR A DAY/////
 
@@ -102,7 +100,6 @@ export const stepMilesMinutesForDay =
     )
     return activeChart;
   }
-
 
 /// USERS ALL ACTIVITY VS COMMUNITY ///
 
@@ -177,7 +174,6 @@ export const allActivityForDayVsAll =
     )
     return allChart;
   }
-
 
 /// HYDRATION - USER HYDRATION CHART /////
 
@@ -257,9 +253,6 @@ export const waterOverLatestWeek = (currentUser, hydrationData, property) => {
     configWater
   )
 }
-
-
-
 
 // SLEEP WIDGETS //////
 // HOURS AND QUALITY OF SLEEP FOR A DAY.

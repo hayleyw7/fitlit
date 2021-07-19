@@ -27,47 +27,45 @@ Built with Visual Studio Code & Atom
 
 [Project board on GitHub](https://github.com/hayleyw7/fitlit/projects) 
 
-
-## Install & setup
-### Repository setup
-#### Clone project repository
+## Repository install and setup
+### Clone project repository
 
 Enter the following command in the Terminal:
 `git clone https://github.com/hayleyw7/flashcards-starter-2.git`
 
-#### Navigate to folder
+### Navigate to folder
 
 Enter the following command in the Terminal:
 `cd fitlit`
 
-#### Install dependencies
+### Install dependencies
 
 Enter the following command in the Terminal:
 `npm install`
 
-#### Run local host
+### Run local host
 
 Enter the following command in the Terminal:
 `npm start`
 
-### API setup
+## API install and setup
 
-#### Clone API repository
+### Clone API repository
 
 Enter the following command in the Terminal:
 `git clone https://github.com/turingschool-examples/fitlit-api`
 
-#### Navigate to folder
+### Navigate to folder
 
 Enter the following command in the Terminal:
 `cd fitlit-api`
 
-#### Install dependencies
+### Install dependencies
 
 Enter the following command in the Terminal:
 `npm install`
 
-#### Run API
+### Run API
 
 Enter the following command in the Terminal:
 `npm start`
@@ -82,9 +80,9 @@ When the site loads, a user will see two colorful sections: sidebar and widgets.
 
 After opening the website, the user will be greeted by name. The sidebar also includes their contact information, as well as a calendar. The calendar can be used to access the data of a specific time period.
 
-### Widget section
+### Widgets
 
-The will be able to see their Goals, Activity, Hydration, and Sleep data in separate sections. Each section includes widgets with either a) labelled numbers, or b) graphs, over which a user can hover to see specific numbers and headings. These widgets are regularly updated through the day, week, month, and beyond.
+The user will be able to see their Goals, Activity, Hydration, and Sleep data in separate sections. Each section includes widgets with either a) labelled numbers, or b) graphs, over which a user can hover to see specific numbers and headings. These widgets are regularly updated through the day, week, month, and beyond.
 
 #### Goals
 

@@ -97,6 +97,10 @@ The Goals section includes a chart of the user's daily step goal and a chart com
 
 The Activity section includes a left graph of the user's steps, miles, and active minutes during the current day. The top right of the section contains the same data, but for the week in numbers. Underneath, there is a bar graph comparing the data community-wide.
 
+#### Hydration
+
+The left chart contains the amount of water consumed today, and the right chart contains that data from the last week, separated by date.
+
 
 
 ## GIF

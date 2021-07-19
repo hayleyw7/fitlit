@@ -86,6 +86,7 @@ Enter the following URL in your internet browser:
 After opening the website, the user will be greeted by name. The sidebar also includes their contact information, as well as a calendar. The calendar can be used to access the data of a specific time period.
 
 
+
 ## GIF
 
 <!-- replace this with a gif -->

@@ -85,6 +85,14 @@ Enter the following URL in your internet browser:
 
 After opening the website, the user will be greeted by name. The sidebar also includes their contact information, as well as a calendar. The calendar can be used to access the data of a specific time period.
 
+### Widget section
+
+The will be able to see their Goals, Activity, Hydration, and Sleep data in separate sections. Each section includes widgets with either a) labelled numbers, or b) graphs, over which a user can hover to see specific numbers and headings. These widgets are regularly updated through the day, week, month, and beyond.
+
+#### Goals
+
+The Goals section includes a chart of the user's daily step goal and a chart comparing it to the average step goal of the website's community.
+
 
 
 ## GIF

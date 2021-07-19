@@ -28,6 +28,30 @@ Built with Visual Studio Code & Atom
 [Project board on GitHub](https://github.com/hayleyw7/fitlit/projects) 
 
 
+## Install & setup
+### Repository setup
+#### Clone project repository
+
+Enter the following command in the Terminal:
+`git clone https://github.com/hayleyw7/flashcards-starter-2.git`
+
+#### Navigate to folder
+
+Enter the following command in the Terminal:
+`cd fitlit`
+
+#### Install dependencies
+
+Enter the following command in the Terminal:
+`npm install`
+
+#### Run site
+
+Enter the following command in the Terminal:
+`npm start`
+
+### API setup
+
 
 
 ## Use the website

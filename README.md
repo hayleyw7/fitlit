@@ -11,9 +11,9 @@ This project was completed as a project at Turing School of Software & Design du
 
 ## Reflections
 
-[list a challenge]
+A challenge was working on APIs, as this is the first lesson at Turing where this came up.
 
-[list a learning experience]
+Referencing those datasets through the API was definitely a learning experience.
 
 ## Languages
 
@@ -27,9 +27,6 @@ Built with Visual Studio Code & Atom
 
 [Project board on GitHub](https://github.com/hayleyw7/fitlit/projects) 
 
-## Install & setup
-
-[instructions]
 
 
 ## Use the website

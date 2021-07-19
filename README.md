@@ -45,7 +45,7 @@ Enter the following command in the Terminal:
 Enter the following command in the Terminal:
 `npm install`
 
-#### Run site
+#### Run local host
 
 Enter the following command in the Terminal:
 `npm start`
@@ -67,14 +67,14 @@ Enter the following command in the Terminal:
 Enter the following command in the Terminal:
 `npm install`
 
-#### Run site
+#### Run API
 
-Enter the following URL in your internet browser:
-`http://localhost:8080/`
+Enter the following command in the Terminal:
+`npm start`
 
 ## Use the website
 
-[how to access & navigate the website as a user]
+
 
 ## GIF
 

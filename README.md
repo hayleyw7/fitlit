@@ -72,15 +72,12 @@ Enter the following command in the Terminal:
 Enter the following command in the Terminal:
 `npm start`
 
-### Access website
-
-#### URL
+## Access and use website
 
 Enter the following URL in your internet browser:
 `http://localhost:8080/`
 
-## Use the website
-
+When the site loads, a user will see two colorful sections: sidebar and widgets.
 ### Sidebar
 
 After opening the website, the user will be greeted by name. The sidebar also includes their contact information, as well as a calendar. The calendar can be used to access the data of a specific time period.

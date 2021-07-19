@@ -28,10 +28,11 @@ Built with Visual Studio Code & Atom
 [Project board on GitHub](https://github.com/hayleyw7/fitlit/projects) 
 
 ## Repository install and setup
+
 ### Clone project repository
 
 Enter the following command in the Terminal:
-`git clone https://github.com/hayleyw7/flashcards-starter-2.git`
+`git clone https://github.com/hayleyw7/fitlit.git`
 
 ### Navigate to folder
 
@@ -53,7 +54,7 @@ Enter the following command in the Terminal:
 ### Clone API repository
 
 Enter the following command in the Terminal:
-`git clone https://github.com/turingschool-examples/fitlit-api`
+`git clone https://github.com/turingschool-examples/fitlit-api.git`
 
 ### Navigate to folder
 
@@ -76,6 +77,7 @@ Enter the following URL in your internet browser:
 `http://localhost:8080/`
 
 When the site loads, a user will see two colorful sections: sidebar and widgets.
+
 ### Sidebar
 
 After opening the website, the user will be greeted by name. The sidebar also includes their contact information, as well as a calendar. The calendar can be used to access the data of a specific time period.
@@ -84,21 +86,13 @@ After opening the website, the user will be greeted by name. The sidebar also in
 
 The user will be able to see their Goals, Activity, Hydration, and Sleep data in separate sections. Each section includes widgets with either a) labelled numbers, or b) graphs, over which a user can hover to see specific numbers and headings. These widgets are regularly updated through the day, week, month, and beyond.
 
-#### Goals
+* The Goals section includes a chart of the user's daily step goal and a chart comparing it to the average step goal of the website's community.
 
-The Goals section includes a chart of the user's daily step goal and a chart comparing it to the average step goal of the website's community.
+* The Activity section includes a left graph of the user's steps, miles, and active minutes during the current day. The top right of the section contains the same data, but for the week in numbers. Underneath, there is a bar graph comparing the data community-wide.
 
-#### Activity
+* In the Hydration section, the left chart contains the amount of water consumed today, and the right chart contains that data from the last week, separated by date.
 
-The Activity section includes a left graph of the user's steps, miles, and active minutes during the current day. The top right of the section contains the same data, but for the week in numbers. Underneath, there is a bar graph comparing the data community-wide.
-
-#### Hydration
-
-The left chart contains the amount of water consumed today, and the right chart contains that data from the last week, separated by date.
-
-#### Sleep
-
-The top left chart displays you sleep quality and hours slept last night, the respective weekly numbers are next to it, and the all-time numbers are below.
+* For Sleep, the top left chart displays you sleep quality and hours slept last night, the respective weekly numbers are next to it, and the all-time numbers are below.
 
 ## GIF
 

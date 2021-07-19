@@ -101,7 +101,9 @@ The Activity section includes a left graph of the user's steps, miles, and activ
 
 The left chart contains the amount of water consumed today, and the right chart contains that data from the last week, separated by date.
 
+#### Sleep
 
+The top left chart displays you sleep quality and hours slept last night, the respective weekly numbers are next to it, and the all-time numbers are below.
 
 ## GIF
 

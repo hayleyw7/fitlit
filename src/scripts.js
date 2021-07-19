@@ -83,22 +83,25 @@ const findTotalActivityForWeek = (currentUser, activityData) => {
   let minutesData = weeklyMinutes.slice(193)
   let stepsData = weeklySteps.slice(193)
   let stairsData = weeklyStairs.slice(193)
-  const getData = minutesData.reduce((obj, currentVal) => {
-    stepsData.forEach(data => {
-      stairsData.forEach(stair => {
-        obj.totalMins += currentVal.minutesActive;
-        obj.totalSteps += data.numSteps;
-        obj.totalStairs += stair.flightsOfStairs;
-      })
-    })
-    return obj;
-  }, {
-    totalMins: 0,
-    totalSteps: 0,
-    totalStairs: 0
-  });
-  return getData;
-};
+  const getDataMinutes = minutesData.reduce((acc, currentVal) => {
+    acc += currentVal.minutesActive;
+    return acc
+  }, 0)
+  const getDataSteps = stepsData.reduce((acc, currentVal) => {
+    acc += currentVal.numSteps;
+    return acc
+  }, 0)
+  const getDataStairs = stairsData.reduce((acc, currentVal) => {
+    acc += currentVal.flightsOfStairs;
+    return acc
+  }, 0)
+  let weekActivity = {
+    totalSteps: getDataSteps,
+    totalStairs: getDataStairs,
+    totalMins: getDataMinutes
+  }
+  return weekActivity;
+}
 
 const renderPage = (currentUser, activityData, hydrationData, sleepData, date, usersData) => {
   userName.innerText = `Welcome, ${currentUser.getName()}!`;

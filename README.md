@@ -29,6 +29,7 @@ Built with Visual Studio Code & Atom
 
 
 
+
 ## Use the website
 
 [how to access & navigate the website as a user]

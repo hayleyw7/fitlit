@@ -97,7 +97,7 @@ The user will be able to see their Goals, Activity, Hydration, and Sleep data in
 ## GIF
 
 <!-- replace this with a gif -->
-![FitLit GIF will be here](assets/fitlit.gif) 
+![FitLit GIF](assets/fitlit-gif.gif) 
 
 ## Future additions
 

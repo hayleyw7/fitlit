@@ -12,10 +12,10 @@
 }
 
 body {
-  display: flex;
-  font-family: 'Baloo 2';
   background-color: var(--black);
   color: var(--white);
+  display: flex;
+  font-family: 'Baloo 2';
   margin: 0;
 }
 
@@ -55,20 +55,20 @@ h3 {
 
 /* NAV BAR SECTION */
 .nav-bar {
+  background-color: var(--background);
   min-width: 13.5rem;
   padding: 0 1rem 1rem 1rem;
-  background-color: var(--background);
   text-align: center;
 }
 
 .user-name {
-  font-size: 2rem;
   color: var(--yellow);
+  font-size: 2rem;
 }
 
 .user-info {
-  font-size: 1rem;
   color: var(--blue);
+  font-size: 1rem;
 }
 
 .calendar {
@@ -81,42 +81,45 @@ h3 {
 
 /* /////// MAIN ///////  */
 .widget-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
 /* WIDGETS */
-.widget-goals, .widget-sleep, .widget-hydration, .widget-activity {
+.widget-goals,
+.widget-sleep,
+.widget-hydration,
+.widget-activity {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: center;
 }
 
 .widget-half,
 .widget-full {
   background-color: var(--background);
-  padding: 0 1rem 3rem 1rem;
   border-radius: 1rem;
-  margin: 0 1rem 1rem 1rem;
   height: 22rem;
+  margin: 0 1rem 1rem 1rem;
+  padding: 0 1rem 3rem 1rem;
   width: 69rem;
 }
 
 .widget-half {
-  width: 32.5rem;
   min-width: 15rem;
+  width: 32.5rem;
 }
 
 .column-activity {
   float: left;
-  width: 28%;
-  vertical-align: center;
   padding: 0 0 0 1.25rem;
+  vertical-align: center;
+  width: 28%;
 }
 
 .activity-num-1,
@@ -125,8 +128,8 @@ h3 {
 .sleep-num-1,
 .sleep-num-2 {
   font-size: 3rem;
-  margin: 3rem 1rem 0 0;
   font-weight: bold;
+  margin: 3rem 1rem 0 0;
   text-align: center;
 }
 
@@ -149,38 +152,39 @@ h3 {
 }
 
 /* //// MEDIA QUERY //// */
-@media only screen and (min-device-width: 200px) and (max-device-width: 480px) {
+@media screen and (min-device-width: 200px) and (max-device-width: 480px){
   html {
     display: flex;
   }
 
   body {
-    display: flex;
-    font-family: 'Arial';
+    align-content: center;
+    align-items: center;
     background-color: var(--black);
     color: var(--white);
-    margin: 0;
+    display: flex;
     flex-direction: column;
-    align-content: center;
+    font-family: 'Arial';
     justify-content: center;
-    align-items: center;
+    margin: 0;
   }
 
   .nav-bar {
-    padding: 1rem;
+    align-items: center;
     background-color: var(--background);
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    padding: 1rem;
+    width: 100%;
   }
 
   .widget-goals, .widget-sleep, .widget-hydration, .widget-activity {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
+    justify-content: center;
   }
 }
+ 
